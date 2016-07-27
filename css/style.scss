@@ -1218,19 +1218,6 @@ button, a, img, li, input[type="button"]{outline: none}
 	max-height: calc(100% - 104px);
 	height: auto;
 	overflow-y: auto;
-	// &:before{
-	// 	position: absolute;
-	// 	top: -5px;
-	//     right: 37px;
-	//     display: block;
-	//     z-index: 3001;
-	//     content: '';
-	//     width: 0;
-	//     height: 0;
-	//     border-left: 5px solid transparent;
-	//     border-right: 5px solid transparent;
-	//     border-bottom: 5px solid #fff;
-	// }
 	div{
 		float: none;
 		margin-left: 0;
@@ -1288,6 +1275,36 @@ button, a, img, li, input[type="button"]{outline: none}
 		font-size: 16px;
 	}
 }
+.popUpLogin{
+	position: absolute;
+	top: 76px;
+	right: 0;
+	z-index: 500;
+	background: #fff;
+	color: #333;
+	box-shadow: 0 2px 40px rgba(0, 0, 0, 0.2);
+	padding: 20px 20px;
+	width: 380px;
+	display: none;
+	input{
+		width: 100%;
+		outline: none;
+		border: 1px solid #eee;
+		padding: 8px 10px;
+		margin-bottom: 10px;
+		&[type="button"]{
+			background: #000;
+			border: none;
+			cursor: pointer;
+			color: #fafafa;
+		}
+	}
+	a{
+		text-align: center;
+		color: #333;
+		display: block;
+	}
+}
 #fullSlider{
 	top: 60px;
 	img{
@@ -1308,6 +1325,38 @@ button, a, img, li, input[type="button"]{outline: none}
 		position: absolute;
 		top: 5px;
 		right: 5px;
+	}
+}
+#registerPage{
+	h3{
+		font-size: 18px;
+		border-bottom: 1px solid #eee;
+		padding-bottom: 5px;
+		margin-top: 50px;
+	}
+	label{
+		width: 100%;
+		font-weight: normal;
+		font-size: 14px;
+	}
+	input[type="text"]{
+		width: 100%;
+		margin-bottom: 20px;
+		border: 1px solid #eee;
+		padding: 8px 10px;
+		outline: none;
+	}
+	input[type="button"]{
+		width: 100%;
+		background: #000;
+		color: #fafafa;
+		padding: 8px 10px;
+		text-align: center;
+		border: none;
+		margin-top: 20px;
+	}
+	.forRemember, #rememberID, .followID, #follow{
+		display: inline;
 	}
 }
 @media screen and (max-width: 992px) {
@@ -1840,11 +1889,9 @@ button, a, img, li, input[type="button"]{outline: none}
 	#mazaStore .storeBlock{
 		margin-bottom: 0;
 	}
-	// .popUpCart{
-	// 	&:after{
-	// 		right: 15px;
-	// 	}
-	// }
+	.popUpLogin{
+		width: 100%;
+	}
 }
 @media (min-width: 1200px){
 	.container {

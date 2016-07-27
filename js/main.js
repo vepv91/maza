@@ -361,7 +361,9 @@ function getFullSlider(){
 		prevSlide();
 	});
 };
-
+function showHideLogin(){
+	showHide('.popUpLogin');
+};
 showSortBy();
 onChangeSortBy();
 rightFilterList();
