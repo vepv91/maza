@@ -364,6 +364,22 @@ function getFullSlider(){
 function showHideLogin(){
 	showHide('.popUpLogin');
 };
+function forgotPass(){
+	collapseElement('#forgotPass');
+	$(window).scrollTop($('#submitReset').offset().top);
+};
+function radioCheck(idClick, idHide, idShow){
+	$(idClick).click(function(){
+		if($(idClick).is(':checked')){
+			$(idHide).fadeOut('fast');
+			$(idShow).fadeIn('fast');
+		}
+	});
+};
+function showHideRegCheck(){
+	radioCheck('#newMem','#logOldMem','#logNewMem');
+	radioCheck('#oldMem','#logNewMem','#logOldMem');
+};
 showSortBy();
 onChangeSortBy();
 rightFilterList();
@@ -373,3 +389,4 @@ getAllFilter();
 onChangeAllFilter();
 chooseColor();
 tabs();
+showHideRegCheck();

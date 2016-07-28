@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Maza.vn - Checkout-1</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,900,700&subset=latin,vietnamese' rel='stylesheet' type='text/css'> -->
+</head>
+<body>
+	<div class="wrapper">
+		<div id="checkoutPage">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="header">
+							<a href="" class="logo"><img src="images/logo-checkout.png" alt=""></a>
+							<a href="" class="continueShopping">Tiếp tục mua sắm</a>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<ul class="progressBar">
+							<li class="active"><a href="">1. Đăng nhập</a></li>
+							<li><a href="">2. Thông tin giao hàng</a></li>
+							<li><a href="">3. Hoàn tất</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<h2>Đăng nhập</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-md-5">
+						<h4>Đăng nhập / Đăng ký mới</h4>
+						<input type="radio" name="grReg" id="oldMem" checked><label for="oldMem" onclick="showHideOldMem();">Tôi là thành viên của Maza</label> <br />
+						<input type="radio" name="grReg" id="newMem"><label for="newMem">Tôi là khách hàng mới</label>
+						<form action="" id="logOldMem">
+							<label for="">Email</label>
+							<input type="text" placeholder="Nhập email đăng nhập">
+							<label for="">Mật khẩu</label>
+							<input type="text" placeholder="Nhập mật khẩu">
+							<input type="checkbox" id="rememberC"><label for="rememberC">Ghi nhớ đăng nhập</label> <br />
+							<input type="button" value="Đăng nhập">
+						</form>
+						<form action="" id="logNewMem">
+							<label for="">Email</label>
+							<input type="text" placeholder="Nhập email đăng nhập">
+							<label for="">Mật khẩu</label>
+							<input type="text" placeholder="Nhập mật khẩu">
+							<label for="">Xác nhận mật khẩu</label>
+							<input type="text" placeholder="Nhập lại mật khẩu">
+							<input type="checkbox" id="RegFollowC"><label for="RegFollowC">Đăng ký theo dõi</label> <br />
+							<input type="button" value="Đăng ký">
+						</form>
+						<h5 onclick="forgotPass();">Quên mật khẩu?</h5>
+						<form action="" id="forgotPass">
+							<label for="">Email</label>
+							<input type="text" placholder="Nhập email đăng nhập">
+							<input type="button" value="Lấy lại mật khẩu" id="submitReset">
+						</form>
+					</div>
+					<div class="col-xs-12 col-md-5 col-md-offset-1">
+						<h4>Chưa có tài khoản vẫn mua hàng được</h4>
+						<p>Thử tính năng mới chỉ có ở Maza store</p>
+						<input type="button" value="Mua hàng không cần tài khoản">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

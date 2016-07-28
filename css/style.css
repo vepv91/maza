@@ -1358,6 +1358,314 @@ button, a, img, li, input[type="button"] {
   display: inline;
 }
 
+#style-policyPage .topBannerFull {
+  border: 4px solid #000;
+  margin-bottom: 40px;
+}
+#style-policyPage .topBannerFull img {
+  max-width: 100%;
+  width: 100%;
+}
+#style-policyPage .policyPage .menuPolicyLeft {
+  text-align: right;
+}
+#style-policyPage .policyPage .menuPolicyLeft a {
+  color: #333;
+}
+#style-policyPage .policyPage .menuPolicyLeft li {
+  margin-bottom: 10px;
+}
+#style-policyPage .policyPage .menuPolicyLeft li.active {
+  font-weight: bold;
+}
+#style-policyPage .policyPage .menuPolicyLeft li:hover {
+  text-decoration: underline;
+}
+#style-policyPage .policyPage .contentPolicyRight {
+  border-left: 1px solid #eee;
+}
+#style-policyPage .policyPage h3 {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+#style-policyPage .policyPage h5 {
+  font-size: 14px;
+  margin-top: 30px;
+}
+#style-policyPage .stylePage .topPics {
+  text-align: center;
+}
+#style-policyPage .stylePage .topPics a {
+  color: #333;
+}
+#style-policyPage .stylePage .topPics a:hover {
+  color: #428bca;
+}
+#style-policyPage .stylePage .topPics .detailHover {
+  background: #eee;
+  padding: 0 20px;
+}
+#style-policyPage .stylePage .topPics .detailHover h3 {
+  margin: 0;
+  font-size: 20px;
+  padding: 20px 0 10px;
+}
+#style-policyPage .stylePage .topPics .detailHover p {
+  padding-bottom: 10px;
+  margin-bottom: 0;
+}
+#style-policyPage .stylePage .topPics .moreDetailSocial {
+  background: #eee;
+  padding: 15px 20px 10px;
+  margin-bottom: 20px;
+}
+#style-policyPage .stylePage .topPics .moreDetailSocial a {
+  margin: 0 10px;
+}
+#style-policyPage .stylePage .topPics img {
+  max-width: 100%;
+  width: 100%;
+}
+#style-policyPage .stylePageMain {
+  text-align: center;
+}
+#style-policyPage .stylePageMain .headerPageInsta h3 {
+  margin-top: 40px;
+  font-size: 25px;
+  font-weight: 700;
+}
+#style-policyPage .stylePageMain .instaPosts .postDetailInsta {
+  margin: 20px 0;
+}
+#style-policyPage .stylePageMain .instaPosts img {
+  max-width: 100%;
+  width: 100%;
+}
+#style-policyPage .stylePageMain .instaPosts .detailMorePost {
+  border: 1px solid #eee;
+  overflow: hidden;
+  padding: 10px 10px 5px 10px;
+}
+#style-policyPage .stylePageMain .instaPosts .detailMorePost a {
+  float: left;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+#style-policyPage .stylePageMain .instaPosts .detailMorePost ul {
+  float: left;
+  width: calc(100% - 60px);
+  text-align: left;
+  margin: 0;
+}
+#style-policyPage .stylePageMain .instaPosts .detailMorePost ul h4 {
+  margin: 0 0 5px;
+}
+#style-policyPage .stylePageMain .instaPosts .detailMorePost ul p {
+  color: #428bca;
+}
+
+#accountInfo {
+  background: #eee;
+  padding: 50px 0;
+}
+#accountInfo h3 {
+  font-weight: 700;
+  font-size: 25px;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0 0 20px;
+}
+#accountInfo .tabListLeft ul {
+  border: none;
+  border-top: 1px solid #ddd;
+}
+#accountInfo .tabListLeft ul li {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #eee;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+#accountInfo .tabListLeft ul li i {
+  margin-right: 10px;
+}
+#accountInfo .tabListLeft ul li.active {
+  border: 1px solid #ddd;
+  border-right: 1px solid #fff;
+  border-top: none;
+  background: #fff;
+  position: relative;
+}
+#accountInfo .tabListLeft ul li.active a {
+  color: #d54936;
+}
+#accountInfo .tabListLeft ul li.active:after {
+  display: block;
+  content: '';
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -1px;
+  background: #fff;
+  z-index: 500;
+}
+#accountInfo .tabListLeft ul li a {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 15px 10px 15px 15px;
+}
+#accountInfo .contentTabRight {
+  border: 1px solid #ddd;
+  min-height: 200px;
+  margin-left: -11px;
+  background: #fff;
+  padding-left: 21px;
+  padding-bottom: 20px;
+}
+#accountInfo .contentTabRight a {
+  color: #428bca;
+}
+#accountInfo .contentTabRight h4 {
+  font-size: 18px;
+  text-transform: uppercase;
+  border-bottom: 3px solid #eee;
+  padding-bottom: 12px;
+  margin: 18px 0 20px;
+  font-weight: 700;
+}
+#accountInfo .contentTabRight table {
+  min-width: 320px;
+}
+#accountInfo .contentTabRight table tr td, #accountInfo .contentTabRight table tr th {
+  border-bottom: 1px solid #eee;
+  padding: 10px 5px;
+}
+#accountInfo .contentTabRight .scrollTable {
+  overflow-x: auto;
+}
+
+#cartPage {
+  padding: 50px 0 0 0;
+}
+#cartPage h3 {
+  font-weight: 700;
+  font-size: 25px;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0 0 20px;
+}
+#cartPage .cartLeft .tableHeader {
+  background: #eee;
+  padding: 10px 0;
+  margin: 0 10px;
+}
+#cartPage .cartLeft .tableBody {
+  margin-top: 10px;
+}
+#cartPage .cartLeft .tableBody img {
+  width: 80px;
+  height: auto;
+  float: left;
+  margin-right: 10px;
+}
+#cartPage .cartLeft .tableBody select {
+  border: 1px solid #eee;
+  padding: 6px 5px;
+  outline: none;
+  width: 100%;
+}
+#cartPage .cartLeft .tableBody a {
+  color: #428bca;
+}
+#cartPage .cartLeft .tableBody .titleP a {
+  color: #333;
+  font-weight: 600;
+}
+#cartPage .cartLeft .tableBody .priceP {
+  color: #eb0101;
+  font-size: 16px;
+}
+#cartPage .cartLeft .tableBody .row {
+  margin-bottom: 20px;
+}
+#cartPage .cartLeft .tableFooter {
+  font-size: 16px;
+  border-top: 1px solid #ddd;
+  padding: 10px 5px 0;
+}
+#cartPage .cartLeft .tableFooter input[type="button"] {
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fafafa;
+  background: #428bca;
+  padding: 10px;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 18px;
+}
+#cartPage .cartRight {
+  background: #333;
+  color: #fafafa;
+  padding: 20px;
+}
+#cartPage .cartRight h3 {
+  font-size: 20px;
+}
+#cartPage .cartRight table tr td {
+  padding: 10px 0;
+}
+#cartPage .cartRight table tfoot tr td {
+  border-top: 1px solid #525252;
+}
+#cartPage .cartRight a {
+  display: block;
+  color: #fafafa;
+  text-align: center;
+}
+#cartPage .cartRight input[type="button"] {
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fafafa;
+  background: #428bca;
+  padding: 10px;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 18px;
+  margin-top: 10px;
+}
+#cartPage .list3s {
+  background: #fff;
+  padding: 20px;
+}
+#cartPage .list3s li {
+  margin-bottom: 20px;
+}
+#cartPage .list3s li i {
+  font-size: 42px;
+  float: left;
+  display: inline-block;
+  width: 42px;
+  text-align: center;
+  margin-right: 20px;
+}
+#cartPage .list3s li p {
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
 @media screen and (max-width: 992px) {
   #header .subMenuTop .s3 li {
     margin-right: 20px;
@@ -1639,7 +1947,238 @@ button, a, img, li, input[type="button"] {
     top: 58px;
     padding: 20px 10px;
   }
+
+  #style-policyPage .topBannerFull {
+    margin: 20px 0;
+  }
+  #style-policyPage .policyPage .menuPolicyLeft {
+    text-align: left;
+    padding: 0;
+  }
+  #style-policyPage .policyPage .contentPolicyRight {
+    padding: 0;
+  }
+
+  #accountInfo .tabListLeft ul li.active {
+    border-left: 1px solid #fff;
+  }
+  #accountInfo .tabListLeft ul li.active:after {
+    display: none;
+  }
+  #accountInfo .tabListLeft ul li a {
+    padding: 15px 10px;
+  }
+  #accountInfo .contentTabRight {
+    padding-left: 10px;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  #cartPage .cartLeft .tableFooter {
+    border: none;
+  }
+  #cartPage .cartLeft .tableFooter input[type="button"] {
+    margin: 10px 0 20px 0;
+  }
+  #cartPage .cartLeft .tableBody select {
+    margin: 0 -5px;
+  }
+  #cartPage .cartRight {
+    margin: 0 0 30px 0;
+  }
+  #cartPage .list3s {
+    margin-bottom: 0;
+    padding: 0;
+  }
+  #cartPage .list3s li {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
 }
+#checkoutPage .header {
+  padding: 30px 0;
+}
+#checkoutPage .logo {
+  float: left;
+}
+#checkoutPage .continueShopping {
+  float: right;
+  color: #333;
+  border: 1px solid #333;
+  padding: 7px 30px;
+  text-transform: uppercase;
+}
+#checkoutPage .progressBar {
+  overflow: hidden;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+#checkoutPage .progressBar li {
+  cursor: pointer;
+  float: left;
+  width: calc(33.3% - 4px);
+  padding: 8px 0 7px 0px;
+  background: #eee;
+  text-align: center;
+  position: relative;
+  margin-right: 4px;
+}
+#checkoutPage .progressBar li:after {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  content: '';
+  height: 0;
+  width: 0;
+  border: 20px solid transparent;
+  border-right-width: 0;
+  border-left-width: 14px;
+  transform: translateX(4px);
+  border-left-color: #fff;
+  margin: 0;
+  z-index: 1;
+}
+#checkoutPage .progressBar li a {
+  color: #333;
+}
+#checkoutPage .progressBar li a:after {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  content: '';
+  height: 0;
+  width: 0;
+  border: 20px solid transparent;
+  border-right-width: 0;
+  border-left-width: 14px;
+  z-index: 2;
+  border-left-color: #eee;
+}
+#checkoutPage .progressBar li.active {
+  background: #333;
+}
+#checkoutPage .progressBar li.active a {
+  color: #fafafa;
+}
+#checkoutPage .progressBar li.active a:after {
+  border-left-color: #333;
+}
+#checkoutPage .progressBar li:last-of-type {
+  margin-right: 0;
+  width: 33.3%;
+}
+#checkoutPage .progressBar li:last-of-type:after {
+  display: none;
+}
+#checkoutPage .progressBar li:last-of-type a:after {
+  display: none;
+}
+#checkoutPage form label {
+  font-weight: normal;
+  margin-top: 15px;
+}
+#checkoutPage form input[type="text"] {
+  border: 1px solid #eee;
+  padding: 7px 10px;
+  width: 100%;
+  outline: none;
+}
+#checkoutPage form input[type="button"] {
+  background: #333;
+  padding: 8px 10px;
+  width: 100%;
+  color: #fafafa;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px 0;
+}
+#checkoutPage input[type="button"] {
+  background: #333;
+  padding: 8px 10px;
+  width: 100%;
+  color: #fafafa;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px 0;
+}
+#checkoutPage input[type="radio"] {
+  margin-right: 5px;
+}
+#checkoutPage h5 {
+  font-weight: normal;
+  cursor: pointer;
+}
+#checkoutPage h4 {
+  font-size: 18px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+#checkoutPage h2 {
+  background: url(../images/patternHeader-checkout.jpg) top left repeat;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 25px 25px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+#checkoutPage #rememberC, #checkoutPage #RegFollowC {
+  margin: 15px 5px 0px 0;
+}
+#checkoutPage #forgotPass {
+  border-top: 1px solid #eee;
+  display: none;
+}
+#checkoutPage #logNewMem {
+  display: none;
+}
+#checkoutPage select {
+  width: 100%;
+  border: 1px solid #eee;
+  padding: 8px 5px;
+  outline: none;
+}
+#checkoutPage textarea {
+  width: 100%;
+  border: 1px solid #eee;
+  outline: none;
+  padding: 8px 10px;
+  resize: none;
+  min-height: 100px;
+}
+#checkoutPage .rowPCheckOut {
+  margin-bottom: 25px;
+}
+#checkoutPage .rowPCheckOut img {
+  max-width: 100%;
+  width: 100%;
+}
+#checkoutPage .rowPCheckOut .priceCO {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+#checkoutPage .rowPCheckOut .priceCO a {
+  float: right;
+  margin-left: 10px;
+  color: #333;
+}
+#checkoutPage .cartCheckOutRight {
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+#checkoutPage .cartCheckOutRight .totalCO {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
 @media screen and (max-width: 640px) {
   #mainCatHome .mainCatBlock {
     margin-bottom: 30px;
@@ -1667,6 +2206,22 @@ button, a, img, li, input[type="button"] {
   }
   #detailPage .sliderIMG {
     width: calc(100% - 60px);
+  }
+
+  #checkoutPage .progressBar li {
+    width: 100%;
+    text-align: left;
+    padding-left: 20px;
+    margin-bottom: 5px;
+  }
+  #checkoutPage .progressBar li:after {
+    display: none;
+  }
+  #checkoutPage .progressBar li a:after {
+    display: none;
+  }
+  #checkoutPage .progressBar li:last-of-type {
+    width: 100%;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1846,9 +2401,27 @@ button, a, img, li, input[type="button"] {
   .popUpLogin {
     width: 100%;
   }
+
+  #checkoutPage h2 {
+    font-size: 22px;
+  }
+  #checkoutPage .continueShopping {
+    padding: 7px 15px;
+  }
+  #checkoutPage .logo {
+    width: 120px;
+  }
+  #checkoutPage .logo img {
+    width: 100%;
+    height: auto;
+  }
 }
 @media (min-width: 1200px) {
   .container {
     width: 1280px;
+  }
+
+  #checkoutPage .container {
+    width: 1170px;
   }
 }
