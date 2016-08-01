@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/slick.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<!-- <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,900,700&subset=latin,vietnamese' rel='stylesheet' type='text/css'> -->
 
 </head>
@@ -131,7 +132,6 @@
 									<li><a href="#">Hàng mới</a></li>
 								</ul>
 							</div>
-
 							<div class="iconList">
 								<div class="searchForm">SearchForm
 									<form action="" id="mainSearchForm">
@@ -139,13 +139,33 @@
 									</form>
 									<div class="clearfix"></div>
 								</div>
-								<div class="userLogin" onclick="showHideLogin();">
-									<button>Đăng nhập</button>
-								</div>
 								<div class="cartForm" onclick="showHideCart();">
+									<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+									<span class="numProducts">3</span>
 									<button>Giỏ hàng</button>
 								</div>
+								<div class="userLogin" onclick="showHideLogin();">
+									<i class="fa fa-user" aria-hidden="true"></i>
+									<button>Đăng nhập</button>
+								</div>
+								<!-- <div class="userLogOut" data-toggle="dropdown">
+									<i class="fa fa-user" aria-hidden="true"></i>
+									<button class="dropdown-toggle" type="button" data-toggle="dropdown">
+										<span>Hi, <span>Admin gaylord</span></span>
+  										<span class="caret"></span>
+  									</button>
+  									<ul class="dropdown-menu">
+										<li><a href="#">Thông tin tài khoản</a></li>
+										<li><a href="#">Lịch sử đơn hàng</a></li>
+										<li><a href="#">Địa chỉ thanh toán</a></li>
+										<li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Thoát</a></li>
+									</ul>
+								</div> -->
 							</div>
+							<div class="freeShipping">
+								<button data-toggle="modal" data-target="#freeShipPopUp">Miễn phí giao hàng - <span>Chi tiết</span></button>
+							</div>
+							<div class="clear"></div>
 						</div>
 					</div>
 				</div>
@@ -156,18 +176,6 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 col-md-offset-1">
-						<h3>Đăng nhập</h3>
-						<form action="" id="loginFormPage">
-							<label>Email</label>
-							<input type="text" placeholder="Nhập email của bạn">
-							<label>Mật khẩu</label>
-							<input type="text" placeholder="Nhập mật khẩu">
-							<input type="checkbox" id="rememberID">
-							<label for="rememberID" class="forRemember">Ghi nhớ đăng nhập</label>
-							<input type="button" value="Đăng nhập">
-						</form>
-					</div>
-					<div class="col-md-4 col-md-offset-2">
 						<h3>Đăng ký mới</h3>
 						<form action="" id="loginFormPage">
 							<label>Email</label>
@@ -179,6 +187,19 @@
 							<input type="checkbox" id="follow">
 							<label for="follow" class="followID">Nhận email khuyến mãi</label>
 							<input type="button" value="Đăng ký">
+						</form>
+					</div>
+					<div class="col-md-4 col-md-offset-2">
+						<h3>Đăng nhập</h3>
+						<form action="" id="loginFormPage">
+							<label>Email</label>
+							<input type="text" placeholder="Nhập email của bạn">
+							<label>Mật khẩu</label>
+							<input type="text" placeholder="Nhập mật khẩu">
+							<input type="checkbox" id="rememberID">
+							<label for="rememberID" class="forRemember">Ghi nhớ đăng nhập</label>
+							<input type="button" value="Đăng nhập">
+							<a href="">Quên mật khẩu?</a>
 						</form>
 					</div>
 				</div>
@@ -273,23 +294,26 @@
 				</div>
 			</div>
 		</section>
+		<!-- popUp area -->
 		<div class="popUpCart">
-			<ul>
-				<li>
-					<img src="images/img-detail.jpg" alt="">
-					<div class="detailProCart">
-						<h4>Áo Sơ Mi Nam Họa Tiết Caro</h4>
-						<div class="priceCart"><span>159.000đ</span></div>
-						<div class="colorCart">Màu sắc: <span>Màu đỏ</span></div>
-						<div class="sizeCart">Kích cỡ: <span>XL</span></div>
-						<div class="clearfix"></div>
-						<a class="removeFromCart" onclick="removeFromCart(this);">Bỏ sản phẩm</a>
-					</div>
-				</li>
-			</ul>
-			<div class="clearfix"></div>
-			<div id="sumPrice">Tổng: <span>1.000.000đ</span></div>
-			<button id="goToCart">Xem giỏ hàng</button>
+			<div class="mainCart_P">
+				<ul>
+					<li>
+						<img src="images/img-detail.jpg" alt="">
+						<div class="detailProCart">
+							<h4>Áo Sơ Mi Nam Họa Tiết Caro</h4>
+							<div class="priceCart"><span>159.000đ</span></div>
+							<div class="colorCart">Màu sắc: <span>Màu đỏ</span></div>
+							<div class="sizeCart">Kích cỡ: <span>XL</span></div>
+							<div class="clearfix"></div>
+							<a class="removeFromCart" onclick="removeFromCart(this);">Bỏ sản phẩm</a>
+						</div>
+					</li>
+				</ul>
+				<div class="clearfix"></div>
+				<div id="sumPrice">Tổng: <span>1.000.000đ</span></div>
+				<button id="goToCart">Xem giỏ hàng</button>
+			</div>
 		</div>
 		<div class="popUpLogin">
 			<input type="text" placeholder="Email">
@@ -297,6 +321,18 @@
 			<input type="button" value="Đăng nhập">
 			<a href="#">Quên mật khẩu?</a>
 		</div>
+		<div class="modal fade" id="freeShipPopUp" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-body">
+						<button type="button" class="btn btn-default closeShip" data-dismiss="modal">Đóng</button>
+						<div class="clearfix"></div>
+						<p>Miễn phí giao hàng khi mua durex -_-</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end popUp area -->
 	</div>
 
 	<script src="js/jquery-1.9.1.js"></script>

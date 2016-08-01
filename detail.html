@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/slick.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<!-- <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,900,700&subset=latin,vietnamese' rel='stylesheet' type='text/css'> -->
 
 </head>
@@ -131,7 +132,6 @@
 									<li><a href="#">Hàng mới</a></li>
 								</ul>
 							</div>
-
 							<div class="iconList">
 								<div class="searchForm">SearchForm
 									<form action="" id="mainSearchForm">
@@ -139,13 +139,16 @@
 									</form>
 									<div class="clearfix"></div>
 								</div>
-								<div class="userLogin">
-									<button>Đăng nhập</button>
-								</div>
 								<div class="cartForm" onclick="showHideCart();">
+									<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 									<button>Giỏ hàng</button>
 								</div>
+								<div class="userLogin" onclick="showHideLogin();">
+									<i class="fa fa-user" aria-hidden="true"></i>
+									<button>Đăng nhập</button>
+								</div>
 							</div>
+							<div class="clear"></div>
 						</div>
 					</div>
 				</div>
@@ -265,18 +268,21 @@
 										<li><span style="background: #fff;"></span></li>
 									</ul>
 								</div>
+								<div class="col-xs-12 sumAlert sumAlertColor">Vui lòng chọn màu sắc</div>
 							</div>
 							<div class="row moreDetail">
 								<div class="col-xs-12">
 									<h5>kích cỡ</h5>
 									<select name="" id="size">
-										<option value="">Size XS</option>
-										<option value="">Size S</option>
-										<option value="">Size M</option>
-										<option value="">Size L</option>
-										<option value="">Size XL</option>
+										<option value="0">-- Chọn kích cỡ --</option>
+										<option value="1">Size XS</option>
+										<option value="2">Size S</option>
+										<option value="3">Size M</option>
+										<option value="4">Size L</option>
+										<option value="5">Size XL</option>
 									</select>
 								</div>
+								<div class="col-xs-12 sumAlert sumAlertSize">Vui lòng chọn kích cỡ</div>
 							</div>
 							<div class="row callToAction">
 								<div class="col-xs-12 col-md-10">
@@ -496,22 +502,30 @@
 			</div>
 		</section>
 		<div class="popUpCart">
-			<ul>
-				<li>
-					<img src="images/img-detail.jpg" alt="">
-					<div class="detailProCart">
-						<h4>Áo Sơ Mi Nam Họa Tiết Caro</h4>
-						<div class="priceCart"><span>159.000đ</span></div>
-						<div class="colorCart">Màu sắc: <span>Màu đỏ</span></div>
-						<div class="sizeCart">Kích cỡ: <span>XL</span></div>
-						<div class="clearfix"></div>
-						<a class="removeFromCart" onclick="removeFromCart(this);">Bỏ sản phẩm</a>
-					</div>
-				</li>
-			</ul>
-			<div class="clearfix"></div>
-			<div id="sumPrice">Tổng: <span>1.000.000đ</span></div>
-			<button id="goToCart">Xem giỏ hàng</button>
+			<div class="mainCart_P">
+				<ul>
+					<li>
+						<img src="images/img-detail.jpg" alt="">
+						<div class="detailProCart">
+							<h4>Áo Sơ Mi Nam Họa Tiết Caro</h4>
+							<div class="priceCart"><span>159.000đ</span></div>
+							<div class="colorCart">Màu sắc: <span>Màu đỏ</span></div>
+							<div class="sizeCart">Kích cỡ: <span>XL</span></div>
+							<div class="clearfix"></div>
+							<a class="removeFromCart" onclick="removeFromCart(this);">Bỏ sản phẩm</a>
+						</div>
+					</li>
+				</ul>
+				<div class="clearfix"></div>
+				<div id="sumPrice">Tổng: <span>1.000.000đ</span></div>
+				<button id="goToCart">Xem giỏ hàng</button>
+			</div>
+		</div>
+		<div class="popUpLogin">
+			<input type="text" placeholder="Email">
+			<input type="text" placeholder="Mật khẩu">
+			<input type="button" value="Đăng nhập">
+			<a href="#">Quên mật khẩu?</a>
 		</div>
 	</div>
 

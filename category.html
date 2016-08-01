@@ -7,7 +7,8 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/slick.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,900,700&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,900,700&subset=latin,vietnamese' rel='stylesheet' type='text/css'> -->
 
 </head>
 <body>
@@ -139,11 +140,13 @@
 									</form>
 									<div class="clearfix"></div>
 								</div>
-								<div class="userLogin">
-									<button>Đăng nhập</button>
-								</div>
 								<div class="cartForm" onclick="showHideCart();">
+									<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 									<button>Giỏ hàng</button>
+								</div>
+								<div class="userLogin" onclick="showHideLogin();">
+									<i class="fa fa-user" aria-hidden="true"></i>
+									<button>Đăng nhập</button>
 								</div>
 							</div>
 							<div class="clear"></div>
@@ -590,22 +593,30 @@
 			</div>
 		</section>
 		<div class="popUpCart">
-			<ul>
-				<li>
-					<img src="images/img-detail.jpg" alt="">
-					<div class="detailProCart">
-						<h4>Áo Sơ Mi Nam Họa Tiết Caro</h4>
-						<div class="priceCart"><span>159.000đ</span></div>
-						<div class="colorCart">Màu sắc: <span>Màu đỏ</span></div>
-						<div class="sizeCart">Kích cỡ: <span>XL</span></div>
-						<div class="clearfix"></div>
-						<a class="removeFromCart" onclick="removeFromCart(this);">Bỏ sản phẩm</a>
-					</div>
-				</li>
-			</ul>
-			<div class="clearfix"></div>
-			<div id="sumPrice">Tổng: <span>1.000.000đ</span></div>
-			<button id="goToCart">Xem giỏ hàng</button>
+			<div class="mainCart_P">
+				<ul>
+					<li>
+						<img src="images/img-detail.jpg" alt="">
+						<div class="detailProCart">
+							<h4>Áo Sơ Mi Nam Họa Tiết Caro</h4>
+							<div class="priceCart"><span>159.000đ</span></div>
+							<div class="colorCart">Màu sắc: <span>Màu đỏ</span></div>
+							<div class="sizeCart">Kích cỡ: <span>XL</span></div>
+							<div class="clearfix"></div>
+							<a class="removeFromCart" onclick="removeFromCart(this);">Bỏ sản phẩm</a>
+						</div>
+					</li>
+				</ul>
+				<div class="clearfix"></div>
+				<div id="sumPrice">Tổng: <span>1.000.000đ</span></div>
+				<button id="goToCart">Xem giỏ hàng</button>
+			</div>
+		</div>
+		<div class="popUpLogin">
+			<input type="text" placeholder="Email">
+			<input type="text" placeholder="Mật khẩu">
+			<input type="button" value="Đăng nhập">
+			<a href="#">Quên mật khẩu?</a>
 		</div>
 	</div>
 

@@ -26,9 +26,9 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<ul class="progressBar">
-							<li class="active"><a href="">1. Đăng nhập</a></li>
-							<li><a href="">2. Thông tin giao hàng</a></li>
-							<li><a href="">3. Hoàn tất</a></li>
+							<li class="active"><a href="">Đăng nhập</a></li>
+							<li><a href="">Thông tin giao hàng</a></li>
+							<li><a href="">Hoàn tất</a></li>
 						</ul>
 					</div>
 				</div>
@@ -39,9 +39,11 @@
 				</div>
 				<div class="row">
 					<div class="col-xs-12 col-md-5">
-						<h4>Đăng nhập / Đăng ký mới</h4>
-						<input type="radio" name="grReg" id="oldMem" checked><label for="oldMem" onclick="showHideOldMem();">Tôi là thành viên của Maza</label> <br />
-						<input type="radio" name="grReg" id="newMem"><label for="newMem">Tôi là khách hàng mới</label>
+						<div class="tabsMobileReg">
+							<h4>Đăng nhập <span>/ Đăng ký mới</span></h4>
+							<input type="radio" name="grReg" id="oldMem" checked><label for="oldMem" onclick="showHideOldMem();">Tôi là thành viên của Maza</label> <br />
+							<input type="radio" name="grReg" id="newMem"><label for="newMem">Tôi là khách hàng mới</label>
+						</div>
 						<form action="" id="logOldMem">
 							<label for="">Email</label>
 							<input type="text" placeholder="Nhập email đăng nhập">
@@ -60,12 +62,7 @@
 							<input type="checkbox" id="RegFollowC"><label for="RegFollowC">Đăng ký theo dõi</label> <br />
 							<input type="button" value="Đăng ký">
 						</form>
-						<h5 onclick="forgotPass();">Quên mật khẩu?</h5>
-						<form action="" id="forgotPass">
-							<label for="">Email</label>
-							<input type="text" placholder="Nhập email đăng nhập">
-							<input type="button" value="Lấy lại mật khẩu" id="submitReset">
-						</form>
+						<a href="">Quên mật khẩu?</a>
 					</div>
 					<div class="col-xs-12 col-md-5 col-md-offset-1">
 						<h4>Chưa có tài khoản vẫn mua hàng được</h4>

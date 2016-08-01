@@ -9,6 +9,8 @@
   src: url("../fonts/OpenSans-Regular.ttf");
   font-style: normal;
 }
+$imgURL: '../images';
+
 @mixin keyframes($animationName) {
     @-webkit-keyframes #{$animationName} {
         @content;
@@ -70,6 +72,7 @@ button, a, img, li, input[type="button"]{outline: none}
 		background: #000;
 		color: #fafafa;
 		padding: 20px 0;
+		position: relative;
 		.logo{
 			float: left;
 			outline: none;
@@ -81,23 +84,29 @@ button, a, img, li, input[type="button"]{outline: none}
 		}
 		.mainMenu{ 
 			float: left;
-			margin: 6px 0 0 50px;
+			margin: 10px 0 0 50px;
 			li{
 				float: left;
-				padding: 0 40px 0 0;
+				margin: 0 40px 0 0;
 				font-size: 16px;
 				position: relative;
+				&.active{
+					text-decoration: underline;
+				}
 				a{
 					color: #fafafa;
 					text-transform: uppercase;
 					padding: 28px 0;
 					font-weight: 600;
+					&:hover{
+						text-decoration: underline;
+					}
 				}
 				.subMenu{
 					width: auto;
 					min-width: 600px;
 					position: absolute;
-					top: 50px;
+					top: 46px;
 					left: -30px;
 					z-index: 1500;
 					background: #fff;
@@ -154,9 +163,12 @@ button, a, img, li, input[type="button"]{outline: none}
 		}
 		.iconList{
 			float: right;
-			margin: 6px 0 0 0;
+			margin: 10px 0 0 0;
 			font-size: 15px;
 			position: relative;
+			i{
+				font-size: 22px;
+			}
 			div{
 				float: left;
 				margin: 0 0 0 40px;
@@ -166,13 +178,19 @@ button, a, img, li, input[type="button"]{outline: none}
 				background: none;
 				outline: none;
 				cursor: pointer;
-				padding-left: 28px;
+				padding-left: 5px;
+				&:hover{
+					text-decoration: underline;
+				}
 			}
 			#mainSearchForm{
 				position: absolute;
-				top: 47px; left: -20px;
+				top: 43px; left: -20px;
 				z-index: 1000;
 				width: 300px;
+				box-shadow: 0 2px 35px rgba(0, 0, 0, 0.2);
+				padding: 22px 20px 23px;
+				background: #fff;
 				display: none;
 				&:before{
 					position: absolute;
@@ -191,11 +209,15 @@ button, a, img, li, input[type="button"]{outline: none}
 					&[type="text"]{
 						outline: none;
 						color: #333;
-						padding: 13px 15px;
 						font-size: 14px;
 						width: 100%;
-						box-shadow: 0 2px 40px rgba(0,0,0,.2);
-						border: none;
+						border: 1px solid #fff;
+						border-bottom: 1px solid #ddd;
+						padding: 5px;
+						@include transition(all .2s linear);
+						&:hover, &:focus{
+							border-bottom: 1px solid #3995ae;
+						}
 					}
 					&[type="image"]{
 						margin: 9px 7px;
@@ -204,7 +226,7 @@ button, a, img, li, input[type="button"]{outline: none}
 				}
 			}
 			.searchForm{
-				background: url('../images/icon-search.png') top left no-repeat;
+				background: url($imgURL+'/icon-search.png') top left no-repeat;
 				text-indent: -9999px;
 				width: 40px;
 				margin-left: 0;
@@ -219,10 +241,63 @@ button, a, img, li, input[type="button"]{outline: none}
 				}
 			}
 			.cartForm{
-				background: url('../images/icon-cart.png') center left no-repeat;
+				position: relative;
+				.numProducts{
+					position: absolute;
+					top: -4px;
+					left: 10px;
+					z-index: 151;
+					font-size: 11px;
+					background: red;
+					display: block;
+					min-width: 16px; 
+					height: 16px;
+					border-radius: 50%;
+					text-align: center;
+					line-height: 16px;
+					color: #fff;
+				}
 			}
 			.userLogin{
-				background: url('../images/icon-user.png') center left no-repeat;
+				i{
+					font-size: 21px;
+				}
+			}
+			.userLogOut{
+				cursor: pointer;
+				position: relative;
+				.dropdown-menu{
+					top: 44px;
+					border-radius: 0;
+					border: none;
+					box-shadow: 0 3px 40px rgba(0,0,0,.2);
+					li{
+						a{
+							padding: 7px 20px;
+							i{
+								font-size: 12px;
+								margin-right: 3px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.freeShipping{
+			position: absolute;
+			top: -12px;
+			right: 10px;
+			z-index: 152;
+			font-size: 13px;
+			button{
+				background: none;
+				border: none;
+				outline: none;
+				cursor: pointer;
+			}
+			span{
+				text-decoration: underline;
+				cursor: pointer;
 			}
 		}
 	}
@@ -301,6 +376,7 @@ button, a, img, li, input[type="button"]{outline: none}
 	img{
 		max-width: 100%;
 		width: 100%;
+		@include transition(all .2s linear);
 	}
 	a{
 		color: #000;
@@ -336,9 +412,15 @@ button, a, img, li, input[type="button"]{outline: none}
 				background-size: 70%;
 			}
 		}
-		
+		&:hover{
+			img{
+				transform: scale(1.05,1.05);
+			}
+			a{
+				color: #3995ae;
+			}
+		}
 	}
-	
 }
 #mazaStore{
 	padding-top: 20px;
@@ -413,6 +495,11 @@ button, a, img, li, input[type="button"]{outline: none}
 			width: 100%;
 			padding: 5px 10px;
 			outline: none;
+			border: 1px solid #eee;
+			@include transition(all .2s linear);
+			&:hover{
+				border: 1px solid #3995ae;
+			}
 		}
 		input[type="button"]{
 			background: #000;
@@ -423,6 +510,10 @@ button, a, img, li, input[type="button"]{outline: none}
 			width: 45%;
 			text-align: center;
 			margin-top: 10px;
+			@include transition(all .2s linear);
+			&:hover{
+				background: #3995ae;
+			}
 		}
 	}
 	.socialNetwork{
@@ -441,8 +532,9 @@ button, a, img, li, input[type="button"]{outline: none}
 		li{
 			margin-bottom: 5px;
 			cursor: pointer;
+			color: #666;
 			a{
-				color: #333;
+				color: #666;
 				@include transition(all .3s linear);
 				
 			}
@@ -479,19 +571,19 @@ button, a, img, li, input[type="button"]{outline: none}
 			margin-right: 40px;
 			span{
 				padding: 5px 18px;
-				background: url('../images/icon-4.jpg') left center no-repeat;
+				background: url($imgURL+'/icon-4.jpg') left center no-repeat;
 				&.delivery{
-					background: url('../images/icon-4.jpg') -35px center no-repeat;
+					background: url($imgURL+'/icon-4.jpg') -35px center no-repeat;
 				}
 				&.payment{
-					background: url('../images/icon-4.jpg') -65px center no-repeat;	
+					background: url($imgURL+'/icon-4.jpg') -65px center no-repeat;	
 				}
 			}
 		}
 	}
 	.hotline{
 		float: right;
-		border: 1px solid #333;
+		// border: 1px solid #333;
 		text-transform: uppercase;
 		font-weight: bold;
 		font-size: 16px;
@@ -535,6 +627,9 @@ button, a, img, li, input[type="button"]{outline: none}
 			a{
 				color: #333;
 				padding: 7px 12px;
+				&:hover{
+					text-decoration: underline;
+				}
 			}
 			span{
 				background: #000;
@@ -559,6 +654,9 @@ button, a, img, li, input[type="button"]{outline: none}
 			cursor: pointer;
 			span{
 				font-weight: normal;
+			}
+			&:hover{
+				text-decoration: underline;
 			}
 		}
 		ul{
@@ -597,6 +695,9 @@ button, a, img, li, input[type="button"]{outline: none}
 			span{
 				font-size: 10px;
 			}
+			&:hover{
+				text-decoration: underline;
+			}
 		}
 		.filterList{
 			float: left;
@@ -612,6 +713,9 @@ button, a, img, li, input[type="button"]{outline: none}
 					text-decoration: none;
 					span{
 						font-size: 10px;
+					}
+					&:hover{
+						text-decoration: underline;
 					}
 				}
 				.filterDetail{
@@ -629,6 +733,9 @@ button, a, img, li, input[type="button"]{outline: none}
 							cursor: pointer;
 							margin-left: 0px;
 							margin: 5px 0;
+							span:hover{
+								text-decoration: underline;
+							}
 						}
 					}
 				}
@@ -649,6 +756,9 @@ button, a, img, li, input[type="button"]{outline: none}
 				margin: 5px 0;
 				input[type="checkbox"]{
 					margin-right: 5px;
+				}
+				span:hover{
+					text-decoration: underline;
 				}
 			}
 		}
@@ -861,11 +971,20 @@ button, a, img, li, input[type="button"]{outline: none}
 			#addToCart{
 				border: 2px solid #000;
 				margin: 30px 0 10px;
+				@include transition(all .2s linear);
+				&:hover{
+					background: #3995ae;
+					border: 2px solid #3995ae;
+				}
 			}
 			#quickView{
 				border: 2px solid #ddd;
 				background: #fff;
 				color: #333;
+				@include transition(all .2s linear);
+				&:hover{
+					border: 2px solid #000;
+				}
 			}
 		}
 		.inStockAdd{
@@ -1095,6 +1214,9 @@ button, a, img, li, input[type="button"]{outline: none}
 					content: '/';
 					padding: 0 10px;
 				}
+				&:hover{
+					text-decoration: underline;
+				}
 			}
 			span{
 				color: #333;
@@ -1224,20 +1346,20 @@ button, a, img, li, input[type="button"]{outline: none}
 	}
 	img{
 		float: left;
-		margin-right: 15px;
-		width: 60px;
+		margin-right: 10px;
+		width: 50px;
 	}
 	.detailProCart{
 		float: right;
-		width: calc(100% - 75px);
-		font-size: 14px;
+		width: calc(100% - 60px);
+		font-size: 12px;
 		h4{
-			margin: 0 0 10px 0;
-			font-size: 16px;
+			margin: 0 0 5px 0;
+			font-size: 14px;
 			font-weight: 600;
 		}
 		.priceCart{
-			font-size: 16px;
+			font-size: 14px;
 		}
 		.colorCart{
 			float: left;
@@ -1267,12 +1389,16 @@ button, a, img, li, input[type="button"]{outline: none}
 	}
 	#goToCart{
 		float: right;
-		background: #016fa3;
+		background: #3995ae;
 		border-radius: 4px;
 		padding: 5px 15px;
 		color: #fff;
 		border: none;
 		font-size: 16px;
+		@include transition (all .2s linear);
+		&:hover{
+			background: #000;
+		}
 	}
 }
 .popUpLogin{
@@ -1292,17 +1418,31 @@ button, a, img, li, input[type="button"]{outline: none}
 		border: 1px solid #eee;
 		padding: 8px 10px;
 		margin-bottom: 10px;
+		@include transition (all .2s linear);
+		&:hover, &:focus{
+			border: 1px solid #3995ae;
+		}
 		&[type="button"]{
 			background: #000;
 			border: none;
 			cursor: pointer;
 			color: #fafafa;
+			@include transition (all .2s linear);
+			&:hover{
+				background: #3995ae;
+				border: none;
+				color: #fafafa;
+			}
 		}
 	}
 	a{
 		text-align: center;
 		color: #333;
 		display: block;
+		@include transition (all .2s linear);
+		&:hover{
+			color: #3995ae;
+		}
 	}
 }
 #fullSlider{
@@ -1345,6 +1485,10 @@ button, a, img, li, input[type="button"]{outline: none}
 		border: 1px solid #eee;
 		padding: 8px 10px;
 		outline: none;
+		@include transition(all .2s linear);
+		&:hover, &:focus{
+			border: 1px solid #3995ae;
+		}
 	}
 	input[type="button"]{
 		width: 100%;
@@ -1354,9 +1498,38 @@ button, a, img, li, input[type="button"]{outline: none}
 		text-align: center;
 		border: none;
 		margin-top: 20px;
+		@include transition(all .2s linear);
+		&:hover{
+			background: #3995ae;
+		}
 	}
 	.forRemember, #rememberID, .followID, #follow{
 		display: inline;
+	}
+	.forgotPWDPage{
+		a{
+			padding-top: 10px;
+			display: block;
+			color: #333;
+			@include transition(all .2s linear);
+			&:hover{
+				color: #3995ae;
+			}
+		}
+		p{
+			line-height: 1.4;
+		}
+	}
+	#loginFormPage{
+		a{
+			padding-top: 10px;
+			display: block;
+			color: #333;
+			@include transition(all .2s linear);
+			&:hover{
+				color: #3995ae;
+			}
+		}
 	}
 }
 #style-policyPage{
@@ -1686,6 +1859,16 @@ button, a, img, li, input[type="button"]{outline: none}
 		}
 	}
 }
+.sumAlert{
+	color: red;
+	display: none;
+}
+#freeShipPopUp{
+	button.closeShip{
+		float: right;
+		outline: none;
+	}
+}
 @media screen and (max-width: 992px) {
 	#header{
 		.subMenuTop{
@@ -1922,7 +2105,7 @@ button, a, img, li, input[type="button"]{outline: none}
 					z-index: 5000;
 					input[type="text"]{
 						text-align: center;
-						padding: 16px 15px 17px;
+						padding: 7px 15px;
 					}
 					&:before{
 						right: 130px;
@@ -2053,6 +2236,13 @@ button, a, img, li, input[type="button"]{outline: none}
 	}
 }
 #checkoutPage{
+	a{
+		color: #333;
+		@include transition(all .2s linear);
+		&:hover{
+			color: #3995ae !important;
+		}
+	}
 	.header{
 		padding: 30px 0;
 	}
@@ -2065,6 +2255,12 @@ button, a, img, li, input[type="button"]{outline: none}
 		border: 1px solid #333;
 		padding: 7px 30px;
 		text-transform: uppercase;
+		@include transition(all .2s linear);
+		&:hover{
+			background: #3995ae !important;
+			color: #fafafa  !important;
+			border: 1px solid #333;
+		}
 	}
 	.progressBar{
 		overflow: hidden;
@@ -2135,7 +2331,6 @@ button, a, img, li, input[type="button"]{outline: none}
 	}
 	form{
 		label{
-			// width: 100%;
 			font-weight: normal;
 			margin-top: 15px;
 		}
@@ -2144,6 +2339,10 @@ button, a, img, li, input[type="button"]{outline: none}
 			padding: 7px 10px;
 			width: 100%;
 			outline: none;
+			@include transition(all .2s linear);
+			&:hover, &:focus{
+				border: 1px solid #3995ae;
+			}
 		}
 		input[type="button"]{
 			background: #333;
@@ -2169,6 +2368,10 @@ button, a, img, li, input[type="button"]{outline: none}
 		font-size: 16px;
 		font-weight: 600;
 		margin: 20px 0;
+		@include transition(all .2s linear);
+		&:hover{
+			background: #3995ae;
+		}
 	}
 	input[type="radio"]{	
 		margin-right: 5px;
@@ -2206,6 +2409,10 @@ button, a, img, li, input[type="button"]{outline: none}
 		border: 1px solid #eee;
 		padding: 8px 5px;
 		outline: none;
+		@include transition(all .2s linear);
+		&:hover, &:focus{
+			border: 1px solid #3995ae;
+		}
 	}
 	textarea{
 		width: 100%;
@@ -2214,6 +2421,10 @@ button, a, img, li, input[type="button"]{outline: none}
 		padding: 8px 10px;
 		resize: none;
 		min-height: 100px;
+		@include transition(all .2s linear);
+		&:hover, &:focus{
+			border: 1px solid #3995ae;
+		}
 	}
 	.rowPCheckOut{
 		margin-bottom: 25px;
@@ -2243,6 +2454,17 @@ button, a, img, li, input[type="button"]{outline: none}
 	}
 }
 @media screen and (max-width: 640px) {
+	#header{
+		.topMenu{
+			.iconList{
+				.cartForm{
+					button{
+						display: none;
+					}
+				}
+			}
+		}
+	}
 	#mainCatHome{
 		.mainCatBlock{
 			margin-bottom: 30px;
@@ -2278,22 +2500,17 @@ button, a, img, li, input[type="button"]{outline: none}
 	#checkoutPage{
 		.progressBar{
 			li{
-				width: 100%;
-				text-align: left;
-				padding-left: 20px;
-				margin-bottom: 5px;
-				&:after{
-					display: none;
-				}
-				a{
-					&:after{
-						display: none;
-					}
-				}
-				&:last-of-type{
-					width: 100%;
-				}
+				font-size: 14px;
 			}
+		}
+	}
+	.popUpCart{
+		padding: 10px;
+		#sumPrice{
+			font-size: 14px;
+		}
+		#goToCart{
+			font-size: 14px;
 		}
 	}
 }
@@ -2302,10 +2519,8 @@ button, a, img, li, input[type="button"]{outline: none}
 		.topMenu{
 			.iconList{
 				.cartForm{
-					background: url("../images/icon-cart.png") center right no-repeat;
 					button{
-						text-indent: -9999px;
-						padding-left: 0px;
+						display: none;
 					}
 				}
 				.searchForm{
@@ -2313,7 +2528,10 @@ button, a, img, li, input[type="button"]{outline: none}
 					left: -10px;
 				}
 				#mainSearchForm:before{
-					right: 59px;
+					right: 48px;
+				}
+				.userLogOut{
+					display: none;
 				}
 			}
 		}
@@ -2490,9 +2708,6 @@ button, a, img, li, input[type="button"]{outline: none}
 		width: 100%;
 	}
 	#checkoutPage{
-		h2{
-			font-size: 22px;
-		}
 		.continueShopping{
 			padding: 7px 15px;
 		}
@@ -2501,6 +2716,99 @@ button, a, img, li, input[type="button"]{outline: none}
 			img{
 				width: 100%;
 				height: auto;
+			}
+		}
+		h2{
+			display: none;
+		}
+		h4{
+			margin-top: 30px;
+		}
+		form{
+			label{
+				display: none;
+				&[for="rememberC"], &[for="rememberInfo"]{
+					display: inline;
+				}
+			}
+			input[type="text"], select, textarea{
+				margin-top: 10px;
+			}
+			textarea{
+				height: 60px;
+				min-height: auto;
+			}
+		}
+		.progressBar{
+			display: table;
+			width: 100%;
+			li{
+				height: 50px;
+				line-height: 1.4;
+				display: table-cell;
+				vertical-align: middle;
+				padding: 0;
+				padding-left: 10px;
+				&:after{
+				    border: 25px solid transparent;
+				    border-left-width: 12px;
+				    border-left-color: #fff;
+					transform: translateX(4px);
+				}
+				a{
+					height: 50px;
+					padding-left: 10px;
+					display: table-cell;
+					vertical-align: middle;
+					&:after{
+					    border: 25px solid transparent;
+					    border-right-width: 0;
+					    border-left-width: 12px;
+						border-left-color: #eee;
+					}
+				}
+				&.active{
+					a{
+						&:after{
+			    			border-left-color: #333;
+						}
+					}
+				}
+			}
+		}
+		.tabsMobileReg{
+			h4{
+				span{
+					display: none;
+				}
+				margin-bottom: 0;
+
+			}
+			input, label, br{
+				display: none;
+			}
+		}
+		a{
+			color: #333;
+		}
+		input[type="button"]{
+			margin: 20px 0 10px !important;
+		}
+		p{
+			margin-bottom: 0;
+		}
+		#addressInfoForm{
+			div{
+				padding: 0;
+			}
+		}
+		.detailP-CO{
+			padding: 0;
+		}
+		.thanksPage{
+			padding: 20px 0;
+			p{
+				margin: 5px 0;
 			}
 		}
 	}

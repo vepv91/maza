@@ -1,9 +1,5 @@
-// var lengthThumb	= $('.nav4sliderIMG li').length,
-// 	thumbArray	= new Array();
-// for(var i = 0; i < lengthThumb; i++){
-// 	var fullIMGUrl = $('.nav4sliderIMG li:eq('+i+')').find('img').attr('src');
-// 	thumbArray.push(fullIMGUrl);
-// }
+var checkColor 	= 0,
+	checkSize 	= 0;
 
 $('.storeBlockMain').slick({
     infinite: true,
@@ -256,6 +252,15 @@ function chooseColor(){
 	$('.listColor li').click(function(){
 		$('.listColor li').removeClass('active');
 		$(this).addClass('active');
+		checkColor = 1;
+		$('.sumAlertColor').fadeOut('fast');
+	});
+	$('#size').on('change',function(){
+	    checkSize = this.value;
+	    if(checkSize == 0)
+	    	$('.sumAlertSize').fadeIn('fast');
+	    else
+	    	$('.sumAlertSize').fadeOut('fast');
 	});
 };
 function tabs(){
@@ -306,15 +311,23 @@ function HTMLAddToCart(){
 	return HTML;
 };
 function addToCart(){
-	$('.popUpCart').fadeIn('fast');
-	var timeOut1 = setInterval(function() {
-	    $('.popUpCart ul').prepend(HTMLAddToCart());
-	    clearInterval(timeOut1);
-	}, 500);
-	var timeOut2 = setInterval(function() {
-	    $('.popUpCart').fadeOut('fast');
-	    clearInterval(timeOut2);
-	}, 4000);
+	if(checkColor > 0 && checkSize > 0){
+		$('.popUpCart').fadeIn('fast');
+		var timeOut1 = setInterval(function() {
+		    $('.popUpCart ul').prepend(HTMLAddToCart());
+		    clearInterval(timeOut1);
+		}, 500);
+		var timeOut2 = setInterval(function() {
+		    $('.popUpCart').fadeOut('fast');
+		    clearInterval(timeOut2);
+		}, 4000);
+	}else{
+		if(checkColor == 0)
+			$('.sumAlertColor').fadeIn('fast');
+		if(checkSize == 0)
+			$('.sumAlertSize').fadeIn('fast');
+		$(window).scrollTop($('.price').offset().top);
+	}
 };
 function removeFromCart(thisID){
 	$(thisID).closest('li').remove();
@@ -363,10 +376,6 @@ function getFullSlider(){
 };
 function showHideLogin(){
 	showHide('.popUpLogin');
-};
-function forgotPass(){
-	collapseElement('#forgotPass');
-	$(window).scrollTop($('#submitReset').offset().top);
 };
 function radioCheck(idClick, idHide, idShow){
 	$(idClick).click(function(){
