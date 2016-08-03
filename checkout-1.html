@@ -17,7 +17,9 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="header">
-							<a href="" class="logo"><img src="images/logo-checkout.png" alt=""></a>
+							<a href="" class="logo">
+								<object style="z-index: -1; pointer-events: none;" data="images/logo-checkout.svg" type="image/svg+xml"> </object>
+							</a>
 							<a href="" class="continueShopping">Tiếp tục mua sắm</a>
 							<div class="clearfix"></div>
 						</div>
@@ -39,35 +41,31 @@
 				</div>
 				<div class="row">
 					<div class="col-xs-12 col-md-5">
-						<div class="tabsMobileReg">
-							<h4>Đăng nhập <span>/ Đăng ký mới</span></h4>
-							<input type="radio" name="grReg" id="oldMem" checked><label for="oldMem" onclick="showHideOldMem();">Tôi là thành viên của Maza</label> <br />
-							<input type="radio" name="grReg" id="newMem"><label for="newMem">Tôi là khách hàng mới</label>
-						</div>
-						<form action="" id="logOldMem">
+						<form action="" id="logFormCO">
+							<h4>Đăng nhập</h4>
 							<label for="">Email</label>
 							<input type="text" placeholder="Nhập email đăng nhập">
 							<label for="">Mật khẩu</label>
 							<input type="text" placeholder="Nhập mật khẩu">
-							<input type="checkbox" id="rememberC"><label for="rememberC">Ghi nhớ đăng nhập</label> <br />
 							<input type="button" value="Đăng nhập">
 						</form>
-						<form action="" id="logNewMem">
+						<form action="" id="regFormCO">
+							<h4>Đăng kí mới</h4>
 							<label for="">Email</label>
 							<input type="text" placeholder="Nhập email đăng nhập">
 							<label for="">Mật khẩu</label>
 							<input type="text" placeholder="Nhập mật khẩu">
 							<label for="">Xác nhận mật khẩu</label>
 							<input type="text" placeholder="Nhập lại mật khẩu">
-							<input type="checkbox" id="RegFollowC"><label for="RegFollowC">Đăng ký theo dõi</label> <br />
 							<input type="button" value="Đăng ký">
 						</form>
-						<a href="">Quên mật khẩu?</a>
+						<a href="" class="forgotPWD-CO">Quên mật khẩu?</a>						
+						<button class="regButton buttonForMaza" onclick="showregFormCO();">Đăng kí mới</button>
+						<button class="logButton buttonForMaza" onclick="showlogFormCO();">Đăng nhập tài khoản</button>
 					</div>
 					<div class="col-xs-12 col-md-5 col-md-offset-1">
-						<h4>Chưa có tài khoản vẫn mua hàng được</h4>
-						<p>Thử tính năng mới chỉ có ở Maza store</p>
-						<input type="button" value="Mua hàng không cần tài khoản">
+						<h4>Mua hàng không cần tài khoản</h4>
+						<input type="button" class="checkOutWTAcc" value="Đặt hàng nhanh">
 					</div>
 				</div>
 			</div>

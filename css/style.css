@@ -9,6 +9,14 @@
   src: url("../fonts/OpenSans-Regular.ttf");
   font-style: normal;
 }
+.floatLeft {
+  float: left;
+}
+
+.floatRight {
+  float: right;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -60,6 +68,19 @@ button, a, img, li, input[type="button"] {
   outline: none;
 }
 
+input[type="button"], textarea {
+  border-radius: 0;
+  -webkit-appearance: none;
+  border-radius: 1px solid #ddd;
+  padding: 5px;
+}
+
+select {
+  outline: -webkit-focus-ring-color auto 5px;
+  background: #fff;
+  border-radius: 0;
+}
+
 #header .topMenu {
   background: #000;
   color: #fafafa;
@@ -69,6 +90,7 @@ button, a, img, li, input[type="button"] {
 #header .topMenu .logo {
   float: left;
   outline: none;
+  height: 36px;
 }
 #header .topMenu .logo h1 {
   text-indent: -9998px;
@@ -223,15 +245,16 @@ button, a, img, li, input[type="button"] {
   outline: none;
 }
 #header .topMenu .iconList .searchForm {
-  background: url("../images/icon-search.png") top left no-repeat;
-  text-indent: -9999px;
   width: 40px;
   margin-left: 0;
   height: 50px;
   cursor: pointer;
   position: absolute;
-  top: 3px;
+  top: 2px;
   left: -20px;
+}
+#header .topMenu .iconList .searchForm i {
+  font-size: 20px;
 }
 #header .topMenu .iconList .searchForm:hover #mainSearchForm {
   display: block;
@@ -274,20 +297,23 @@ button, a, img, li, input[type="button"] {
   font-size: 12px;
   margin-right: 3px;
 }
-#header .topMenu .freeShipping {
+#header .freeShipping {
   position: absolute;
-  top: -12px;
-  right: 10px;
+  top: 5px;
   z-index: 152;
   font-size: 13px;
+  background: none;
+  color: #fff;
+  width: 100%;
 }
-#header .topMenu .freeShipping button {
+#header .freeShipping button {
   background: none;
   border: none;
   outline: none;
   cursor: pointer;
+  float: right;
 }
-#header .topMenu .freeShipping span {
+#header .freeShipping span {
   text-decoration: underline;
   cursor: pointer;
 }
@@ -475,14 +501,21 @@ button, a, img, li, input[type="button"] {
   border: none;
   outline: none;
   background: none;
+  border-radius: 4px;
 }
 #mazaStore .storeBlockMain .slick-prev {
   background: url(../images/arrow-slick.png) top left no-repeat;
   left: 10px;
 }
+#mazaStore .storeBlockMain .slick-prev:hover {
+  background: url(../images/arrow-slick.png) top left no-repeat rgba(0, 0, 0, 0.5);
+}
 #mazaStore .storeBlockMain .slick-next {
   background: url(../images/arrow-slick.png) top right no-repeat;
   right: 10px;
+}
+#mazaStore .storeBlockMain .slick-next:hover {
+  background: url(../images/arrow-slick.png) top right no-repeat rgba(0, 0, 0, 0.5);
 }
 
 #footer {
@@ -505,7 +538,7 @@ button, a, img, li, input[type="button"] {
   width: 100%;
   padding: 5px 10px;
   outline: none;
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -ms-transition: all 0.2s linear;
@@ -760,7 +793,7 @@ button, a, img, li, input[type="button"] {
 }
 #categoryPage .allFilterBlock {
   display: none;
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   padding: 15px 20px;
 }
 #categoryPage .allFilterBlock h4 {
@@ -804,6 +837,11 @@ button, a, img, li, input[type="button"] {
   margin: 10px 0;
   border-bottom: 1px solid #eee;
   padding-bottom: 5px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 #categoryPage .mainProducts .priceBlock .price {
   float: left;
@@ -817,19 +855,54 @@ button, a, img, li, input[type="button"] {
   clear: both;
 }
 #categoryPage .mainProducts .productTitle {
-  font-size: 16px;
+  font-size: 14px;
   margin-top: 0;
   line-height: 1.4;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 #categoryPage .mainProducts .productTitle a {
   color: #333;
 }
 #categoryPage .mainProducts .productItem {
   margin-top: 30px;
+  border: 1px solid #fff;
+}
+#categoryPage .mainProducts .productItem:hover {
+  border: 1px solid #ddd;
+}
+#categoryPage .mainProducts .productItem:hover .priceBlock, #categoryPage .mainProducts .productItem:hover .productTitle {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#categoryPage .mainProducts .productItem > a {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+#categoryPage .mainProducts .productItem > a .colorList {
+  position: absolute;
+  bottom: 2px;
+  left: 0px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+#categoryPage .mainProducts .productItem > a .colorList li {
+  float: left;
+  margin: 0 2px;
+}
+#categoryPage .mainProducts .productItem > a .colorList li span {
+  display: block;
+  width: 20px;
+  height: 12px;
 }
 #categoryPage .mainProducts > [class*='col-'] {
   display: flex;
@@ -866,17 +939,54 @@ button, a, img, li, input[type="button"] {
   margin-top: -20px;
   text-indent: -9999px;
   background: url(../images/arrow-slick.png) left center;
+  border-radius: 4px;
 }
 
 .slick-prev {
-  left: 15px;
+  background: url(../images/arrow-slick.png) top left no-repeat;
+  left: 10px;
+}
+.slick-prev:hover {
+  background: url(../images/arrow-slick.png) top left no-repeat rgba(0, 0, 0, 0.5);
 }
 
 .slick-next {
-  right: 15px;
-  background: url(../images/arrow-slick.png) right center;
+  background: url(../images/arrow-slick.png) top right no-repeat;
+  right: 10px;
+}
+.slick-next:hover {
+  background: url(../images/arrow-slick.png) top right no-repeat rgba(0, 0, 0, 0.5);
 }
 
+#detailPage .nav4sliderIMG .slick-active {
+  opacity: .3;
+}
+#detailPage .nav4sliderIMG .slick-current {
+  opacity: 1;
+}
+#detailPage .nav4sliderIMG .slick-current + .slick-active {
+  opacity: 1;
+}
+#detailPage .slick-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+#detailPage .slick-dots li {
+  display: inline;
+  margin: 0 2px;
+}
+#detailPage .slick-dots li button {
+  background: none;
+  border: 1px solid #ddd;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  text-indent: -9999px;
+}
+#detailPage .slick-dots li.slick-active button {
+  background: #696969;
+  border: 1px solid #696969;
+}
 #detailPage .detailProduct {
   margin-bottom: 0px;
   margin-top: 5px;
@@ -923,16 +1033,16 @@ button, a, img, li, input[type="button"] {
 }
 #detailPage .detailInfo .titleProduct {
   font-size: 25px;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0 0 0px 0;
 }
 #detailPage .detailInfo .moreDetail {
   margin-top: 20px;
 }
 #detailPage .detailInfo .moreDetail h5 {
-  text-transform: uppercase;
   font-size: 16px;
   margin-top: 0;
+  font-weight: 400;
 }
 #detailPage .detailInfo .moreDetail .listColor li {
   width: 30px;
@@ -943,13 +1053,8 @@ button, a, img, li, input[type="button"] {
   padding: 1px;
   cursor: pointer;
 }
-#detailPage .detailInfo .moreDetail .listColor li:hover {
-  border: 1px solid #bababa;
-  box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
-}
-#detailPage .detailInfo .moreDetail .listColor li.active {
-  border: 1px solid #bababa;
-  box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+#detailPage .detailInfo .moreDetail .listColor li:hover, #detailPage .detailInfo .moreDetail .listColor li.active {
+  border: 1px solid red;
 }
 #detailPage .detailInfo .moreDetail .listColor li span {
   display: block;
@@ -973,7 +1078,7 @@ button, a, img, li, input[type="button"] {
   text-transform: uppercase;
   border: none;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
   border-radius: 5px;
   outline: none;
@@ -1015,7 +1120,7 @@ button, a, img, li, input[type="button"] {
   margin-left: 15px;
 }
 #detailPage .detailInfo .recommendProduct h5 {
-  text-transform: uppercase;
+  font-weight: 400;
   font-size: 16px;
 }
 #detailPage .detailInfo .recommendProduct img {
@@ -1056,9 +1161,29 @@ button, a, img, li, input[type="button"] {
 }
 #detailPage .relatedProducts li {
   margin: 0 0px 0 10px;
+  border: 1px solid #fff;
 }
 #detailPage .relatedProducts li a {
   outline: none;
+  display: block;
+  overflow: hidden;
+}
+#detailPage .relatedProducts li a img {
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+#detailPage .relatedProducts li:hover {
+  border: 1px solid #ddd;
+}
+#detailPage .relatedProducts li:hover .priceBlock, #detailPage .relatedProducts li:hover .productTitle {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#detailPage .relatedProducts li:hover img {
+  transform: scale(1.1, 1.1);
 }
 #detailPage .relatedProducts img {
   max-width: 100%;
@@ -1069,6 +1194,11 @@ button, a, img, li, input[type="button"] {
   margin: 10px 0;
   border-bottom: 1px solid #eee;
   padding-bottom: 5px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 #detailPage .relatedProducts .priceBlock .price {
   float: left;
@@ -1082,12 +1212,17 @@ button, a, img, li, input[type="button"] {
   clear: both;
 }
 #detailPage .relatedProducts .productTitle {
-  font-size: 16px;
+  font-size: 14px;
   margin-top: 0;
   line-height: 1.4;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 #detailPage .relatedProducts .productTitle a {
   color: #333;
@@ -1105,14 +1240,21 @@ button, a, img, li, input[type="button"] {
   border: none;
   outline: none;
   background: none;
+  border-radius: 4px;
 }
 #detailPage .relatedProducts .slick-prev {
   background: url(../images/arrow-slick.png) top left no-repeat;
   left: 20px;
 }
+#detailPage .relatedProducts .slick-prev:hover {
+  background: url(../images/arrow-slick.png) top left no-repeat rgba(0, 0, 0, 0.5);
+}
 #detailPage .relatedProducts .slick-next {
   background: url(../images/arrow-slick.png) top right no-repeat;
   right: 10px;
+}
+#detailPage .relatedProducts .slick-next:hover {
+  background: url(../images/arrow-slick.png) top right no-repeat rgba(0, 0, 0, 0.5);
 }
 #detailPage .relatedProductsTitle {
   font-size: 20px;
@@ -1211,20 +1353,19 @@ button, a, img, li, input[type="button"] {
 .breadcrumbBlock {
   width: 100%;
   height: 30px;
-  background: #eeeeee;
-  margin-bottom: 10px;
+  margin-top: 5px;
 }
 .breadcrumbBlock ul {
   width: 100%;
   margin-bottom: 0;
-  padding: 5px 10px 0 10px;
+  padding: 5px 0;
 }
 .breadcrumbBlock ul li {
   font-size: 12px;
   float: left;
 }
 .breadcrumbBlock ul li a {
-  color: #666;
+  color: #999;
 }
 .breadcrumbBlock ul li a:after {
   display: inline;
@@ -1257,11 +1398,23 @@ button, a, img, li, input[type="button"] {
   width: 100%;
   padding: 8px 10px;
   outline: none;
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   margin: 20px 0 15px;
   text-align: center;
 }
 #quickBuyPopUp .modal-content form#callTo input[type="button"] {
+  width: 100%;
+  padding: 8px 0;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fafafa;
+  background: #000;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+#quickBuyPopUp .modal-content input[type="button"] {
   width: 100%;
   padding: 8px 0;
   text-align: center;
@@ -1435,7 +1588,7 @@ button, a, img, li, input[type="button"] {
 .popUpLogin input {
   width: 100%;
   outline: none;
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   padding: 8px 10px;
   margin-bottom: 10px;
   -webkit-transition: all 0.2s linear;
@@ -1498,23 +1651,41 @@ button, a, img, li, input[type="button"] {
   position: absolute;
   top: 5px;
   right: 5px;
+  font-size: 50px;
+  border: none;
+  background: none;
+  padding: 10px;
+  display: block;
+  width: 60px;
+  height: 60px;
+  line-height: 0;
 }
 
+#registerPage {
+  background: #f9f9f9;
+  padding-bottom: 50px;
+}
 #registerPage h3 {
-  font-size: 18px;
-  border-bottom: 1px solid #eee;
+  font-size: 22px;
+  border-bottom: 1px solid #ddd;
   padding-bottom: 5px;
   margin-top: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+#registerPage p {
+  color: #666;
 }
 #registerPage label {
   width: 100%;
   font-weight: normal;
   font-size: 14px;
+  text-transform: uppercase;
 }
 #registerPage input[type="text"] {
   width: 100%;
   margin-bottom: 20px;
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   padding: 8px 10px;
   outline: none;
   -webkit-transition: all 0.2s linear;
@@ -1522,6 +1693,9 @@ button, a, img, li, input[type="button"] {
   -ms-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
+}
+#registerPage input[type="text"].rq-input {
+  border: 1px solid #f70404;
 }
 #registerPage input[type="text"]:hover, #registerPage input[type="text"]:focus {
   border: 1px solid #3995ae;
@@ -1533,7 +1707,10 @@ button, a, img, li, input[type="button"] {
   padding: 8px 10px;
   text-align: center;
   border: none;
-  margin-top: 20px;
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -ms-transition: all 0.2s linear;
@@ -1566,6 +1743,7 @@ button, a, img, li, input[type="button"] {
   padding-top: 10px;
   display: block;
   color: #333;
+  text-decoration: underline;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -ms-transition: all 0.2s linear;
@@ -1574,6 +1752,10 @@ button, a, img, li, input[type="button"] {
 }
 #registerPage #loginFormPage a:hover {
   color: #3995ae;
+}
+#registerPage .sumAlertRQ {
+  color: #f70404;
+  font-weight: bold;
 }
 
 #style-policyPage .topBannerFull {
@@ -1660,7 +1842,7 @@ button, a, img, li, input[type="button"] {
   width: 100%;
 }
 #style-policyPage .stylePageMain .instaPosts .detailMorePost {
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   overflow: hidden;
   padding: 10px 10px 5px 10px;
 }
@@ -1743,6 +1925,9 @@ button, a, img, li, input[type="button"] {
   text-decoration: none;
   padding: 15px 10px 15px 15px;
 }
+#accountInfo .tabListLeft ul li:hover a {
+  color: #d54936;
+}
 #accountInfo .contentTabRight {
   border: 1px solid #ddd;
   min-height: 200px;
@@ -1772,6 +1957,51 @@ button, a, img, li, input[type="button"] {
 #accountInfo .contentTabRight .scrollTable {
   overflow-x: auto;
 }
+#accountInfo .contentTabRight input[type="text"] {
+  border: 1px solid #ddd;
+  padding: 5px;
+  outline: none;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+#accountInfo .contentTabRight input[type="text"]:hover, #accountInfo .contentTabRight input[type="text"]:focus {
+  border: 1px solid #3995ae;
+}
+#accountInfo .contentTabRight input[type="button"] {
+  width: 100%;
+  background: #000;
+  border: none;
+  outline: none;
+  padding: 7px;
+  color: #fff;
+  margin-bottom: 10px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+#accountInfo .contentTabRight input[type="button"]:hover {
+  background: #3995ae;
+}
+#accountInfo .contentTabRight #tabInfo a {
+  display: block;
+  margin-bottom: 10px;
+}
+#accountInfo .contentTabRight #tabInfo a:hover {
+  text-decoration: underline;
+}
+#accountInfo .contentTabRight #tabInfo label {
+  display: block;
+}
+#accountInfo .contentTabRight .infoBlock, #accountInfo .contentTabRight .pwBlock, #accountInfo .contentTabRight .addressAccInfo {
+  width: 400px;
+}
 
 #cartPage {
   padding: 50px 0 0 0;
@@ -1798,7 +2028,7 @@ button, a, img, li, input[type="button"] {
   margin-right: 10px;
 }
 #cartPage .cartLeft .tableBody select {
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   padding: 6px 5px;
   outline: none;
   width: 100%;
@@ -1902,7 +2132,7 @@ button, a, img, li, input[type="button"] {
     margin-left: 30px;
   }
   #header .topMenu .mainMenu li {
-    margin-right: 0px;
+    margin-right: 20px;
   }
   #header .topMenu .iconList div {
     margin-left: 30px;
@@ -1961,7 +2191,7 @@ button, a, img, li, input[type="button"] {
     padding: 10px 10px;
   }
 
-  .footerInfo img {
+  .footerInfo object {
     display: block;
     margin: 0 auto 20px;
   }
@@ -2001,6 +2231,10 @@ button, a, img, li, input[type="button"] {
   }
 }
 @media screen and (max-width: 768px) {
+  #freeShipPopUp {
+    top: 70px;
+  }
+
   #header {
     padding-top: 58px;
   }
@@ -2015,8 +2249,8 @@ button, a, img, li, input[type="button"] {
   #header .topMenu ul {
     margin-bottom: 0;
   }
-  #header .topMenu .logo img {
-    height: 30px;
+  #header .topMenu .logo svg {
+    height: 32px;
     width: auto;
   }
   #header .topMenu .mainMenu {
@@ -2114,6 +2348,16 @@ button, a, img, li, input[type="button"] {
   }
   #header .topMenu .iconList #mainSearchForm:before {
     right: 130px;
+  }
+  #header .freeShipping {
+    position: static;
+    text-align: center;
+    color: #333;
+    background: #fff;
+    padding: 8px 0;
+  }
+  #header .freeShipping button {
+    float: none;
   }
 
   #bannerHeader a {
@@ -2240,6 +2484,10 @@ button, a, img, li, input[type="button"] {
 #checkoutPage .logo {
   float: left;
 }
+#checkoutPage .logo object {
+  height: 38px;
+  width: auto;
+}
 #checkoutPage .continueShopping {
   float: right;
   color: #333;
@@ -2324,13 +2572,15 @@ button, a, img, li, input[type="button"] {
 }
 #checkoutPage form label {
   font-weight: normal;
-  margin-top: 15px;
 }
 #checkoutPage form input[type="text"] {
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   padding: 7px 10px;
   width: 100%;
   outline: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  margin-bottom: 15px;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -ms-transition: all 0.2s linear;
@@ -2339,6 +2589,9 @@ button, a, img, li, input[type="button"] {
 }
 #checkoutPage form input[type="text"]:hover, #checkoutPage form input[type="text"]:focus {
   border: 1px solid #3995ae;
+}
+#checkoutPage form select {
+  margin-bottom: 15px;
 }
 #checkoutPage form input[type="button"] {
   background: #333;
@@ -2350,7 +2603,7 @@ button, a, img, li, input[type="button"] {
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
-  margin: 20px 0;
+  margin: 10px 0 20px;
 }
 #checkoutPage input[type="button"] {
   background: #333;
@@ -2381,9 +2634,11 @@ button, a, img, li, input[type="button"] {
 }
 #checkoutPage h4 {
   font-size: 18px;
-  border-bottom: 1px solid #ddd;
+  text-transform: uppercase;
+  font-weight: 600;
   padding-bottom: 10px;
   margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
 }
 #checkoutPage h2 {
   background: url(../images/patternHeader-checkout.jpg) top left repeat;
@@ -2393,6 +2648,13 @@ button, a, img, li, input[type="button"] {
   text-transform: uppercase;
   margin-bottom: 20px;
 }
+#checkoutPage .buttonForMaza {
+  background: none;
+  border: none;
+  outline: none;
+  text-decoration: underline;
+  float: right;
+}
 #checkoutPage #rememberC, #checkoutPage #RegFollowC {
   margin: 15px 5px 0px 0;
 }
@@ -2400,12 +2662,12 @@ button, a, img, li, input[type="button"] {
   border-top: 1px solid #eee;
   display: none;
 }
-#checkoutPage #logNewMem {
+#checkoutPage #regFormCO, #checkoutPage .logButton {
   display: none;
 }
 #checkoutPage select {
   width: 100%;
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   padding: 8px 5px;
   outline: none;
   -webkit-transition: all 0.2s linear;
@@ -2419,7 +2681,7 @@ button, a, img, li, input[type="button"] {
 }
 #checkoutPage textarea {
   width: 100%;
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   outline: none;
   padding: 8px 10px;
   resize: none;
@@ -2440,6 +2702,13 @@ button, a, img, li, input[type="button"] {
   max-width: 100%;
   width: 100%;
 }
+#checkoutPage .rowPCheckOut .detailP-CO {
+  padding: 0;
+}
+#checkoutPage .rowPCheckOut .detailP-CO > div > div {
+  padding-left: 0;
+  padding-right: 5px;
+}
 #checkoutPage .rowPCheckOut .priceCO {
   border-bottom: 1px solid #eee;
   padding-bottom: 10px;
@@ -2450,6 +2719,28 @@ button, a, img, li, input[type="button"] {
   float: right;
   margin-left: 10px;
   color: #333;
+  text-decoration: underline;
+}
+#checkoutPage .rowPCheckOut .priceCO a.editCart {
+  background: #3995ae;
+  padding: 0px 7px;
+  border-radius: 3px;
+  color: #fff !important;
+  text-decoration: none;
+}
+#checkoutPage .rowPCheckOut .subInfoCO input[type="text"] {
+  border: 1px solid #ddd;
+  outline: none;
+  padding: 2px 5px;
+}
+#checkoutPage .rowPCheckOut .subInfoCO span.numberProCO {
+  padding: 3px 0px;
+  display: inline-block;
+}
+#checkoutPage .rowPCheckOut .subInfoCO select {
+  padding: 3px 5px;
+  display: none;
+  outline: none;
 }
 #checkoutPage .cartCheckOutRight {
   border: 1px solid #ddd;
@@ -2458,6 +2749,12 @@ button, a, img, li, input[type="button"] {
 #checkoutPage .cartCheckOutRight .totalCO {
   border-top: 1px solid #ddd;
   padding-top: 10px;
+}
+#checkoutPage .forgotPWD-CO {
+  text-decoration: underline;
+}
+#checkoutPage .checkOutWTAcc {
+  margin-top: 0 !important;
 }
 
 @media screen and (max-width: 640px) {
@@ -2512,7 +2809,6 @@ button, a, img, li, input[type="button"] {
     display: none;
   }
   #header .topMenu .iconList .searchForm {
-    background: url("../images/icon-search.png") top center no-repeat;
     left: -10px;
   }
   #header .topMenu .iconList #mainSearchForm:before {
@@ -2684,13 +2980,16 @@ button, a, img, li, input[type="button"] {
     width: 100%;
   }
 
+  #checkoutPage .header {
+    padding: 15px 0;
+  }
   #checkoutPage .continueShopping {
     padding: 7px 15px;
   }
   #checkoutPage .logo {
     width: 120px;
   }
-  #checkoutPage .logo img {
+  #checkoutPage .logo svg {
     width: 100%;
     height: auto;
   }
@@ -2703,15 +3002,12 @@ button, a, img, li, input[type="button"] {
   #checkoutPage form label {
     display: none;
   }
-  #checkoutPage form label[for="rememberC"], #checkoutPage form label[for="rememberInfo"] {
-    display: inline;
-  }
-  #checkoutPage form input[type="text"], #checkoutPage form select, #checkoutPage form textarea {
-    margin-top: 10px;
-  }
   #checkoutPage form textarea {
     height: 60px;
     min-height: auto;
+  }
+  #checkoutPage #rememberC, #checkoutPage label[for="rememberC"], #checkoutPage #rememberInfo, #checkoutPage label[for="rememberInfo"] {
+    display: none !important;
   }
   #checkoutPage .progressBar {
     display: table;
@@ -2759,7 +3055,10 @@ button, a, img, li, input[type="button"] {
     color: #333;
   }
   #checkoutPage input[type="button"] {
-    margin: 20px 0 10px !important;
+    margin: 10px 0 10px !important;
+  }
+  #checkoutPage input[type="button"].checkOutWTAcc {
+    margin-top: 0 !important;
   }
   #checkoutPage p {
     margin-bottom: 0;
@@ -2775,6 +3074,13 @@ button, a, img, li, input[type="button"] {
   }
   #checkoutPage .thanksPage p {
     margin: 5px 0;
+  }
+  #checkoutPage .cartCheckOutRight {
+    padding: 20px 15px;
+  }
+  #checkoutPage .cartCheckOutRight .detailP-CO > div > div {
+    padding-left: 0;
+    padding-right: 10px;
   }
 }
 @media (min-width: 1200px) {

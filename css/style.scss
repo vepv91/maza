@@ -49,7 +49,8 @@ $imgURL: '../images';
 	-o-animation-delay: $delayt;
 	animation-delay: $delayt;
 }
-
+.floatLeft{float: left;}
+.floatRight{float: right;}
 *{margin: 0; padding: 0;}
 a{text-decoration: none; outline: none;}
 a:hover{text-decoration: none;}
@@ -67,6 +68,17 @@ body{
 .floatLeft{float: left;}
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{padding: 0 10px}
 button, a, img, li, input[type="button"]{outline: none}
+input[type="button"], textarea{
+	border-radius: 0;
+	-webkit-appearance: none;
+	border-radius: 1px solid #ddd;
+	padding: 5px;
+}
+select{
+	outline: -webkit-focus-ring-color auto 5px;
+	background: #fff;
+	border-radius: 0;
+}
 #header{
 	.topMenu{
 		background: #000;
@@ -76,6 +88,7 @@ button, a, img, li, input[type="button"]{outline: none}
 		.logo{
 			float: left;
 			outline: none;
+			height: 36px;
 			h1{
 				text-indent: -9998px;
 				height: 0px;
@@ -226,14 +239,15 @@ button, a, img, li, input[type="button"]{outline: none}
 				}
 			}
 			.searchForm{
-				background: url($imgURL+'/icon-search.png') top left no-repeat;
-				text-indent: -9999px;
 				width: 40px;
 				margin-left: 0;
 				height: 50px;
 				cursor: pointer;
 				position: absolute;
-				top: 3px; left: -20px;
+				top: 2px; left: -20px;
+				i{
+					font-size: 20px;
+				}
 				&:hover{
 					#mainSearchForm{
 						display: block;
@@ -283,22 +297,25 @@ button, a, img, li, input[type="button"]{outline: none}
 				}
 			}
 		}
-		.freeShipping{
-			position: absolute;
-			top: -12px;
-			right: 10px;
-			z-index: 152;
-			font-size: 13px;
-			button{
-				background: none;
-				border: none;
-				outline: none;
-				cursor: pointer;
-			}
-			span{
-				text-decoration: underline;
-				cursor: pointer;
-			}
+	}
+	.freeShipping{
+		position: absolute;
+		top: 5px;
+		z-index: 152;
+		font-size: 13px;
+		background: none;
+		color: #fff;
+		width: 100%;
+		button{
+			background: none;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			float: right;
+		}
+		span{
+			text-decoration: underline;
+			cursor: pointer;
 		}
 	}
 }
@@ -466,14 +483,21 @@ button, a, img, li, input[type="button"]{outline: none}
 		    border: none;
 		    outline: none;
 		    background: none;
+		    border-radius: 4px;
 		}
 		.slick-prev{
 			background: url(../images/arrow-slick.png) top left no-repeat;
 			left: 10px;
+			&:hover{
+		    	background: url(../images/arrow-slick.png) top left no-repeat rgba(0,0,0,.5);
+		    }
 		}
 		.slick-next{
 			background: url(../images/arrow-slick.png) top right no-repeat;
 			right: 10px;
+			&:hover{
+		    	background: url(../images/arrow-slick.png) top right no-repeat rgba(0,0,0,.5);
+		    }
 		}
 	}
 }
@@ -495,7 +519,7 @@ button, a, img, li, input[type="button"]{outline: none}
 			width: 100%;
 			padding: 5px 10px;
 			outline: none;
-			border: 1px solid #eee;
+			border: 1px solid #ddd;
 			@include transition(all .2s linear);
 			&:hover{
 				border: 1px solid #3995ae;
@@ -583,7 +607,6 @@ button, a, img, li, input[type="button"]{outline: none}
 	}
 	.hotline{
 		float: right;
-		// border: 1px solid #333;
 		text-transform: uppercase;
 		font-weight: bold;
 		font-size: 16px;
@@ -744,7 +767,7 @@ button, a, img, li, input[type="button"]{outline: none}
 	}
 	.allFilterBlock{
 		display: none;
-		border: 1px solid #eee;
+		border: 1px solid #ddd;
 		padding: 15px 20px;
 		h4{
 			font-size: 16px;
@@ -789,6 +812,7 @@ button, a, img, li, input[type="button"]{outline: none}
 			margin: 10px 0;
 			border-bottom: 1px solid #eee;
 			padding-bottom: 5px;
+			@include transition (all .2s linear);
 			.price{
 				float: left;
 			}
@@ -802,19 +826,50 @@ button, a, img, li, input[type="button"]{outline: none}
 			}
 		}
 		.productTitle{
-			font-size:16px;
+			font-size:14px;
 			margin-top: 0;
 			line-height: 1.4;
 			width: 100%;
 			white-space: nowrap;
 			overflow: hidden;
   			text-overflow: ellipsis;
+  			@include transition (all .2s linear);
 			a{
 				color: #333;
 			}
 		}
 		.productItem{
 			margin-top: 30px;
+			border: 1px solid #fff;
+			&:hover{
+				border: 1px solid #ddd;
+				.priceBlock, .productTitle{
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+			}
+			&> a{
+				position: relative;
+				overflow: hidden;
+				display: block;
+				.colorList{
+					position: absolute;
+					bottom: 2px;
+					left: 0px;
+					width: 100%;
+					overflow: hidden;
+					margin-bottom: 0;
+					li{
+						float: left;
+						margin: 0 2px;
+						span{
+							display: block;
+							width: 20px;
+							height: 12px;
+						}
+					}
+				}
+			}
 		}
 	}
 	.mainProducts > [class*='col-']{
@@ -854,15 +909,56 @@ button, a, img, li, input[type="button"]{outline: none}
 	margin-top: -20px;
 	text-indent: -9999px;
 	background: url(../images/arrow-slick.png) left center;
+	border-radius: 4px;
 }
 .slick-prev{
-	left: 15px;
+	background: url(../images/arrow-slick.png) top left no-repeat;
+	left: 10px;
+	&:hover{
+    	background: url(../images/arrow-slick.png) top left no-repeat rgba(0,0,0,.5);
+    }
 }
 .slick-next{
-	right: 15px;
-	background: url(../images/arrow-slick.png) right center;
+	background: url(../images/arrow-slick.png) top right no-repeat;
+	right: 10px;
+	&:hover{
+    	background: url(../images/arrow-slick.png) top right no-repeat rgba(0,0,0,.5);
+    }
 }
 #detailPage{
+	.nav4sliderIMG{
+			.slick-active{
+				opacity: .3;
+			}
+			.slick-current{
+				opacity: 1;
+				& + .slick-active{
+					opacity: 1;
+				} 
+			}
+	}
+	.slick-dots{
+		text-align: center;
+		margin-top: 10px;
+		li{
+			display: inline;
+			margin: 0 2px;
+			button{
+				background: none;
+				border: 1px solid #ddd;
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				text-indent: -9999px;
+			}
+			&.slick-active{
+				button{
+					background: #696969;
+					border: 1px solid #696969;
+				}
+			}
+		}
+	}
 	.detailProduct{
 		margin-bottom: 0px;
 		margin-top: 5px;
@@ -910,15 +1006,15 @@ button, a, img, li, input[type="button"]{outline: none}
 		}
 		.titleProduct{
 			font-size: 25px;
-			font-weight: 600;
+			font-weight: 400;
 			margin: 0 0 0px 0;
 		}
 		.moreDetail{
 			margin-top: 20px;
 			h5{
-				text-transform: uppercase;
 				font-size: 16px;
 				margin-top: 0;
+				font-weight: 400;
 			}
 			.listColor{
 				li{
@@ -929,13 +1025,8 @@ button, a, img, li, input[type="button"]{outline: none}
 					border: 1px solid #ddd;
 					padding: 1px;
 					cursor: pointer;
-					&:hover{
-						border: 1px solid #bababa;
-						box-shadow: 0 0 7px rgba(0,0,0,.2);
-					}
-					&.active{
-						border: 1px solid #bababa;
-						box-shadow: 0 0 7px rgba(0,0,0,.2);
+					&:hover, &.active{
+						border: 1px solid red;
 					}
 					span{
 						display: block;
@@ -963,7 +1054,7 @@ button, a, img, li, input[type="button"]{outline: none}
 				text-transform: uppercase;
 				border: none;
 				font-size: 18px;
-				font-weight: 600;
+				font-weight: 400;
 				cursor: pointer;
 				border-radius: 5px;
 				outline: none;
@@ -999,7 +1090,7 @@ button, a, img, li, input[type="button"]{outline: none}
 		}
 		.recommendProduct{
 			h5{
-				text-transform: uppercase;
+				font-weight: 400;
 				font-size: 16px;
 			}
 			img{
@@ -1041,8 +1132,24 @@ button, a, img, li, input[type="button"]{outline: none}
 		}
 		li{
 			margin: 0 0px 0 10px;
+			border: 1px solid #fff;
 			a{
 				outline: none;
+				display: block;
+				overflow: hidden;
+				img{
+					@include transition (all .3s linear);
+				}
+			}
+			&:hover{
+				border: 1px solid #ddd;
+				.priceBlock, .productTitle{
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+				img{
+					transform: scale(1.1, 1.1);
+				}
 			}
 		}
 		img{
@@ -1054,6 +1161,7 @@ button, a, img, li, input[type="button"]{outline: none}
 			margin: 10px 0;
 			border-bottom: 1px solid #eee;
 			padding-bottom: 5px;
+			@include transition (all .2s linear);
 			.price{
 				float: left;
 			}
@@ -1067,12 +1175,13 @@ button, a, img, li, input[type="button"]{outline: none}
 			}
 		}
 		.productTitle{
-			font-size:16px;
+			font-size:14px;
 			margin-top: 0;
 			line-height: 1.4;
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
+			@include transition (all .2s linear);
 			a{
 				color: #333;
 			}
@@ -1090,14 +1199,21 @@ button, a, img, li, input[type="button"]{outline: none}
 		    border: none;
 		    outline: none;
 		    background: none;
+			border-radius: 4px;
 		}
 		.slick-prev{
 			background: url(../images/arrow-slick.png) top left no-repeat;
 			left: 20px;
+			&:hover{
+		    	background: url(../images/arrow-slick.png) top left no-repeat rgba(0,0,0,.5);
+		    }
 		}
 		.slick-next{
 			background: url(../images/arrow-slick.png) top right no-repeat;
 			right: 10px;
+			&:hover{
+		    	background: url(../images/arrow-slick.png) top right no-repeat rgba(0,0,0,.5);
+		    }
 		}
 	}
 	.relatedProductsTitle{
@@ -1198,17 +1314,16 @@ button, a, img, li, input[type="button"]{outline: none}
 .breadcrumbBlock{
 	width: 100%;
 	height: 30px;
-	background: #eeeeee;
-	margin-bottom: 10px;
+	margin-top:5px;
 	ul{
 		width: 100%;
 		margin-bottom: 0;
-		padding: 5px 10px 0 10px;
+		padding: 5px 0;
 		li{
 			font-size: 12px;
 			float: left;
 			a{
-				color: #666;
+				color: #999;
 				&:after{
 					display: inline; 
 					content: '/';
@@ -1242,7 +1357,7 @@ button, a, img, li, input[type="button"]{outline: none}
 				width: 100%;
 				padding: 8px 10px;
 				outline: none;
-				border: 1px solid #eee;
+				border: 1px solid #ddd;
 				margin: 20px 0 15px;
 				text-align: center;
 			}
@@ -1258,6 +1373,18 @@ button, a, img, li, input[type="button"]{outline: none}
 				cursor: pointer;
 				font-size: 16px;
 			}
+		}
+		input[type="button"]{
+			width: 100%;
+			padding: 8px 0;
+			text-align: center;
+			text-transform: uppercase;
+			color: #fafafa;
+			background: #000;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			font-size: 16px;
 		}
 	}
 	.modal-body{
@@ -1415,7 +1542,7 @@ button, a, img, li, input[type="button"]{outline: none}
 	input{
 		width: 100%;
 		outline: none;
-		border: 1px solid #eee;
+		border: 1px solid #ddd;
 		padding: 8px 10px;
 		margin-bottom: 10px;
 		@include transition (all .2s linear);
@@ -1465,27 +1592,46 @@ button, a, img, li, input[type="button"]{outline: none}
 		position: absolute;
 		top: 5px;
 		right: 5px;
+		font-size: 50px;
+		border: none;
+		background: none;
+		padding: 10px;
+		display: block;
+		width: 60px;
+		height: 60px;
+		line-height: 0;
 	}
 }
 #registerPage{
+	background: #f9f9f9;
+	padding-bottom: 50px;
 	h3{
-		font-size: 18px;
-		border-bottom: 1px solid #eee;
+		font-size: 22px;
+		border-bottom: 1px solid #ddd;
 		padding-bottom: 5px;
 		margin-top: 50px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	p{
+		color: #666;
 	}
 	label{
 		width: 100%;
 		font-weight: normal;
 		font-size: 14px;
+		text-transform: uppercase;
 	}
 	input[type="text"]{
 		width: 100%;
 		margin-bottom: 20px;
-		border: 1px solid #eee;
+		border: 1px solid #ddd;
 		padding: 8px 10px;
 		outline: none;
 		@include transition(all .2s linear);
+		&.rq-input{
+			border: 1px solid #f70404;
+		}
 		&:hover, &:focus{
 			border: 1px solid #3995ae;
 		}
@@ -1497,7 +1643,10 @@ button, a, img, li, input[type="button"]{outline: none}
 		padding: 8px 10px;
 		text-align: center;
 		border: none;
-		margin-top: 20px;
+		margin-top: 10px;
+		text-transform: uppercase;
+		font-size: 16px;
+		font-weight: 600;
 		@include transition(all .2s linear);
 		&:hover{
 			background: #3995ae;
@@ -1525,11 +1674,16 @@ button, a, img, li, input[type="button"]{outline: none}
 			padding-top: 10px;
 			display: block;
 			color: #333;
+			text-decoration: underline;
 			@include transition(all .2s linear);
 			&:hover{
 				color: #3995ae;
 			}
 		}
+	}
+	.sumAlertRQ{
+		color: #f70404;
+		font-weight: bold;
 	}
 }
 #style-policyPage{
@@ -1623,7 +1777,7 @@ button, a, img, li, input[type="button"]{outline: none}
 				width: 100%;
 			}
 			.detailMorePost{
-				border: 1px solid #eee;
+				border: 1px solid #ddd;
 				overflow: hidden;
 				padding: 10px 10px 5px 10px;
 				a{
@@ -1706,6 +1860,11 @@ button, a, img, li, input[type="button"]{outline: none}
 					text-decoration: none;
 					padding: 15px 10px 15px 15px;
 				}
+				&:hover{
+					a{
+						color: #d54936;
+					}
+				}
 			}
 		}
 	}
@@ -1722,7 +1881,6 @@ button, a, img, li, input[type="button"]{outline: none}
 		h4{
 			font-size: 18px;
 			text-transform: uppercase;
-			// display: inline-block;
 			border-bottom: 3px solid #eee;
 			padding-bottom: 12px;
 			margin: 18px 0 20px;
@@ -1739,6 +1897,45 @@ button, a, img, li, input[type="button"]{outline: none}
 		}
 		.scrollTable{
 			overflow-x: auto;
+		}
+		input[type="text"]{
+			border: 1px solid #ddd;
+			padding: 5px;
+			outline: none;
+			width: 100%;
+			margin-bottom: 10px;
+			@include transition (all .2s linear);
+			&:hover, &:focus{
+				border: 1px solid #3995ae;
+			}
+		}
+		input[type="button"]{
+			width: 100%;
+			background: #000;
+			border: none;
+			outline: none;
+			padding: 7px;
+			color: #fff;
+			margin-bottom: 10px;
+			@include transition (all .2s linear);
+			&:hover{
+				background: #3995ae;
+			}
+		}
+		#tabInfo{
+			a{
+				display: block;
+				margin-bottom: 10px;
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+			label{
+				display: block;
+			}
+		}
+		.infoBlock, .pwBlock, .addressAccInfo{
+			width: 400px;
 		}
 	}
 }
@@ -1767,7 +1964,7 @@ button, a, img, li, input[type="button"]{outline: none}
 				margin-right: 10px;
 			}
 			select{
-				border: 1px solid #eee;
+				border: 1px solid #ddd;
 				padding: 6px 5px;
 				outline: none;
 				width: 100%;
@@ -1882,7 +2079,7 @@ button, a, img, li, input[type="button"]{outline: none}
 			.mainMenu{
 				margin-left: 30px;
 				li{
-					margin-right: 0px;
+					margin-right: 20px;
 				}
 			}
 			.iconList{
@@ -1944,7 +2141,7 @@ button, a, img, li, input[type="button"]{outline: none}
 		}
 	}
 	.footerInfo{
-		img{
+		object{
 			display: block;
 			margin: 0 auto 20px;
 		}
@@ -1988,6 +2185,9 @@ button, a, img, li, input[type="button"]{outline: none}
 	}
 }
 @media screen and (max-width: 768px) {
+	#freeShipPopUp{
+		top: 70px;
+	}
 	#header{
 		padding-top: 58px;
 		.topMenu{
@@ -2001,8 +2201,8 @@ button, a, img, li, input[type="button"]{outline: none}
 				margin-bottom: 0;
 			}
 			.logo{
-				img{
-					height: 30px;
+				svg{
+					height: 32px;
 					width: auto;
 				}
 			}
@@ -2111,6 +2311,16 @@ button, a, img, li, input[type="button"]{outline: none}
 						right: 130px;
 					}
 				}
+			}
+		}
+		.freeShipping{
+			position: static;
+			text-align: center;
+			color: #333;
+			background: #fff;
+			padding: 8px 0;
+			button{
+				float: none;
 			}
 		}
 	}
@@ -2248,6 +2458,10 @@ button, a, img, li, input[type="button"]{outline: none}
 	}
 	.logo{
 		float: left;
+		object{
+			height: 38px;
+			width: auto;
+		}
 	}
 	.continueShopping{
 		float: right;
@@ -2332,17 +2546,22 @@ button, a, img, li, input[type="button"]{outline: none}
 	form{
 		label{
 			font-weight: normal;
-			margin-top: 15px;
 		}
 		input[type="text"]{
-			border: 1px solid #eee;
+			border: 1px solid #ddd;
 			padding: 7px 10px;
 			width: 100%;
 			outline: none;
+			-webkit-appearance: none;
+			border-radius: 0;
+			margin-bottom: 15px;
 			@include transition(all .2s linear);
 			&:hover, &:focus{
 				border: 1px solid #3995ae;
 			}
+		}
+		select{
+			margin-bottom: 15px;
 		}
 		input[type="button"]{
 			background: #333;
@@ -2354,7 +2573,7 @@ button, a, img, li, input[type="button"]{outline: none}
 			cursor: pointer;
 			font-size: 16px;
 			font-weight: 600;
-			margin: 20px 0;
+			margin: 10px 0 20px;
 		}
 	}
 	input[type="button"]{
@@ -2382,9 +2601,11 @@ button, a, img, li, input[type="button"]{outline: none}
 	}
 	h4{
 		font-size: 18px;
-		border-bottom: 1px solid #ddd;
+		text-transform: uppercase;
+		font-weight: 600;
 		padding-bottom: 10px;
 		margin-bottom: 10px;
+		border-bottom: 1px solid #ddd;
 	}
 	h2{
 		background: url(../images/patternHeader-checkout.jpg) top left repeat;
@@ -2394,6 +2615,13 @@ button, a, img, li, input[type="button"]{outline: none}
 		text-transform: uppercase;
 		margin-bottom: 20px;
 	}
+	.buttonForMaza{
+		background: none;
+		border: none;
+		outline: none;
+		text-decoration: underline;
+		float: right;
+	}
 	#rememberC, #RegFollowC{
 		margin: 15px 5px 0px 0;
 	}
@@ -2401,12 +2629,12 @@ button, a, img, li, input[type="button"]{outline: none}
 		border-top: 1px solid #eee;
 		display: none;
 	}
-	#logNewMem{
+	#regFormCO, .logButton{
 		display: none;
 	}
 	select{
 		width: 100%;
-		border: 1px solid #eee;
+		border: 1px solid #ddd;
 		padding: 8px 5px;
 		outline: none;
 		@include transition(all .2s linear);
@@ -2416,7 +2644,7 @@ button, a, img, li, input[type="button"]{outline: none}
 	}
 	textarea{
 		width: 100%;
-		border: 1px solid #eee;
+		border: 1px solid #ddd;
 		outline: none;
 		padding: 8px 10px;
 		resize: none;
@@ -2432,6 +2660,13 @@ button, a, img, li, input[type="button"]{outline: none}
 			max-width: 100%;
 			width: 100%;
 		}
+		.detailP-CO{
+			padding: 0;
+			& > div > div{
+				padding-left: 0;
+				padding-right: 5px;
+			}
+		}
 		.priceCO{
 			border-bottom: 1px solid #eee;
 			padding-bottom: 10px;
@@ -2441,6 +2676,30 @@ button, a, img, li, input[type="button"]{outline: none}
 				float: right;
 				margin-left: 10px;
 				color: #333;
+				text-decoration: underline;
+				&.editCart{
+					background: #3995ae;
+					padding: 0px 7px;
+					border-radius: 3px;
+					color: #fff !important;
+					text-decoration: none;
+				}
+			}
+		}
+		.subInfoCO{
+			input[type="text"]{
+				border: 1px solid #ddd;
+				outline: none;
+				padding: 2px 5px;
+			}
+			span.numberProCO{
+				padding: 3px 0px;
+				display: inline-block;
+			}
+			select{
+				padding: 3px 5px;
+				display: none;
+				outline: none;
 			}
 		}
 	}
@@ -2451,6 +2710,12 @@ button, a, img, li, input[type="button"]{outline: none}
 			border-top: 1px solid #ddd;
 			padding-top: 10px;
 		}
+	}
+	.forgotPWD-CO{
+		text-decoration: underline;
+	}
+	.checkOutWTAcc{
+		margin-top: 0 !important;
 	}
 }
 @media screen and (max-width: 640px) {
@@ -2524,7 +2789,7 @@ button, a, img, li, input[type="button"]{outline: none}
 					}
 				}
 				.searchForm{
-					background: url("../images/icon-search.png") top center no-repeat;
+					// background: url("../images/icon-search.png") top center no-repeat;
 					left: -10px;
 				}
 				#mainSearchForm:before{
@@ -2708,12 +2973,15 @@ button, a, img, li, input[type="button"]{outline: none}
 		width: 100%;
 	}
 	#checkoutPage{
+		.header{
+			padding: 15px 0;
+		}
 		.continueShopping{
 			padding: 7px 15px;
 		}
 		.logo{
 			width: 120px;
-			img{
+			svg{
 				width: 100%;
 				height: auto;
 			}
@@ -2727,17 +2995,14 @@ button, a, img, li, input[type="button"]{outline: none}
 		form{
 			label{
 				display: none;
-				&[for="rememberC"], &[for="rememberInfo"]{
-					display: inline;
-				}
-			}
-			input[type="text"], select, textarea{
-				margin-top: 10px;
 			}
 			textarea{
 				height: 60px;
 				min-height: auto;
 			}
+		}
+		#rememberC, label[for="rememberC"], #rememberInfo, label[for="rememberInfo"]{
+			display: none !important;
 		}
 		.progressBar{
 			display: table;
@@ -2792,7 +3057,10 @@ button, a, img, li, input[type="button"]{outline: none}
 			color: #333;
 		}
 		input[type="button"]{
-			margin: 20px 0 10px !important;
+			margin: 10px 0 10px !important;
+			&.checkOutWTAcc{
+				margin-top: 0 !important;
+			}
 		}
 		p{
 			margin-bottom: 0;
@@ -2809,6 +3077,15 @@ button, a, img, li, input[type="button"]{outline: none}
 			padding: 20px 0;
 			p{
 				margin: 5px 0;
+			}
+		}
+		.cartCheckOutRight{
+			padding: 20px 15px;
+			.detailP-CO{
+				& > div > div{
+					padding-left: 0;
+					padding-right: 10px;
+				}
 			}
 		}
 	}

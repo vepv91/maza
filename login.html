@@ -2,13 +2,14 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Maza.vn</title>
+	<title>Maza.vn - Đăng nhập</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/slick.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<!-- <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,900,700&subset=latin,vietnamese' rel='stylesheet' type='text/css'> -->
+
 </head>
 <body>
 	<div class="wrapper">
@@ -22,18 +23,8 @@
 								<span></span>
 								<span></span>
 							</div>
-							<a href="" class="logo">
-								<svg xmlns="http://www.w3.org/2000/svg" width="125" height="36" viewBox="0 0 125 36">
-								  <defs>
-								    <style>
-								      .cls-1 {
-								        fill: #fff;
-								        fill-rule: evenodd;
-								      }
-								    </style>
-								  </defs>
-								  <path class="cls-1" d="M4.289,0.263h0.44q8.847,17.249,11.136,21.794L17.78,25.87l1.012,2.106h0.044q0.44-1.042.946-2.062,0.594-1.242,1.937-3.814L33.207,0.263h0.462L37.587,36h-2a2.474,2.474,0,0,1-2.454-2.226L31.909,22.1q-0.748-7.294-.858-10.664H30.962q-1.012,2.417-2.333,5.077-0.572,1.131-1.276,2.527L25.967,21.7Q24.91,23.808,23,27.444l-4.16,7.782H18.352L14.258,27.4q-1.915-3.68-2.949-5.742-0.792-1.6-1.343-2.727Q9.241,17.489,8.69,16.292q-1.32-2.815-2.113-4.944H6.49q-0.154,2.351-.33,4.59Q5.917,18.509,5.543,22.1L4.286,33.784A2.475,2.475,0,0,1,1.832,36H0ZM76.7,32.321L89.516,32.3a2.248,2.248,0,0,1,1.766.855L93.53,36h-23.7V35.913L87.236,4.12H74.916a2.248,2.248,0,0,1-1.805-.912l-1.94-2.614H93.816V0.684Zm26.8-6.274q-1.035,2.55-1.893,4.656l-1.491,3.739A2.468,2.468,0,0,1,97.826,36H95.159l3.235-7.8q0.7-1.684,1.5-3.614L110.08,0h0.528L125,36h-2.916a2.469,2.469,0,0,1-2.3-1.579l-3.259-8.376H103.5Zm11.664-3.525V22.389l-3.72-9.866q-0.858-2.306-1.232-3.591h-0.088q-0.4,1.241-1.3,3.591l-3.939,10h10.278ZM47.087,26.047Q46.052,28.6,45.194,30.7L43.7,34.442A2.468,2.468,0,0,1,41.413,36H38.746l3.235-7.8q0.7-1.684,1.5-3.614L53.667,0H54.2L68.588,36H65.672a2.469,2.469,0,0,1-2.3-1.579l-3.259-8.376H47.087Zm11.664-3.525V22.389l-3.719-9.866Q54.174,10.217,53.8,8.931H53.711q-0.4,1.241-1.3,3.591l-3.939,10H58.751Z"/>
-								</svg>
+							<a href="#" class="logo">
+								<object style="z-index: -1; pointer-events: none;" data="images/logo.svg" type="image/svg+xml"> </object>
 								<h1>Maza.vn</h1>
 							</a>
 							<div class="mainMenu">
@@ -142,7 +133,7 @@
 								</ul>
 							</div>
 							<div class="iconList">
-								<div class="searchForm">SearchForm
+								<div class="searchForm"><i class="fa fa-search" aria-hidden="true"></i>
 									<form action="" id="mainSearchForm">
 										<input type="text" placeholder="Nhập từ khóa tìm kiếm...">
 									</form>
@@ -150,14 +141,14 @@
 								</div>
 								<div class="cartForm" onclick="showHideCart();">
 									<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-									<span class="numProducts">0</span>
+									<span class="numProducts">3</span>
 									<button>Giỏ hàng</button>
 								</div>
-								<!-- <div class="userLogin" onclick="showHideLogin();">
+								<div class="userLogin" onclick="showHideLogin();">
 									<i class="fa fa-user" aria-hidden="true"></i>
 									<button>Đăng nhập</button>
-								</div> -->
-								<div class="userLogOut" data-toggle="dropdown">
+								</div>
+								<!-- <div class="userLogOut" data-toggle="dropdown">
 									<i class="fa fa-user" aria-hidden="true"></i>
 									<button class="dropdown-toggle" type="button" data-toggle="dropdown">
 										<span>Hi, <span>Admin gaylord</span></span>
@@ -169,62 +160,63 @@
 										<li><a href="#">Địa chỉ thanh toán</a></li>
 										<li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Thoát</a></li>
 									</ul>
-								</div>
-							</div>
-							<div class="freeShipping">
-								<button data-toggle="modal" data-target="#freeShipPopUp">Miễn phí giao hàng - <span>Chi tiết</span></button>
+								</div> -->
 							</div>
 							<div class="clear"></div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="subMenuTop hidden-xs">
+			<div class="freeShipping">
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="s3">
-								<ul>
-									<li><span></span>Chọn hàng online</li>
-									<li><span class="delivery"></span>Giao hàng trong 24h</li>
-									<li><span class="payment"></span>Thanh toán tiện lợi</li>
-								</ul>
-							</div>
-							<div class="hotline">
-								HOTLINE: 08 6254 9999
-							</div>
-							<div class="clear"></div>
+							<button data-toggle="modal" data-target="#freeShipPopUp">Miễn phí giao hàng - <span>Chi tiết</span></button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-		<section id="bannerHeader">
+
+		<section id="registerPage">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12">
-						<img src="images/banner-header.jpg" alt="">
-						<a href="#" class="Male">Mua đồ Nam</a>
-						<a href="#" class="Female">Sắm đồ Nữ</a>
+					<div class="col-md-4 col-md-offset-1">
+						<h3>Đăng nhập</h3>
+						<p>
+							Đăng nhập để nhận ưu đãi, tích điểm khi mua sắm
+						</p>
+						<p class="sumAlertRQ">
+							*Email và mật khẩu không được bỏ trống
+						</p>
+						<form action="" id="loginFormPage">
+							<label>Email</label>
+							<input type="text" placeholder="Nhập email của bạn" class="rq-input">
+							<label>Mật khẩu</label>
+							<input type="text" placeholder="Nhập mật khẩu" class="rq-input">
+							<input type="button" value="Đăng nhập">
+							<a href="">Quên mật khẩu?</a>
+						</form>
+					</div>
+					<div class="col-md-4 col-md-offset-2">
+						<h3>Đăng ký mới</h3>
+						<p>
+							Đăng ký tài khoản mới để mua sắm thuận tiện, nhanh chóng hơn, tích điểm để nhận ưu đãi
+						</p>
+						<form action="" id="loginFormPage">
+							<label>Email</label>
+							<input type="text" placeholder="Nhập email của bạn">
+							<label>Mật khẩu</label>
+							<input type="text" placeholder="Nhập mật khẩu">
+							<label>Xác nhận mật khẩu</label>
+							<input type="text" placeholder="Nhập lại mật khẩu">
+							<input type="button" value="Đăng ký">
+						</form>
 					</div>
 				</div>
 			</div>
 		</section>
-		<section id="mazaStore">
-			<div class="container">
-				<h4 class="titleSection">Tham quan Maza Store</h4>
-				<div class="storeBlock">
-					<ul class="storeBlockMain">
-						<li><a href="#"><img src="images/img-2.jpg" alt=""></a></li>
-						<li><a href="#"><img src="images/img-2a.jpg" alt=""></a></li>
-						<li><a href="#"><img src="images/img-2.jpg" alt=""></a></li>
-						<li><a href="#"><img src="images/img-2a.jpg" alt=""></a></li>
-						<li><a href="#"><img src="images/img-2.jpg" alt=""></a></li>
-						<li><a href="#"><img src="images/img-2a.jpg" alt=""></a></li>
-					</ul>
-				</div>
-			</div>
-		</section>
+
 		<section id="footer">
 			<div class="container">
 				<div class="row">
@@ -254,8 +246,6 @@
 								<img class="paymentIMG" src="images/payment.jpg" alt="">
 							</div>
 						</div>
-						
-						
 					</div>
 					<div class="col-md-3 col-xs-12 col-sm-6">
 						<h5 class="titleFooter">Giới thiệu</h5>
@@ -305,7 +295,7 @@
 			<div class="container">
 				<div class="row footerInfo">
 					<div class="col-xs-12 col-md-3">
-						<img src="images/logo-bottom.png" alt="">
+						<object data="images/logo-footer.svg" type="image/svg+xml"> </object>
 					</div>
 					<div class="col-xs-12 col-md-9">
 						<p>
@@ -315,7 +305,6 @@
 				</div>
 			</div>
 		</section>
-
 		<!-- popUp area -->
 		<div class="popUpCart">
 			<div class="mainCart_P">
@@ -358,6 +347,7 @@
 		</div>
 		<!-- end popUp area -->
 	</div>
+
 	<script src="js/jquery-1.9.1.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/slick.min.js"></script>
