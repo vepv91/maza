@@ -484,19 +484,19 @@ function saveAddInfo(className){
 	});
 	convertButton2A(className, 'Chỉnh sửa thông tin mua hàng', 'editAddInfo(this); return false;');
 };
-function editCartCheckout(className){
+function editCartCheckout(className){ 
 	var parentDiv = $(className).closest('.detailP-CO');
 	$(className).addClass('editCart').text('Cập nhật').attr('onclick', 'saveCartCheckout(this); return false;');
 	parentDiv.find('select.numberProCO').show();
 	parentDiv.find('span.numberProCO').css({opacity: 0});
 };
-function saveCartCheckout(className){
+function saveCartCheckout(className){ 
 	var parentDiv = $(className).closest('.detailP-CO');
 	$(className).removeClass('editCart').text('Thay đổi').attr('onclick', 'editCartCheckout(this); return false;');
 	parentDiv.find('select.numberProCO').hide();
 	parentDiv.find('span.numberProCO').css({opacity: 1});
 };
-function onchangeSelectCartCheckout(){
+function onchangeSelectCartCheckout(){ //onchange
 	$('.subInfoCO select').change(function(){
 		var selectValue = $(this).val(),
 			selectClass = $(this).attr('class');
