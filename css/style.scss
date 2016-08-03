@@ -571,6 +571,8 @@ select{
 		}
 	}
 }
+.txtMaza{float: right; margin-right: 5px;}
+.txtLog{display: none;}
 #copyright{
 	.copyrightFooter{
 		text-align: center;
@@ -2780,6 +2782,7 @@ select{
 	}
 }
 @media screen and (max-width: 480px) {
+	.txtMaza{display: none !important;}
 	#header{
 		.topMenu{
 			.iconList{

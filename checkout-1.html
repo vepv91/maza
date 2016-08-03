@@ -42,7 +42,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-md-5">
 						<form action="" id="logFormCO">
-							<h4>Đăng nhập</h4>
+							<h4>Đăng nhập tài khoản</h4>
 							<label for="">Email</label>
 							<input type="text" placeholder="Nhập email đăng nhập">
 							<label for="">Mật khẩu</label>
@@ -50,7 +50,7 @@
 							<input type="button" value="Đăng nhập">
 						</form>
 						<form action="" id="regFormCO">
-							<h4>Đăng kí mới</h4>
+							<h4>Đăng kí tài khoản mới</h4>
 							<label for="">Email</label>
 							<input type="text" placeholder="Nhập email đăng nhập">
 							<label for="">Mật khẩu</label>
@@ -59,9 +59,11 @@
 							<input type="text" placeholder="Nhập lại mật khẩu">
 							<input type="button" value="Đăng ký">
 						</form>
-						<a href="" class="forgotPWD-CO">Quên mật khẩu?</a>						
+						<a href="" class="forgotPWD-CO">Quên mật khẩu?</a>		
 						<button class="regButton buttonForMaza" onclick="showregFormCO();">Đăng kí mới</button>
-						<button class="logButton buttonForMaza" onclick="showlogFormCO();">Đăng nhập tài khoản</button>
+						<span class="txtReg txtMaza"> Chưa có tài khoản? </span>			
+						<button class="logButton buttonForMaza" onclick="showlogFormCO();">Đăng nhập</button>
+						<span class="txtLog txtMaza"> Đã có tài khoản? </span>
 					</div>
 					<div class="col-xs-12 col-md-5 col-md-offset-1">
 						<h4>Mua hàng không cần tài khoản</h4>

@@ -598,6 +598,15 @@ select {
   text-decoration: underline;
 }
 
+.txtMaza {
+  float: right;
+  margin-right: 5px;
+}
+
+.txtLog {
+  display: none;
+}
+
 #copyright .copyrightFooter {
   text-align: center;
   background: #eeeeee;
@@ -2805,6 +2814,10 @@ select {
   }
 }
 @media screen and (max-width: 480px) {
+  .txtMaza {
+    display: none !important;
+  }
+
   #header .topMenu .iconList .cartForm button {
     display: none;
   }

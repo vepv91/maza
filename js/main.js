@@ -508,12 +508,16 @@ function showregFormCO(){
 	$('.regButton').hide();
 	$('#regFormCO').show();
 	$('#logFormCO').hide();
+	$('.txtReg').hide();
+	$('.txtLog').show();
 };
 function showlogFormCO(){
 	$('.logButton').hide();
 	$('.regButton').show();
 	$('#regFormCO').hide();
 	$('#logFormCO').show();
+	$('.txtReg').show();
+	$('.txtLog').hide();
 };
 
 
