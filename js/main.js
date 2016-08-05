@@ -56,7 +56,11 @@ $('.nav4sliderIMG ul').slick({
 	  	breakpoint: 480,
 		  	settings: {
 		  		vertical:false,
-				verticalSwiping: false
+				verticalSwiping: false,
+				centerMode: true,
+				slidesToShow: 5,
+				slidesToScroll: 1,
+				centerPadding: '0px'
 		  	}
 		}
 	]
@@ -116,6 +120,7 @@ $(function(){ // this function for responsive on mobile devices - please dont ed
 		$('#footer').addClass('footerMobile');
 		collapseFooter();
 		getPriceMobile();
+		getFullSlider();
 	}else{
 		getFullSlider();
 	}
@@ -229,6 +234,11 @@ function onChangeRightFilterList(){ //RightFilterList's onChange click event her
 function showAllFilter(){ // - please dont edit this
 	$('.allFilter').click(function(){
 		collapseElement('.allFilterBlock');
+		var spanArrow = $(this).find('.activeArrow');
+		if(spanArrow.text() === '▲')
+			spanArrow.text('▼');
+		else
+			spanArrow.text('▲');
 		return false;
 	});
 };
@@ -288,8 +298,12 @@ function getPriceMobile(){ //get bottom fixed price on mobile -  please dont edi
 	HTML += '</div>';
 	$('#detailPage').append(HTML);
 };
-function showHideCart(){ //Show / hide popUp Cart
-	showHide('.popUpCart');
+function showHideCart(className){ //Show / hide popUp Cart
+	var hrefLink = $(className).attr('href');
+	if($(window).width() < 480)
+		location.href = hrefLink;
+	else
+		showHide('.popUpCart');
 };
 function HTMLAddToCart(){ //HTML form add sản phẩm vô popUp Cart
 	var HTML = '';
@@ -312,13 +326,29 @@ function HTMLAddToCart(){ //HTML form add sản phẩm vô popUp Cart
 	HTML += '</li>';
 	return HTML;
 };
+function HTMLAdd2CartMobile(){
+	var HTML = '';
+	HTML += '<div class="bgDialog"></div>';
+	HTML += '<div class="mobileCartDialog">';
+	HTML += '<div class="closeMBCart" onclick="dismissCartMobile();">&times;</div>'
+	HTML += '<p>Sản phẩm đã được thêm vào giỏ hàng !</p>';
+	HTML += '<input type="button" class="dismissCart" onclick="dismissCartMobile();" value="Tiếp tục mua sắm">';
+	HTML += '<input type="button" value="Tiến hành đặt hàng">';
+	HTML += '</div>';
+	return HTML;
+};
+function dismissCartMobile(){
+	$('.mobileCartDialog').remove();
+	$('.bgDialog').remove();
+};
 function addToCart(){ //Thêm sản phẩm vào giỏ hàng - Trang detail
 	if(checkColor > 0 && checkSize > 0){
-		//Check đã chọn size & color, đã check = pass
 		if($(window).width() < 640){
-			$('#footer').addClass('footerMobile');
-			collapseFooter();
-			getPriceMobile();
+			$('.wrapper').append(HTMLAdd2CartMobile());
+			var timeOut = setInterval(function() {
+			    dismissCartMobile();
+			    clearInterval(timeOut);
+			}, 4000);
 		}else{
 			$('.popUpCart').fadeIn('fast');
 			var timeOut1 = setInterval(function() {
@@ -331,7 +361,6 @@ function addToCart(){ //Thêm sản phẩm vào giỏ hàng - Trang detail
 			}, 4000);
 		}
 	}else{
-		// chưa chọn size & color, alert
 		if(checkColor == 0)
 			$('.sumAlertColor').fadeIn('fast');
 		if(checkSize == 0)
@@ -398,6 +427,13 @@ function submitPhone(){ //Đăng kí mua hàng nhanh - submit button
 	$('.mainFormCall').closest('.modal-body').append('<p style="text-transform: uppercase; font-weight: bold; margin-bottom: 10px;">Thanks you !</p><input type="button" data-dismiss="modal" value="Đóng">');
 	$('.mainFormCall').remove();
 };
+function onchangeSelect(selectID, getAttr, textTag){ //Chọn selectbox -> đổi text()
+	$(selectID).change(function(){
+		var selectValue = $(this).val(),
+			selectClass = $(this).attr(getAttr);
+		$(textTag+'.'+selectClass).text(selectValue).attr('value', selectValue);
+	});
+};
 function convertA2Button(classA, valueButton, revertFunction){ //Chuyển từ tag a thành button khi click
 	$(classA).replaceWith(function () {
 		var input = $('<input>',{
@@ -420,8 +456,8 @@ function convertButton2A(classB, htmlValue,convertFunction){ //Chuyển từ tag
         return a;
 	});
 };
-function editInfo(className){ //Chỉnh sửa thông tin cá nhân
-	$('.infoBlock').find('p').replaceWith(function () {
+function editInfo(className){ //Chỉnh sửa thông tin cá nhân - trang user
+	$('.infoBlock').find('p.editable').replaceWith(function () {
 		var input = $('<input>',{
             type: 'text',
             value: $(this).html(),
@@ -429,9 +465,13 @@ function editInfo(className){ //Chỉnh sửa thông tin cá nhân
         });
         return input;
 	});
+	$('#tabInfo .non-edit').hide('fast');
+	$('#tabInfo .hd-class').show('fast');
 	convertA2Button(className, 'Lưu thay đổi', 'saveEditInfo(this);');
 };
-function saveEditInfo(className){ //Lưu thông tin cá nhân mới
+onchangeSelect('#gender', 'id', 'p');
+onchangeSelect('#dob select', 'id', 'span');
+function saveEditInfo(className){ //Lưu thông tin cá nhân mới - trang user
 	$('.infoBlock').find('input[type=text]').replaceWith(function () {
 		var p = $('<p>',{
             html: $(this).val(),
@@ -439,11 +479,15 @@ function saveEditInfo(className){ //Lưu thông tin cá nhân mới
         });
         return p;
 	});
+	$('#tabInfo .non-edit').show('fast');
+	$('#tabInfo .hd-class').hide('fast');
 	convertButton2A(className, 'Chỉnh sửa thông tin cá nhân', 'editInfo(this); return false;');
 };
-function HTMLFormChangePWD(){ //HTML Form thay đổi mật khẩu
+function HTMLFormChangePWD(){ //HTML Form thay đổi mật khẩu - trang user
 	var HTML = '';
 	HTML += '<div class="newFWDForm">';
+	HTML += '<label>Mật khẩu hiện tại</label>';
+	HTML += '<input type="text" class="oldPWDTxt" placeholder="Nhập mật khẩu hiện tại" />';
 	HTML += '<label>Mật khẩu mới</label>';
 	HTML += '<input type="text" class="newPWDTxt" placeholder="Nhập mật khẩu mới" />';
 	HTML += '<label>Xác nhận mật khẩu mới</label>';
@@ -451,20 +495,20 @@ function HTMLFormChangePWD(){ //HTML Form thay đổi mật khẩu
 	HTML += '</div>';
 	return HTML;
 }
-function changePWD(className){ //Thay đổi mật khẩu
+function changePWD(className){ //Thay đổi mật khẩu - trang user
 	convertA2Button(className, 'Lưu mật khẩu mới', 'saveNewPWD(this);');
 	$('.pwBlock p').hide();
 	$('.pwBlock label').hide();
 	$('.pwBlock').prepend(HTMLFormChangePWD());
 };
-function saveNewPWD(className){ //Lưu mật khẩu mới
+function saveNewPWD(className){ //Lưu mật khẩu mới - trang user
 	convertButton2A(className, 'Thay đổi mật khẩu', 'changePWD(this); return false;');
 	$('.newFWDForm').remove();
 	$('.pwBlock p').show();
 	$('.pwBlock label').show();
 };
-function editAddInfo(className){
-	$('.addressAccInfo').find('p').replaceWith(function () {
+function editAddInfo(className){ //Thay đổi thông tin - trang user
+	$('.addressAccInfo').find('p.editable').replaceWith(function () {
 		var input = $('<input>',{
             type: 'text',
             value: $(this).html(),
@@ -472,9 +516,10 @@ function editAddInfo(className){
         });
         return input;
 	});
+	$('#addressInfo .selectAdd').show();
 	convertA2Button(className, 'Lưu thông tin mới', 'saveAddInfo(this);');
 };
-function saveAddInfo(className){
+function saveAddInfo(className){ //Lưu thay đổi thông tin - trang user
 	$('.addressAccInfo').find('input[type=text]').replaceWith(function () {
 		var p = $('<p>',{
             html: $(this).val(),
@@ -482,26 +527,23 @@ function saveAddInfo(className){
         });
         return p;
 	});
+	$('#addressInfo .selectAdd').hide();
 	convertButton2A(className, 'Chỉnh sửa thông tin mua hàng', 'editAddInfo(this); return false;');
 };
-function editCartCheckout(className){ 
+function editCartCheckout(className){ //Edit số lượng trong giỏ hàng - trang checkout 2
 	var parentDiv = $(className).closest('.detailP-CO');
 	$(className).addClass('editCart').text('Cập nhật').attr('onclick', 'saveCartCheckout(this); return false;');
 	parentDiv.find('select.numberProCO').show();
 	parentDiv.find('span.numberProCO').css({opacity: 0});
 };
-function saveCartCheckout(className){ 
+function saveCartCheckout(className){  //Lưu edit số lượng trong giỏ hàng - trang checkout 2
 	var parentDiv = $(className).closest('.detailP-CO');
 	$(className).removeClass('editCart').text('Thay đổi').attr('onclick', 'editCartCheckout(this); return false;');
 	parentDiv.find('select.numberProCO').hide();
 	parentDiv.find('span.numberProCO').css({opacity: 1});
 };
-function onchangeSelectCartCheckout(){ //onchange
-	$('.subInfoCO select').change(function(){
-		var selectValue = $(this).val(),
-			selectClass = $(this).attr('class');
-		$('span.'+selectClass).text(selectValue).attr('value', selectValue);
-	});
+function onchangeSelectCartCheckout(){ //onchange checkout selectbox số lượng
+	onchangeSelect('.subInfoCO select', 'class','span');
 };
 function showregFormCO(){
 	$('.logButton').show();
@@ -519,7 +561,9 @@ function showlogFormCO(){
 	$('.txtReg').show();
 	$('.txtLog').hide();
 };
-
+function submitFilter(){
+	$('.selectedFilters').fadeIn('fast');
+};
 
 showSortBy();
 onChangeSortBy();

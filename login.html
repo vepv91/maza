@@ -130,6 +130,7 @@
 										</div>
 									</li>
 									<li><a href="#">Hàng mới</a></li>
+									<li class="visible-xs"><a href="#">Đăng nhập</a></li>
 								</ul>
 							</div>
 							<div class="iconList">
@@ -139,7 +140,7 @@
 									</form>
 									<div class="clearfix"></div>
 								</div>
-								<div class="cartForm" onclick="showHideCart();">
+								<div class="cartForm" onclick="showHideCart(this);" href="cart.html">
 									<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 									<span class="numProducts">3</span>
 									<button>Giỏ hàng</button>
@@ -172,12 +173,12 @@
 					<div class="row">
 						<div class="col-xs-12">
 							<button data-toggle="modal" data-target="#freeShipPopUp">Miễn phí giao hàng - <span>Chi tiết</span></button>
+							<span class="closeFreeShip" onclick="$('.freeShipping').hide();">&times;</span>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-
 		<section id="registerPage">
 			<div class="container">
 				<div class="row">
