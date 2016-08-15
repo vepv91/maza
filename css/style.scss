@@ -1,16 +1,27 @@
-// @font-face {
-//   font-family: 'OpenSansB';
-//   src: url("../fonts/OpenSans-Bold.ttf");
-//   font-weight: normal;
-//   font-style: normal;
-// }
-// @font-face {
-//   font-family: 'OpenSans';
-//   src: url("../fonts/OpenSans-Regular.ttf");
-//   font-style: normal;
-// }
+@font-face {
+  font-family: 'Maza';
+  src: url("../fonts/UVNHongHaHep_R.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'MazaB';
+  src: url("../fonts/UVNHongHaHep.ttf");
+}
+@font-face {
+  font-family: 'MazaHelL';
+  src: url("../fonts/helveticaneuelight.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'MazaHel';
+  src: url("../fonts/helveticaneue.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'MazaHelB';
+  src: url("../fonts/helveticaneuebold.ttf");
+}
 $imgURL: '../images';
-
 @mixin keyframes($animationName) {
     @-webkit-keyframes #{$animationName} {
         @content;
@@ -67,14 +78,16 @@ body{
 .floatRight{float: right;}
 .floatLeft{float: left;}
 .rq-input{border: 1px solid #f70404;}
- .sumAlertRQ {color: #f70404; font-weight: bold;}
+ .sumAlertRQ {color: #f70404;}
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{padding: 0 10px}
 button, a, img, li, input[type="button"]{outline: none}
-input[type="button"], textarea{
+input[type="text"], textarea{
 	border-radius: 0;
 	-webkit-appearance: none;
-	border-radius: 1px solid #ddd;
+	appearance: none;
+	border: 1px solid #ddd;
 	padding: 5px;
+	background: #fff;
 }
 select{
 	outline: -webkit-focus-ring-color auto 5px;
@@ -106,15 +119,19 @@ select{
 				font-size: 16px;
 				position: relative;
 				&.active{
-					text-decoration: underline;
+					> a{
+						color: #e50303;
+						border-bottom: 2px solid #e50303;
+					}
 				}
 				a{
 					color: #fafafa;
 					text-transform: uppercase;
-					padding: 28px 0;
+					padding: 22px 0;
 					font-weight: 600;
 					&:hover{
 						text-decoration: underline;
+						border-bottom: none;
 					}
 				}
 				.subMenu{
@@ -346,8 +363,8 @@ select{
 		color: #fafafa;
 		font-size: 28px;
 		background: #000;
-		font-weight: 600;
 		padding: 15px 50px;
+		font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
 		@include transition(all .3s linear);
 		&:hover{
 			background: #fff;
@@ -380,9 +397,9 @@ select{
 			text-align: center;
 			padding: 15px 0;
 			margin: 0;
-			font-weight: 700;
 			font-size: 20px;
 			@include transition(all .3s linear);
+            font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
 		}
 		img{
 			max-width: 100%;
@@ -402,7 +419,7 @@ select{
 }
 
 #mainCatHome{
-	padding: 60px 0 0;
+	padding: 40px 0 0;
 	img{
 		max-width: 100%;
 		width: 100%;
@@ -414,22 +431,21 @@ select{
 	.titleSection{
 		font-size: 30px;
 		font-weight: 700;
-		text-align: center;
 		padding-bottom: 10px;
+	    text-align: center;
 		text-transform: uppercase;
-		font-family: 'Source Sans Pro', 'Open Sans', 'Roboto', sans-serif;
 	}
 	.mainCatBlock{
-		margin-bottom: 40px;
+		margin-bottom: 20px;
 		text-align: center;
 		h3{
-			font-size: 18px;
+			font-size: 16px;
 			margin: 15px 0 0 0;
 			text-transform: uppercase; 
 			@include transition(all .3s linear);
 			display: inline-block;
 			position: relative;
-			font-weight: 600;
+			font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
 			&:after{
 				position: absolute;
 				top: 4px;
@@ -468,15 +484,13 @@ select{
 		outline: none;
 		display: block;
 	}
-	.storeBlock{
-		margin-bottom: 40px;
-	}
 	.titleSection{
 		font-size: 30px;
-		font-weight: 700;
 		text-align: center;
 		padding-bottom: 10px;
 		text-transform: uppercase;
+		font-weight: 700;
+		font-family: 'Playfair Display',  'Open Sans', 'Roboto', sans-serif;
 	}
 	.storeBlockMain{
 		li{
@@ -548,6 +562,8 @@ select{
 			width: 45%;
 			text-align: center;
 			margin-top: 10px;
+			font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+			text-transform: uppercase;
 			@include transition(all .2s linear);
 			&:hover{
 				background: #3995ae;
@@ -561,24 +577,25 @@ select{
 		}
 	}
 	.titleFooter{
-		font-size: 16px;
-		font-weight: 700;
+		font-size: 15px;
+		font-weight: 600;
 		margin-top: 0px;
+		color: #666;
 	}
 	ul{
 		margin-bottom: 25px;
 		li{
 			margin-bottom: 5px;
 			cursor: pointer;
-			color: #666;
+			color: #8a8a8a;
+			font-size: 13px;
 			a{
-				color: #666;
+				color: #8a8a8a;
 				@include transition(all .3s linear);
 				
 			}
 			&:hover{
 				a{
-					padding-left: 5px;
 					text-decoration: underline;
 				}
 			}
@@ -692,8 +709,7 @@ select{
 	.titleCategory{
 		margin: 30px 0 0;
 		.mainTitleCat{
-			font-size: 20px;
-			font-weight: 700;
+			font-size: 22px;
 			text-transform: uppercase;
 			margin-top: 0;
 		}
@@ -726,8 +742,9 @@ select{
 	}
 	.sortCategory{
 		position: relative;
+		text-transform: uppercase;
 		.activeArrow{
-			font-size: 10px;
+			font-size: 13px;
 		}
 		.sortBy{
 			cursor: pointer;
@@ -747,6 +764,7 @@ select{
 			padding: 15px 20px 15px 20px;
 			border: 1px solid #ddd;
 			margin-top: 5px;
+			text-transform: initial;
 			li{
 				margin: 5px 0;
 				cursor: pointer;
@@ -764,6 +782,7 @@ select{
 	}
 	.filterRight{
 		float: right;
+		text-transform: uppercase;
 		.allFilter{
 			float: left;
 			color: #333;
@@ -772,7 +791,7 @@ select{
 				text-decoration: none;
 			}
 			span{
-				font-size: 10px;
+				font-size: 13px;
 			}
 			&:hover{
 				text-decoration: underline;
@@ -784,6 +803,7 @@ select{
 				float: left;
 				margin-left: 30px;
 				position: relative;
+
 				&:active{
 					text-decoration: none;
 				}
@@ -791,7 +811,7 @@ select{
 					color: #333;
 					text-decoration: none;
 					span{
-						font-size: 10px;
+						font-size: 13px;
 					}
 					&:hover{
 						text-decoration: underline;
@@ -807,6 +827,7 @@ select{
 					border: 1px solid #ddd;
 					padding: 15px 20px;
 					display: none;
+					text-transform: initial;
 					ul{
 						li{
 							cursor: pointer;
@@ -827,8 +848,9 @@ select{
 		padding: 15px 20px;
 		margin-top: 10px;
 		h4{
-			font-size: 16px;
-			font-weight: 600;
+			font-size: 14px;
+			font-weight: 400;
+			text-transform: uppercase;
 		}
 		ul{
 			li{
@@ -845,12 +867,13 @@ select{
 		.submitFilter{
 			border: none;
 			outline: none;
-			background: #eee;
+			background: #A4A4A4;
 			border-radius: 4px;
-			color: #333;
+			color: #fff;
 			text-transform: uppercase;
 			font-weight: 600;
 			padding: 10px 25px;
+			margin-right: -10px;
 			&:hover{
 				background: #000;
 				color: #fafafa;
@@ -899,15 +922,16 @@ select{
 			}
 		}
 		.productItem{
-			margin-top: 30px;
+			margin-top: 10px;
+			margin-bottom: 30px;
 			border: 1px solid #fff;
-			&:hover{
-				border: 1px solid #ddd;
-				.priceBlock, .productTitle{
-					padding-left: 10px;
-					padding-right: 10px;
-				}
-			}
+			// &:hover{
+			// 	border: 1px solid #ddd;
+			// 	.priceBlock, .productTitle{
+			// 		padding-left: 10px;
+			// 		padding-right: 10px;
+			// 	}
+			// }
 			&> a{
 				position: relative;
 				overflow: hidden;
@@ -1018,7 +1042,8 @@ select{
 	}
 	.slick-dots{
 		text-align: center;
-		margin-top: 10px;
+		padding-top: 10px;
+		background: #fff !important;
 		li{
 			display: inline;
 			margin: 0 2px;
@@ -1048,9 +1073,9 @@ select{
 	}
 	.sliderIMG{
 		position: relative;
-		padding: 0 1% 0 0;
+		padding: 0 2% 0 0;
 		float: right;
-		width: calc(100% - 70px);
+		width: calc(100% - 57px);
 		ul{
 			background: url(../images/bg-slider-IMG.jpg) center center no-repeat;
 			background-size: cover;
@@ -1076,108 +1101,140 @@ select{
 		}
 		.price{
 			font-size: 24px;
+			margin-top: 10px;
 			.oldPrice{
 				text-decoration: line-through;
-				color: #afafaf;
-				font-size: 16px;
+				color: #696969;
 			}
 			.newPrice{
-				font-weight: 700;
-				color: #e10e25;
+				font-weight: 400;
+				color: #eb2e48;
 				padding: 0 10px;
 			}
 		}
 		.discount{
-			font-size: 16px;
+			font-size: 13px;
+			display: block;
+			margin-top: -8px;
+			color: #000;
 		}
 		.titleProduct{
-			font-size: 25px;
-			font-weight: 400;
+			font-family: 'MazaHelL', 'Open Sans', 'Roboto', sans-serif;
+			font-size: 28px;
+			font-weight: normal;
 			margin: 0 0 0px 0;
+			letter-spacing: .05rem;
+			line-height: 1.2 !important;
+			color: #000;
+		}
+		.productID{
+			font-size: 13px;
+			color: #696969;
 		}
 		.moreDetail{
 			margin-top: 20px;
 			h5{
-				font-size: 16px;
+				font-size: 13px;
 				margin-top: 0;
 				font-weight: 400;
+				text-transform: uppercase;
+				color: #696969;
+				margin-bottom: 5px;
 			}
 			.listColor{
 				li{
-					width: 30px;
-					height: 30px;
+					width: 28px;
+					height: 28px;
 					float: left;
 					margin-right: 5px;
-					border: 1px solid #ddd;
 					padding: 1px;
 					cursor: pointer;
 					&:hover, &.active{
-						border: 1px solid red;
+						position: relative;
+						&:after{
+							display: block;
+							content: '';
+							position: absolute;
+							bottom: -4px;
+							left: 10px;
+							width: 10px;
+							height: 2px;
+							background: #000;
+						}
 					}
 					span{
 						display: block;
 						width: 100%;
 						height: 100%;
+						border-radius: 50%;
 					}
 				}
 			}
 			#size{
 				width: 100%;
-				padding: 5px;
+				padding: 7px 5px;
 				outline: none;
-				height: 32px;
 				border: 1px solid #ddd;
 				cursor: pointer;
 			}
 		}
 		.callToAction{
 			input[type="submit"]{
-				background: #000;
 				color: #fafafa;
 				width: 100%;
 				text-align: center;
-				padding: 10px 0;
+				padding: 8px 0;
 				text-transform: uppercase;
 				border: none;
-				font-size: 18px;
+				font-size: 16px;
 				font-weight: 400;
 				cursor: pointer;
-				border-radius: 5px;
 				outline: none;
+				font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+				margin: 25px 0 0;
+				border-radius: 4px;
 			}
 			#addToCart{
-				border: 2px solid #000;
-				margin: 30px 0 10px;
+				border: 2px solid #3995ae;
+				background: #3995ae;
 				@include transition(all .2s linear);
 				&:hover{
-					background: #3995ae;
-					border: 2px solid #3995ae;
+					background: #000;
+					border: 2px solid #000;
 				}
 			}
 			#quickView{
-				border: 2px solid #ddd;
-				background: #fff;
+				border: 2px solid #eee;
+				background: #eee;
 				color: #333;
 				@include transition(all .2s linear);
 				&:hover{
-					border: 2px solid #000;
+					border: 2px solid #3995ae;
+					color: #3995ae;
 				}
 			}
 		}
 		.inStockAdd{
-			margin: 25px 0 20px;
+			margin: 25px 0 15px;
+			strong{
+				color: #696969;
+				font-weight: 400;
+				text-transform: uppercase;
+			}
 			ul{
 				margin-bottom: 0;
 				li{
 					list-style: disc;
 					margin-left: 15px;
+					color: #696969;
 				}
 			}
 		}
 		.recommendProduct{
 			h5{
+				color: #696969;
 				font-weight: 400;
-				font-size: 16px;
+				text-transform: uppercase;
 			}
 			img{
 				width: 100%;
@@ -1186,7 +1243,7 @@ select{
 		}
 	}
 	.contentDetail{
-		margin: 40px 0;
+		margin: 20px 0 40px;
 		h4{
 			font-size: 20px;
 			font-weight: 600;
@@ -1323,20 +1380,20 @@ select{
 	    }
 	}
 	.detailProductText{
-		padding-right: 2%;
+		padding-right: 3%;
 	}
 	.nav4sliderIMG{
 		float: left;
-		margin-right: 10px;
-		width: 60px;
+		margin-right: 5px;
+		width: 52px;
 		ul{
-			width: 60px;
+			width: 52px;
 			margin: 0 auto;
 		}
 		li{
 			outline: none;
 			cursor: pointer;
-			margin: 0 0 10px;
+			margin: 0 0 5px;
 			border: none;
 			&.slick-current{
 				opacity: 1;
@@ -1381,6 +1438,7 @@ select{
 			cursor: pointer;
 			margin-right: 30px;
 			h4{
+				font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
 				margin: 0;
 				font-size: 18px;
 				font-weight: normal;
@@ -1412,7 +1470,7 @@ select{
 			font-size: 12px;
 			float: left;
 			a{
-				color: #999;
+				color: #b7b7b7;
 				&:after{
 					display: inline; 
 					content: '/';
@@ -1424,7 +1482,6 @@ select{
 			}
 			span{
 				color: #333;
-				font-weight: 600;
 			}
 		}
 	}
@@ -1691,29 +1748,28 @@ select{
 	}
 }
 #registerPage{
-	background: #f9f9f9;
+	background: #efefef;
 	padding-bottom: 50px;
-
 	h3{
-		font-size: 22px;
-		border-bottom: 1px solid #ddd;
-		padding-bottom: 5px;
+		font-size: 25px;
 		margin-top: 50px;
-		font-weight: 700;
+		font-weight: 900;
 		text-transform: uppercase;
 	}
 	p{
 		color: #666;
+		font-size: 12px;
+		margin: 0;
 	}
 	label{
 		width: 100%;
 		font-weight: normal;
 		font-size: 14px;
 		text-transform: uppercase;
+		margin-top: 15px;
 	}
 	input[type="text"]{
 		width: 100%;
-		margin-bottom: 20px;
 		border: 1px solid #ddd;
 		padding: 8px 10px;
 		outline: none;
@@ -1726,17 +1782,17 @@ select{
 		}
 	}
 	input[type="button"]{
-		width: 100%;
+		width: 180px;
 		background: #000;
 		color: #fafafa;
 		padding: 8px 10px;
 		text-align: center;
 		border: none;
-		margin-top: 10px;
+		margin-top: 20px;
 		text-transform: uppercase;
 		font-size: 16px;
-		font-weight: 600;
 		@include transition(all .2s linear);
+		font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
 		&:hover{
 			background: #3995ae;
 		}
@@ -1772,7 +1828,6 @@ select{
 	}
 	.sumAlertRQ{
 		color: #f70404;
-		font-weight: bold;
 	}
 }
 #style-policyPage{
@@ -1899,8 +1954,17 @@ select{
 	.hd-class{
 		display: none;
 	}
+	.detailOrder{
+		li{
+			display: inline;
+			margin-right: 20px;
+			span{
+				font-weight: 700;
+			}
+		}
+	}
 	h3{
-		font-weight: 700;
+		font-weight: 900;
 		font-size: 25px;
 		text-transform: uppercase;
 		padding: 0;
@@ -2364,6 +2428,9 @@ select{
 				right: 10px;
 			}
 		}
+		.detailInfo .callToAction #quickView{
+			margin-top: 10px;
+		}
 	}
 	#cartPage{
 		.list3s{
@@ -2423,10 +2490,14 @@ select{
 					&:last-child{
 						border-bottom: none;
 					}
+					&.active{
+						a{
+							border: none;
+						}
+					}
 					a{
 						display: block;
 						padding: 15px 10px;
-						// font-weight: 600;
 						text-decoration: none;
 					}
 					.subMenu{
@@ -2525,6 +2596,7 @@ select{
 			margin-top: 0px;
 			text-align: center;
 			font-size: 20px;
+
 			&:hover{
 				background: #000;
 				color: #fafafa;
@@ -2974,7 +3046,7 @@ select{
 			width:50px;
 	    }
 	    .sliderIMG{
-	    	width: calc(100% - 54px);
+	    	width: calc(100% - 55px);
 	    }
 	}
 	#checkoutPage{
@@ -3003,7 +3075,7 @@ select{
 	}
 	#registerPage{
 		label{display: none;}
-		input[type="text"]{margin-bottom: 10px;}
+		input[type="text"]{margin-top: 10px;}
 	}
 	#fullSlider{
 		top: 80px;
@@ -3093,7 +3165,6 @@ select{
 		.titleSection{
 			margin-bottom: 0;
 			font-size: 22px;
-			font-weight: 600;
 		}
 		.mainCatBlock{
 			width: calc(100% - 20px);
@@ -3447,24 +3518,31 @@ select{
 			font-size: 15px;
 		}
 	}
-}
-@media (min-width: 1200px){
-	.container {
-	    width: 1280px;
-	}
-	#checkoutPage .container {
-	    width: 1170px;
-	}
-}
-@media  screen and (min-width: 1600px) {
-   .container {
-	    width: 1366px;
-	}
-	#checkoutPage .container {
-	    width: 1280px;
-	}
-}
-
+} 
+// @media (min-width: 1200px){
+// 	.container {
+// 	    width: 1200px;
+// 	}
+// 	#checkoutPage .container {
+// 	    width: 1170px;
+// 	}
+// }
+// @media  screen and (min-width: 1600px) {
+//    .container {
+// 	    width: 1366px;
+// 	}
+// 	#checkoutPage .container {
+// 	    width: 1280px;
+// 	}
+// }
+// @media  screen and (min-width: 1900px) {
+//    .container {
+// 	    width: 1170px;
+// 	}
+// 	#checkoutPage .container {
+// 	    width: 1170px;
+// 	}
+// }
 
 
 
