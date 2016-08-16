@@ -501,30 +501,29 @@ select{
 		.slick-arrow{
 			cursor: pointer;
 		    display: block;
-		    height: 36px;
+		    height: 38px;
 		    margin-top: -18px;
 		    position: absolute;
 		    text-indent: -9999px;
 		    top: 50%;
-		    width: 36px;
+		    width: 38px;
 		    z-index: 20;
 		    border: none;
 		    outline: none;
 		    background: none;
-		    border-radius: 4px;
+		    border-radius: 50%;
 		}
 		.slick-prev{
-			background: url(../images/arrow-slick.png) top left no-repeat;
-			left: 10px;
+			background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255,255,255,.6);
 			&:hover{
-		    	background: url(../images/arrow-slick.png) top left no-repeat rgba(0,0,0,.5);
+		    	background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255,255,255,.9);
 		    }
 		}
 		.slick-next{
-			background: url(../images/arrow-slick.png) top right no-repeat;
 			right: 10px;
+			background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255,255,255,.6);
 			&:hover{
-		    	background: url(../images/arrow-slick.png) top right no-repeat rgba(0,0,0,.5);
+		    	background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255,255,255,.9);
 		    }
 		}
 	}
@@ -985,28 +984,27 @@ select{
 	z-index: 100;
 	outline: none;
 	display: block;
-	width: 36px;
-	height: 36px;
+	width: 38px;
+	height: 38px;
 	border: none;
 	text-align: center;
 	line-height: 36px;
 	margin-top: -20px;
 	text-indent: -9999px;
-	background: url(../images/arrow-slick.png) left center;
-	border-radius: 4px;
+	border-radius: 50%;
 }
 .slick-prev{
-	background: url(../images/arrow-slick.png) top left no-repeat;
+	background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255,255,255,.6);
 	left: 10px;
 	&:hover{
-    	background: url(../images/arrow-slick.png) top left no-repeat rgba(0,0,0,.5);
+    	background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255,255,255,.9);
     }
 }
 .slick-next{
-	background: url(../images/arrow-slick.png) top right no-repeat;
 	right: 10px;
+	background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255,255,255,.6);
 	&:hover{
-    	background: url(../images/arrow-slick.png) top right no-repeat rgba(0,0,0,.5);
+    	background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255,255,255,.9);
     }
 }
 #detailPage{
@@ -1087,6 +1085,7 @@ select{
 		img{
 			width: 100%;
 			max-width: 100%;
+			position: relative;
 		}
 		.slick-track{
 			margin: 0 auto;
@@ -1141,6 +1140,22 @@ select{
 				color: #696969;
 				margin-bottom: 5px;
 			}
+			.listSize{
+				li{
+					float: left;
+					height: 28px;
+					min-width: 28px;
+					border: 1px solid #ddd;
+					margin-right: 5px;
+					text-align: center;
+					line-height: 26px;
+					cursor: pointer;
+					padding: 0 5px;
+					&.active{
+						border: 1px solid #000;
+					}
+				}
+			}
 			.listColor{
 				li{
 					width: 28px;
@@ -1149,6 +1164,7 @@ select{
 					margin-right: 5px;
 					padding: 1px;
 					cursor: pointer;
+
 					&:hover, &.active{
 						position: relative;
 						&:after{
@@ -1167,6 +1183,7 @@ select{
 						width: 100%;
 						height: 100%;
 						border-radius: 50%;
+						text-indent: -9999px;
 					}
 				}
 			}
@@ -1335,30 +1352,30 @@ select{
 		.slick-arrow{
 			cursor: pointer;
 		    display: block;
-		    height: 36px;
+		    height: 38px;
 		    margin-top: -18px;
 		    position: absolute;
 		    text-indent: -9999px;
 		    top: 40%;
-		    width: 36px;
+		    width: 38px;
 		    z-index: 20;
 		    border: none;
 		    outline: none;
 		    background: none;
-			border-radius: 4px;
+			border-radius: 50%;
 		}
 		.slick-prev{
-			background: url(../images/arrow-slick.png) top left no-repeat;
+			background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255,255,255,.6);
 			left: 20px;
 			&:hover{
-		    	background: url(../images/arrow-slick.png) top left no-repeat rgba(0,0,0,.5);
+		    	background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255,255,255,.9);
 		    }
 		}
 		.slick-next{
-			background: url(../images/arrow-slick.png) top right no-repeat;
 			right: 10px;
+			background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255,255,255,.6);
 			&:hover{
-		    	background: url(../images/arrow-slick.png) top right no-repeat rgba(0,0,0,.5);
+		    	background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255,255,255,.9);
 		    }
 		}
 	}
@@ -1366,9 +1383,10 @@ select{
 		font-size: 20px;
 	    display: block;
 	    margin-bottom: 10px;
-	    font-weight: 600;
+	    font-weight: normal;
 	    border-bottom: 1px solid #eee;
 	    padding-bottom: 10px;
+		font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
 	    strong{
 			text-transform: uppercase;
 	    }
@@ -1393,14 +1411,17 @@ select{
 		li{
 			outline: none;
 			cursor: pointer;
-			margin: 0 0 5px;
+			height: 64px;
+			margin: 0 0 5px 0;
 			border: none;
+			overflow: hidden;
 			&.slick-current{
 				opacity: 1;
 			}
 			img{
 				max-width: 100%;
 				width: 100%;
+				height: auto;
 			}
 			a{
 				outline: none;
@@ -1438,13 +1459,15 @@ select{
 			cursor: pointer;
 			margin-right: 30px;
 			h4{
-				font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+				font-family: 'Maza', 'Open Sans', 'Roboto', sans-serif;
 				margin: 0;
 				font-size: 18px;
 				font-weight: normal;
+				color: #696969;
 			}
 			&.active h4{
-				font-weight: 600;
+				color: #333;
+				font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
 			}
 		}
 	}
@@ -2420,12 +2443,18 @@ select{
 				margin: 0 5px;
 			}
 			.slick-prev{
-				background: url(../images/arrow-slick.png) top left no-repeat;
+				background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255,255,255,.6);
 				left: 10px;
+				&:hover{
+			    	background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255,255,255,.9);
+			    }
 			}
 			.slick-next{
-				background: url(../images/arrow-slick.png) top right no-repeat;
 				right: 10px;
+				background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255,255,255,.6);
+				&:hover{
+			    	background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255,255,255,.9);
+			    }
 			}
 		}
 		.detailInfo .callToAction #quickView{
@@ -3283,7 +3312,6 @@ select{
     			left: -35px;
     		}
     		.slick-arrow{
-    			background-size: 60px;
     			width: 30px;
     			height: 30px;
     		}
@@ -3317,7 +3345,6 @@ select{
 			display: none;
 		}
 		.productID{
-			margin-bottom: 10px;
 			display: block;
 		}
 	}

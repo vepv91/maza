@@ -24,7 +24,7 @@ $('.sliderIMG ul').slick({
     slidesToScroll: 2,
     speed: 500,
 	arrows: true, 
-	dots: true,
+	dots: false,
 	asNavFor: '.nav4sliderIMG ul',
     responsive:[{
 	  	breakpoint: 480,
@@ -65,6 +65,7 @@ $('.nav4sliderIMG ul').slick({
 		}
 	]
 });
+$('.zoomOnHover').zoom();
 $('.recommendList').slick({
     infinite: true,
     slidesToShow: 4,
@@ -264,15 +265,16 @@ function chooseColor(){ //Chọn màu sắc & kích cỡ
 	$('.listColor li').click(function(){
 		$('.listColor li').removeClass('active');
 		$(this).addClass('active');
+		$('.titleColor span').text($(this).text());
 		checkColor = 1;
 		$('.sumAlertColor').fadeOut('fast');
 	});
-	$('#size').on('change',function(){
-	    checkSize = this.value;
-	    if(checkSize == 0)
-	    	$('.sumAlertSize').fadeIn('fast');
-	    else
-	    	$('.sumAlertSize').fadeOut('fast');
+	$('.listSize li').click(function(){
+		$('.listSize li').removeClass('active');
+		$(this).addClass('active');
+		$('.titleSize span').text($(this).text());
+		checkSize = 1;
+		$('.sumAlertSize').fadeOut('fast');
 	});
 };
 function tabs(){ //tab in detail page
@@ -401,7 +403,7 @@ function getFullSlider(){ //get Slider - please dont edit this function
 	$('#detailPage').append(HTMLNavFullSlider());
 	lengthSlider = $('.sliderIMG ul li').length;
 	$('.sliderIMG ul li').click(function(){
-		urlIMGFull 		= $(this).find('img').attr('data-full'),
+		urlIMGFull 		= $(this).find('a').attr('src'),
 		curIMGIndex 	= $(this).index();
 		$('#fullSlider .modal-body img').attr('src', urlIMGFull);
 	});

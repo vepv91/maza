@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Maza.vn - Chi tiết sản phẩm</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+</head>
+<body>
+	<div style="width: 600px; margin: 0 auto;">
+		<div class="sliderNe">
+			<ul>
+				<li class="zoomOnHover" data-toggle="modal" data-target="#fullSlider">
+					<img data-full="images/detail-1.jpg" src="images/detail-1.jpg"alt="">
+				</li>
+				<li class="zoomOnHover" data-toggle="modal" data-target="#fullSlider">
+					<img data-full="images/detail-2.jpg" src="images/detail-2.jpg"alt="">
+				</li>
+				<li class="zoomOnHover" data-toggle="modal" data-target="#fullSlider">
+					<img data-full="images/detail-3.jpg" src="images/detail-3.jpg"alt="">
+				</li>
+				<li class="zoomOnHover" data-toggle="modal" data-target="#fullSlider">
+					<img data-full="images/detail-4.jpg" src="images/detail-4.jpg"alt="">
+				</li>
+				<li class="zoomOnHover" data-toggle="modal" data-target="#fullSlider">
+					<img data-full="images/detail-5.jpg" src="images/detail-5.jpg"alt="">
+				</li>
+				<li class="zoomOnHover" data-toggle="modal" data-target="#fullSlider">
+					<img data-full="images/detail-3.jpg" src="images/detail-3.jpg"alt="">
+				</li>
+			</ul>
+		</div>
+		<div class="navSlider">
+			<ul>
+				<li><img src="images/thumb-detail-1.jpg"alt=""></li>
+				<li><img src="images/thumb-detail-2.jpg"alt=""></li>
+				<li><img src="images/thumb-detail-3.jpg"alt=""></li>
+				<li><img src="images/thumb-detail-4.jpg"alt=""></li>
+				<li><img src="images/thumb-detail-5.jpg"alt=""></li>
+				<li><img src="images/thumb-detail-3.jpg"alt=""></li>
+			</ul>
+		</div>
+	</div>
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/jquery.zoom.min.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+	$('.sliderNe ul').slick({
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    speed: 500,
+	arrows: false, 
+	dots: false,
+	asNavFor: '.navSlider ul'
+});
+$('.navSlider ul').slick({
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 2,
+    speed: 500,
+	arrows: false, 
+	dots: false,
+	asNavFor: '.sliderNe ul',
+	vertical:true,
+	verticalSwiping: true,
+	// centerMode: true,
+	// centerPadding: '0px',
+	focusOnSelect: true
+});
+</script>
+</body>
+</html>
