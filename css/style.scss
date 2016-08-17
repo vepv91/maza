@@ -21,7 +21,20 @@
   font-family: 'MazaHelB';
   src: url("../fonts/helveticaneuebold.ttf");
 }
+
 $imgURL: '../images';
+$bodyFont: 'Source Sans Pro', 'Open Sans', 'Roboto', sans-serif;
+$titleFontBold: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+$titleFontRegular: 'Maza', 'Open Sans', 'Roboto', sans-serif;
+$fontColor1: #333;
+$fontColor2: #666;
+$fontColor3: #696969;
+$fontColor4: #8a8a8a;
+$borderColor: 1px solid #ddd;
+$blueColor: #3995ae;
+$redColor: #f12424;
+
+
 @mixin keyframes($animationName) {
     @-webkit-keyframes #{$animationName} {
         @content;
@@ -60,6 +73,7 @@ $imgURL: '../images';
 	-o-animation-delay: $delayt;
 	animation-delay: $delayt;
 }
+
 .floatLeft{float: left;}
 .floatRight{float: right;}
 *{margin: 0; padding: 0;}
@@ -68,24 +82,24 @@ a:hover{text-decoration: none;}
 img{outline: none; border: none}
 ul, li, ol{list-style: none}
 body{
-	font-family: 'Source Sans Pro', 'Open Sans', 'Roboto', sans-serif;
+	font-family: $bodyFont;
 	font-size: 14px;
-	color: #333;
+	color: $fontColor1;
 	line-height: 1.6 !important;
 	background: #fff;
 }
 .clearfix{clear: both;}
 .floatRight{float: right;}
 .floatLeft{float: left;}
-.rq-input{border: 1px solid #f70404;}
- .sumAlertRQ {color: #f70404;}
+.rq-input{border: 1px solid $redColor;}
+ .sumAlertRQ {color: $redColor;}
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{padding: 0 10px}
 button, a, img, li, input[type="button"]{outline: none}
 input[type="text"], textarea{
 	border-radius: 0;
 	-webkit-appearance: none;
 	appearance: none;
-	border: 1px solid #ddd;
+	border: $borderColor;
 	padding: 5px;
 	background: #fff;
 }
@@ -120,8 +134,8 @@ select{
 				position: relative;
 				&.active{
 					> a{
-						color: #e50303;
-						border-bottom: 2px solid #e50303;
+						color: $redColor;
+						border-bottom: 2px solid $redColor;
 					}
 				}
 				a{
@@ -164,12 +178,12 @@ select{
 					}
 					h4{
 						font-weight: 700;
-						border-bottom: 1px solid #ddd;
+						border-bottom: $borderColor;
 						font-size: 16px;
 						padding-bottom: 10px;
 						white-space: nowrap;
 						a{
-							color: #333;
+							color: $fontColor1;
 						}
 					}
 					li{
@@ -179,7 +193,7 @@ select{
 						margin-bottom: 10px;
 						a{
 							text-transform: initial;
-							color: #333;
+							color: $fontColor1;
 							display: block;
 							padding: 0px 0;
 							font-weight: normal;
@@ -240,15 +254,15 @@ select{
 					float: left;
 					&[type="text"]{
 						outline: none;
-						color: #333;
+						color: $fontColor1;
 						font-size: 14px;
 						width: 100%;
 						border: 1px solid #fff;
-						border-bottom: 1px solid #ddd;
+						border-bottom: $borderColor;
 						padding: 5px;
 						@include transition(all .2s linear);
 						&:hover, &:focus{
-							border-bottom: 1px solid #3995ae;
+							border-bottom: 1px solid $blueColor;
 						}
 					}
 					&[type="image"]{
@@ -281,7 +295,7 @@ select{
 					left: 10px;
 					z-index: 151;
 					font-size: 11px;
-					background: red;
+					background: $redColor;
 					display: block;
 					min-width: 16px; 
 					height: 16px;
@@ -364,11 +378,11 @@ select{
 		font-size: 28px;
 		background: #000;
 		padding: 15px 50px;
-		font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+		font-family: $titleFontBold;
 		@include transition(all .3s linear);
 		&:hover{
 			background: #fff;
-			color: #333;
+			color: $fontColor1;
 		}
 	}
 	.Male{
@@ -399,7 +413,7 @@ select{
 			margin: 0;
 			font-size: 20px;
 			@include transition(all .3s linear);
-            font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+            font-family: $titleFontBold;
 		}
 		img{
 			max-width: 100%;
@@ -445,7 +459,7 @@ select{
 			@include transition(all .3s linear);
 			display: inline-block;
 			position: relative;
-			font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+			font-family: $titleFontBold;
 			&:after{
 				position: absolute;
 				top: 4px;
@@ -455,7 +469,7 @@ select{
 				content: '';
 				width: 10px;
 				height: 10px;
-				background: url(../images/icon-arrow.png) center center no-repeat;
+				background: url($imgURL+'/icon-arrow.png') center center no-repeat;
 				background-size: 70%;
 			}
 		}
@@ -464,7 +478,7 @@ select{
 				transform: scale(1.05,1.05);
 			}
 			a{
-				color: #3995ae;
+				color: $blueColor;
 			}
 		}
 	}
@@ -514,16 +528,16 @@ select{
 		    border-radius: 50%;
 		}
 		.slick-prev{
-			background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255,255,255,.6);
+			background: url($imgURL+'/arrow-slick-prev.png') center center no-repeat rgba(255,255,255,.6);
 			&:hover{
-		    	background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255,255,255,.9);
+		    	background: url($imgURL+'/arrow-slick-prev.png') center center no-repeat rgba(255,255,255,.9);
 		    }
 		}
 		.slick-next{
 			right: 10px;
-			background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255,255,255,.6);
+			background: url($imgURL+'/arrow-slick-next.png') center center no-repeat rgba(255,255,255,.6);
 			&:hover{
-		    	background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255,255,255,.9);
+		    	background: url($imgURL+'/arrow-slick-next.png') center center no-repeat rgba(255,255,255,.9);
 		    }
 		}
 	}
@@ -531,7 +545,7 @@ select{
 #footer{
 	margin: 50px 0 20px;
 	.container{
-		border-top: 1px solid #ddd;
+		border-top: $borderColor;
 		.row{
 			padding-top: 40px;
 			.row{
@@ -546,10 +560,10 @@ select{
 			width: 100%;
 			padding: 5px 10px;
 			outline: none;
-			border: 1px solid #ddd;
+			border: $borderColor;
 			@include transition(all .2s linear);
 			&:hover{
-				border: 1px solid #3995ae;
+				border: 1px solid $blueColor;
 			}
 		}
 		input[type="button"]{
@@ -561,11 +575,11 @@ select{
 			width: 45%;
 			text-align: center;
 			margin-top: 10px;
-			font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+			font-family: $titleFontBold;
 			text-transform: uppercase;
 			@include transition(all .2s linear);
 			&:hover{
-				background: #3995ae;
+				background: $blueColor;
 			}
 		}
 	}
@@ -689,14 +703,14 @@ select{
 	}
 	.subCategory{
 		width: 100%;
-		border-bottom: 1px solid #ddd;
+		border-bottom: $borderColor;
 		ul{
 			width: 100%;
 			text-align: center;
 			li{
 				display: inline;
 				a{
-					color: #333;
+					color: $fontColor1;
 					padding: 10px;
 					&:hover{
 						text-decoration: underline;
@@ -719,7 +733,7 @@ select{
 			display: inline;
 			margin: 0 3px;
 			a{
-				color: #333;
+				color: $fontColor1;
 				padding: 7px 12px;
 				&:hover{
 					text-decoration: underline;
@@ -761,7 +775,7 @@ select{
 			z-index: 500;
 			background: #fff;
 			padding: 15px 20px 15px 20px;
-			border: 1px solid #ddd;
+			border: $borderColor;
 			margin-top: 5px;
 			text-transform: initial;
 			li{
@@ -784,7 +798,7 @@ select{
 		text-transform: uppercase;
 		.allFilter{
 			float: left;
-			color: #333;
+			color: $fontColor1;
 			text-decoration: none;
 			&:active{
 				text-decoration: none;
@@ -807,7 +821,7 @@ select{
 					text-decoration: none;
 				}
 				a{
-					color: #333;
+					color: $fontColor1;
 					text-decoration: none;
 					span{
 						font-size: 13px;
@@ -823,7 +837,7 @@ select{
 					z-index: 500;
 					background: #fff;
 					white-space: nowrap;
-					border: 1px solid #ddd;
+					border: $borderColor;
 					padding: 15px 20px;
 					display: none;
 					text-transform: initial;
@@ -843,7 +857,7 @@ select{
 	}
 	.allFilterBlock{
 		display: none;
-		border: 1px solid #ddd;
+		border: $borderColor;
 		padding: 15px 20px;
 		margin-top: 10px;
 		h4{
@@ -924,13 +938,6 @@ select{
 			margin-top: 10px;
 			margin-bottom: 30px;
 			border: 1px solid #fff;
-			// &:hover{
-			// 	border: 1px solid #ddd;
-			// 	.priceBlock, .productTitle{
-			// 		padding-left: 10px;
-			// 		padding-right: 10px;
-			// 	}
-			// }
 			&> a{
 				position: relative;
 				overflow: hidden;
@@ -994,35 +1001,35 @@ select{
 	border-radius: 50%;
 }
 .slick-prev{
-	background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255,255,255,.6);
+	background: url($imgURL+'/arrow-slick-prev.png') center center no-repeat rgba(255,255,255,.6);
 	left: 10px;
 	&:hover{
-    	background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255,255,255,.9);
+    	background: url($imgURL+'/arrow-slick-prev.png') center center no-repeat rgba(255,255,255,.9);
     }
 }
 .slick-next{
 	right: 10px;
-	background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255,255,255,.6);
+	background: url($imgURL+'/arrow-slick-next.png') center center no-repeat rgba(255,255,255,.6);
 	&:hover{
-    	background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255,255,255,.9);
+    	background: url($imgURL+'/arrow-slick-next.png') center center no-repeat rgba(255,255,255,.9);
     }
 }
 #detailPage{
 	table{
-		border-left: 1px solid #ddd;
-		border-top: 1px solid #ddd;
+		border-left: $borderColor;
+		border-top: $borderColor;
 		margin-bottom: 10px;
 		tr{
 			td{
-				border-right: 1px solid #ddd;
-				border-bottom: 1px solid #ddd;
+				border-right: $borderColor;
+				border-bottom: $borderColor;
 				padding: 5px 8px;
 			}
 		}
 		thead{
 			th{
-				border-right: 1px solid #ddd;
-				border-bottom: 1px solid #ddd;
+				border-right: $borderColor;
+				border-bottom: $borderColor;
 				padding: 5px 8px;
 			}
 		}
@@ -1047,7 +1054,7 @@ select{
 			margin: 0 2px;
 			button{
 				background: none;
-				border: 1px solid #ddd;
+				border: $borderColor;
 				width: 7px;
 				height: 7px;
 				border-radius: 50%;
@@ -1075,7 +1082,7 @@ select{
 		float: right;
 		width: calc(100% - 57px);
 		ul{
-			background: url(../images/bg-slider-IMG.jpg) center center no-repeat;
+			background: url($imgURL+'/bg-slider-IMG.jpg') center center no-repeat;
 			background-size: cover;
 		}
 		li{
@@ -1107,7 +1114,7 @@ select{
 			}
 			.newPrice{
 				font-weight: 400;
-				color: #eb2e48;
+				color: $redColor;
 				padding: 0 10px;
 			}
 		}
@@ -1145,7 +1152,7 @@ select{
 					float: left;
 					height: 28px;
 					min-width: 28px;
-					border: 1px solid #ddd;
+					border: $borderColor;
 					margin-right: 5px;
 					text-align: center;
 					line-height: 26px;
@@ -1191,7 +1198,7 @@ select{
 				width: 100%;
 				padding: 7px 5px;
 				outline: none;
-				border: 1px solid #ddd;
+				border: $borderColor;
 				cursor: pointer;
 			}
 		}
@@ -1207,13 +1214,13 @@ select{
 				font-weight: 400;
 				cursor: pointer;
 				outline: none;
-				font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+				font-family: $titleFontBold;
 				margin: 25px 0 0;
 				border-radius: 4px;
 			}
 			#addToCart{
-				border: 2px solid #3995ae;
-				background: #3995ae;
+				border: 2px solid $blueColor;
+				background: $blueColor;
 				@include transition(all .2s linear);
 				&:hover{
 					background: #000;
@@ -1223,11 +1230,11 @@ select{
 			#quickView{
 				border: 2px solid #eee;
 				background: #eee;
-				color: #333;
+				color: $fontColor1;
 				@include transition(all .2s linear);
 				&:hover{
-					border: 2px solid #3995ae;
-					color: #3995ae;
+					border: 2px solid $blueColor;
+					color: $blueColor;
 				}
 			}
 		}
@@ -1302,7 +1309,7 @@ select{
 				}
 			}
 			&:hover{
-				border: 1px solid #ddd;
+				border: $borderColor;
 				.priceBlock, .productTitle{
 					padding-left: 10px;
 					padding-right: 10px;
@@ -1365,28 +1372,29 @@ select{
 			border-radius: 50%;
 		}
 		.slick-prev{
-			background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255,255,255,.6);
+			background: url($imgURL+'/arrow-slick-prev.png') center center no-repeat rgba(255,255,255,.6);
 			left: 20px;
 			&:hover{
-		    	background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255,255,255,.9);
+		    	background: url($imgURL+'/arrow-slick-prev.png') center center no-repeat rgba(255,255,255,.9);
 		    }
 		}
 		.slick-next{
 			right: 10px;
-			background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255,255,255,.6);
+			background: url($imgURL+'/arrow-slick-next.png') center center no-repeat rgba(255,255,255,.6);
 			&:hover{
-		    	background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255,255,255,.9);
+		    	background: url($imgURL+'/arrow-slick-next.png') center center no-repeat rgba(255,255,255,.9);
 		    }
 		}
 	}
 	.relatedProductsTitle{
-		font-size: 20px;
+		font-size: 18px;
 	    display: block;
 	    margin-bottom: 10px;
 	    font-weight: normal;
 	    border-bottom: 1px solid #eee;
 	    padding-bottom: 10px;
-		font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+		font-family: $titleFontBold;
+		text-transform: uppercase;
 	    strong{
 			text-transform: uppercase;
 	    }
@@ -1451,7 +1459,7 @@ select{
 		width: 100%;
 		height: 30px;
 		margin-left: 0 !important;
-		border-bottom: 1px solid #ddd;
+		border-bottom: $borderColor;
 		margin-bottom: 10px !important;
 		li{
 			float: left;
@@ -1459,15 +1467,16 @@ select{
 			cursor: pointer;
 			margin-right: 30px;
 			h4{
-				font-family: 'Maza', 'Open Sans', 'Roboto', sans-serif;
+				font-family: $titleFontRegular;
 				margin: 0;
 				font-size: 18px;
 				font-weight: normal;
 				color: #696969;
+				text-transform: uppercase;
 			}
 			&.active h4{
-				color: #333;
-				font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+				color: $fontColor1;
+				font-family: $titleFontBold;
 			}
 		}
 	}
@@ -1504,7 +1513,7 @@ select{
 				}
 			}
 			span{
-				color: #333;
+				color: $fontColor1;
 			}
 		}
 	}
@@ -1526,21 +1535,9 @@ select{
 				width: 100%;
 				padding: 8px 10px;
 				outline: none;
-				border: 1px solid #ddd;
+				border: $borderColor;
 				margin: 20px 0 15px;
 				text-align: center;
-			}
-			input[type="button"]{
-				width: 100%;
-				padding: 8px 0;
-				text-align: center;
-				text-transform: uppercase;
-				color: #fafafa;
-				background: #000;
-				border: none;
-				outline: none;
-				cursor: pointer;
-				font-size: 16px;
 			}
 		}
 		input[type="button"]{
@@ -1554,6 +1551,7 @@ select{
 			outline: none;
 			cursor: pointer;
 			font-size: 16px;
+			font-family: $titleFontBold;
 		}
 	}
 	.modal-body{
@@ -1630,7 +1628,7 @@ select{
 	width: 500px;
 	padding: 20px;
 	background: #fff;
-	color: #333;
+	color: $fontColor1;
 	box-shadow: 0 2px 40px rgba(0, 0, 0, 0.2);
 	display: none;
 	max-height: calc(100% - 104px);
@@ -1685,7 +1683,7 @@ select{
 	}
 	#goToCart{
 		float: right;
-		background: #3995ae;
+		background: $blueColor;
 		border-radius: 4px;
 		padding: 5px 15px;
 		color: #fff;
@@ -1703,7 +1701,7 @@ select{
 	right: 0;
 	z-index: 500;
 	background: #fff;
-	color: #333;
+	color: $fontColor1;
 	box-shadow: 0 2px 40px rgba(0, 0, 0, 0.2);
 	padding: 20px 20px;
 	width: 380px;
@@ -1711,21 +1709,23 @@ select{
 	input{
 		width: 100%;
 		outline: none;
-		border: 1px solid #ddd;
+		border: $borderColor;
 		padding: 8px 10px;
 		margin-bottom: 10px;
 		@include transition (all .2s linear);
 		&:hover, &:focus{
-			border: 1px solid #3995ae;
+			border: 1px solid $blueColor;
 		}
 		&[type="button"]{
 			background: #000;
 			border: none;
 			cursor: pointer;
 			color: #fafafa;
-			@include transition (all .2s linear);
+			font-family: $titleFontBold;
+			text-transform: uppercase; 
+			@include transition (all .2s linear); 
 			&:hover{
-				background: #3995ae;
+				background: $blueColor;
 				border: none;
 				color: #fafafa;
 			}
@@ -1733,11 +1733,11 @@ select{
 	}
 	a{
 		text-align: center;
-		color: #333;
+		color: $fontColor1;
 		display: block;
 		@include transition (all .2s linear);
 		&:hover{
-			color: #3995ae;
+			color: $blueColor;
 		}
 	}
 }
@@ -1793,15 +1793,15 @@ select{
 	}
 	input[type="text"]{
 		width: 100%;
-		border: 1px solid #ddd;
+		border: $borderColor;
 		padding: 8px 10px;
 		outline: none;
 		@include transition(all .2s linear);
 		&.rq-input{
-			border: 1px solid #f70404;
+			border: 1px solid $redColor;
 		}
 		&:hover, &:focus{
-			border: 1px solid #3995ae;
+			border: 1px solid $blueColor;
 		}
 	}
 	input[type="button"]{
@@ -1815,9 +1815,9 @@ select{
 		text-transform: uppercase;
 		font-size: 16px;
 		@include transition(all .2s linear);
-		font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+		font-family: $titleFontBold;
 		&:hover{
-			background: #3995ae;
+			background: $blueColor;
 		}
 	}
 	.forRemember, #rememberID, .followID, #follow{
@@ -1827,10 +1827,10 @@ select{
 		a{
 			padding-top: 10px;
 			display: block;
-			color: #333;
+			color: $fontColor1;
 			@include transition(all .2s linear);
 			&:hover{
-				color: #3995ae;
+				color: $blueColor;
 			}
 		}
 		p{
@@ -1841,16 +1841,16 @@ select{
 		a{
 			padding-top: 10px;
 			display: block;
-			color: #333;
+			color: $fontColor1;
 			text-decoration: underline;
 			@include transition(all .2s linear);
 			&:hover{
-				color: #3995ae;
+				color: $blueColor;
 			}
 		}
 	}
 	.sumAlertRQ{
-		color: #f70404;
+		color: $redColor;
 	}
 }
 #style-policyPage{
@@ -1866,7 +1866,7 @@ select{
 		.menuPolicyLeft{
 			text-align: right;
 			a{
-				color: #333;
+				color: $fontColor1;
 			}
 			li{
 				margin-bottom: 10px;
@@ -1894,7 +1894,7 @@ select{
 		.topPics{
 			text-align: center;
 			a{
-				color: #333;
+				color: $fontColor1;
 				&:hover{
 					color: #428bca;
 				}
@@ -1944,7 +1944,7 @@ select{
 				width: 100%;
 			}
 			.detailMorePost{
-				border: 1px solid #ddd;
+				border: $borderColor;
 				overflow: hidden;
 				padding: 10px 10px 5px 10px;
 				a{
@@ -1995,7 +1995,7 @@ select{
 	}
 	select{
 		outline: none;
-		border: 1px solid #ddd;
+		border: $borderColor;
 		padding: 5px;
 		margin-right: 5px;
 	}
@@ -2020,10 +2020,10 @@ select{
 	.tabListLeft{
 		ul{
 			border: none;
-			border-top: 1px solid #ddd;
+			border-top: $borderColor;
 			li{
 				width: 100%;
-				border-bottom: 1px solid #ddd;
+				border-bottom: $borderColor;
 				border-left: 1px solid #eee;
 				margin-bottom: 0px;
 				text-transform: uppercase;
@@ -2032,7 +2032,7 @@ select{
 					margin-right: 10px;
 				}
 				&.active{
-					border: 1px solid #ddd;
+					border: $borderColor;
 					border-right: 1px solid #fff;
 					border-top: none;
 					background: #fff;
@@ -2059,7 +2059,7 @@ select{
 					cursor: pointer;
 					text-align: left;
 					display: block;
-					color: #333;
+					color: $fontColor1;
 					text-decoration: none;
 					padding: 15px 10px 15px 15px;
 				}
@@ -2072,7 +2072,7 @@ select{
 		}
 	}
 	.contentTabRight{
-		border: 1px solid #ddd;
+		border: $borderColor;
 		min-height: 200px;
 		margin-left: -11px;
 		background: #fff;
@@ -2102,14 +2102,14 @@ select{
 			overflow-x: auto;
 		}
 		input[type="text"]{
-			border: 1px solid #ddd;
+			border: $borderColor;
 			padding: 5px;
 			outline: none;
 			width: 100%;
 			margin-bottom: 10px;
 			@include transition (all .2s linear);
 			&:hover, &:focus{
-				border: 1px solid #3995ae;
+				border: 1px solid $blueColor;
 			}
 		}
 		input[type="button"]{
@@ -2122,7 +2122,7 @@ select{
 			margin-bottom: 10px;
 			@include transition (all .2s linear);
 			&:hover{
-				background: #3995ae;
+				background: $blueColor;
 			}
 		}
 		#tabInfo{
@@ -2190,7 +2190,7 @@ select{
 				margin-right: 10px;
 			}
 			select{
-				border: 1px solid #ddd;
+				border: $borderColor;
 				padding: 6px 5px;
 				outline: none;
 				width: 100%;
@@ -2206,7 +2206,7 @@ select{
 					font-size: 14px;
 					a{
 						font-size: 13px;
-						color: #3995ae;
+						color: $blueColor;
 						text-decoration: underline;
 					}
 					span.ahuhu{
@@ -2216,7 +2216,7 @@ select{
 						color: #eb0101;
 					}
 					&.titleP a{
-						color: #333;
+						color: $fontColor1;
 						font-weight: 600;
 						text-decoration: none;
 					}
@@ -2235,14 +2235,14 @@ select{
 		}
 		.tableFooter{
 			font-size: 16px;
-			border-top: 1px solid #ddd;
+			border-top: $borderColor;
 			padding: 15px 20px;
 			input[type="button"]{
 				border: none;
 				text-transform: uppercase;
 				font-weight: 700;
 				color: #fafafa;
-				background: #3995ae;
+				background: $blueColor;
 				padding: 10px;
 				width: 100%;
 				border-radius: 4px;
@@ -2255,7 +2255,7 @@ select{
 		}
 	}
 	.cartRight{
-		background: #333;
+		background: $fontColor1;
 		color: #fafafa;
 		padding: 20px;
 		h3{
@@ -2275,7 +2275,7 @@ select{
 		}
 		a{
 			display: block;
-			color: #3995ae;
+			color: $blueColor;
 			text-align: center;
 			text-decoration: underline;
 			@include transition (all .2s linear);
@@ -2288,7 +2288,7 @@ select{
 			text-transform: uppercase;
 			font-weight: 700;
 			color: #fafafa;
-			background: #3995ae;
+			background: $blueColor;
 			padding: 10px;
 			width: 100%;
 			border-radius: 4px;
@@ -2297,7 +2297,7 @@ select{
 			@include transition (all .2s linear);
 			&:hover{
 				background: #fff;
-				color: #333;
+				color: $fontColor1;
 			}
 		}
 	}
@@ -2443,17 +2443,17 @@ select{
 				margin: 0 5px;
 			}
 			.slick-prev{
-				background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255,255,255,.6);
+				background: url($imgURL+'/arrow-slick-prev.png') center center no-repeat rgba(255,255,255,.6);
 				left: 10px;
 				&:hover{
-			    	background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255,255,255,.9);
+			    	background: url($imgURL+'/arrow-slick-prev.png') center center no-repeat rgba(255,255,255,.9);
 			    }
 			}
 			.slick-next{
 				right: 10px;
-				background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255,255,255,.6);
+				background: url($imgURL+'/arrow-slick-next.png') center center no-repeat rgba(255,255,255,.6);
 				&:hover{
-			    	background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255,255,255,.9);
+			    	background: url($imgURL+'/arrow-slick-next.png') center center no-repeat rgba(255,255,255,.9);
 			    }
 			}
 		}
@@ -2509,13 +2509,13 @@ select{
 				overflow-y: auto;
 				box-shadow: 0 2px 25px rgba(0, 0, 0, 0.4);
 				a{
-					color: #333 !important;
+					color: $fontColor1 !important;
 				}
 				li{
 					padding-right: 0px;
 					float: none;
 					width: 100%;
-					border-bottom: 1px solid #ddd;
+					border-bottom: $borderColor;
 					&:last-child{
 						border-bottom: none;
 					}
@@ -2538,7 +2538,7 @@ select{
 						padding: 0 0px;
 						h4{
 							margin-top: 0;
-							border-top: 1px solid #ddd;
+							border-top: $borderColor;
 							border-bottom: none;
 							padding-top: 10px;
 							padding-bottom: 0px;
@@ -2610,7 +2610,7 @@ select{
 		.freeShipping{
 			position: static;
 			text-align: center;
-			color: #333;
+			color: $fontColor1;
 			background: #f9f9f9;
 			padding: 8px 0 5px;
 			button{
@@ -2642,7 +2642,7 @@ select{
 		}
 	}
 	.hasSubMenu{
-		background: url(../images/icon-arrow.png) right center no-repeat;
+		background: url($imgURL+'/icon-arrow.png') right center no-repeat;
 	}
 	.breadcrumbBlock{
 		margin: 10px 0;
@@ -2756,10 +2756,10 @@ select{
 }
 #checkoutPage{
 	a{
-		color: #333;
+		color: $fontColor1;
 		@include transition(all .2s linear);
 		&:hover{
-			color: #3995ae !important;
+			color: $blueColor !important;
 		}
 	}
 	.header{
@@ -2774,7 +2774,7 @@ select{
 	}
 	.continueShopping{
 		float: right;
-		color: #333;
+		color: $fontColor1;
 		padding: 0px;
 		font-size: 20px;
 		font-weight: 600;
@@ -2820,7 +2820,7 @@ select{
 			    z-index: 1;
 			}
 			a{
-				color: #333;
+				color: $fontColor1;
 				&:after{
 					position: absolute;
 				    top: 0;
@@ -2836,11 +2836,11 @@ select{
 				}
 			}
 			&.active{
-				background: #333;
+				background: $fontColor1;
 				a{
 					color: #fafafa;
 					&:after{
-		    			border-left-color: #333;
+		    			border-left-color: $fontColor1;
 					}
 				}
 			}
@@ -2861,25 +2861,26 @@ select{
 	form{
 		label{
 			font-weight: normal;
+			margin-top: 10px;
+		}
+		p{
+			margin-bottom: 0;
+			font-size: 12px;
 		}
 		input[type="text"]{
-			border: 1px solid #ddd;
+			border: $borderColor;
 			padding: 7px 10px;
 			width: 100%;
 			outline: none;
 			-webkit-appearance: none;
 			border-radius: 0;
-			margin-bottom: 15px;
 			@include transition(all .2s linear);
 			&:hover, &:focus{
-				border: 1px solid #3995ae;
+				border: 1px solid $blueColor;
 			}
 		}
-		select{
-			margin-bottom: 15px;
-		}
 		input[type="button"]{
-			background: #333;
+			background: $fontColor1;
 			padding: 8px 10px;
 			width: 100%;
 			color: #fafafa;
@@ -2888,11 +2889,12 @@ select{
 			cursor: pointer;
 			font-size: 16px;
 			font-weight: 600;
-			margin: 10px 0 20px;
+			margin: 20px 0 20px;
+			font-family: $titleFontBold;
 		}
 	}
 	input[type="button"]{
-		background: #333;
+		background: $fontColor1;
 		padding: 8px 10px;
 		width: 100%;
 		color: #fafafa;
@@ -2902,9 +2904,10 @@ select{
 		font-size: 16px;
 		font-weight: 600;
 		margin: 20px 0;
+		font-family: $titleFontBold;
 		@include transition(all .2s linear);
 		&:hover{
-			background: #3995ae;
+			background: $blueColor;
 		}
 	}
 	input[type="radio"]{	
@@ -2917,18 +2920,19 @@ select{
 	h4{
 		font-size: 18px;
 		text-transform: uppercase;
-		font-weight: 600;
+		font-weight: 700;
 		padding-bottom: 10px;
 		margin-bottom: 10px;
-		border-bottom: 1px solid #ddd;
+		border-bottom: $borderColor;
 	}
 	h2{
-		background: url(../images/patternHeader-checkout.jpg) top left repeat;
-		font-size: 28px;
-		font-weight: bold;
-		padding: 25px 25px;
+		background: url($imgURL+'/patternHeader-checkout.jpg') top left repeat;
+		font-size: 32px;
+		padding: 20px 25px;
 		text-transform: uppercase;
 		margin-bottom: 20px;
+	    font-weight: 700;
+	    font-family: $titleFontBold;
 	}
 	.buttonForMaza{
 		background: none;
@@ -2949,24 +2953,24 @@ select{
 	}
 	select{
 		width: 100%;
-		border: 1px solid #ddd;
+		border: $borderColor;
 		padding: 8px 5px;
 		outline: none;
 		@include transition(all .2s linear);
 		&:hover, &:focus{
-			border: 1px solid #3995ae;
+			border: 1px solid $blueColor;
 		}
 	}
 	textarea{
 		width: 100%;
-		border: 1px solid #ddd;
+		border: $borderColor;
 		outline: none;
 		padding: 8px 10px;
 		resize: none;
 		min-height: 100px;
 		@include transition(all .2s linear);
 		&:hover, &:focus{
-			border: 1px solid #3995ae;
+			border: 1px solid $blueColor;
 		}
 	}
 	.rowPCheckOut{
@@ -2990,10 +2994,10 @@ select{
 			a{
 				float: right;
 				margin-left: 10px;
-				color: #333;
+				color: $fontColor1;
 				text-decoration: underline;
 				&.editCart{
-					background: #3995ae;
+					background: $blueColor;
 					padding: 0px 7px;
 					border-radius: 3px;
 					color: #fff !important;
@@ -3003,7 +3007,7 @@ select{
 		}
 		.subInfoCO{
 			input[type="text"]{
-				border: 1px solid #ddd;
+				border: $borderColor;
 				outline: none;
 				padding: 2px 5px;
 			}
@@ -3019,10 +3023,10 @@ select{
 		}
 	}
 	.cartCheckOutRight{
-		border: 1px solid #ddd;
+		border: $borderColor;
 		padding: 20px;
 		.totalCO{
-			border-top: 1px solid #ddd;
+			border-top: $borderColor;
 			padding-top: 10px;
 		}
 	}
@@ -3197,7 +3201,7 @@ select{
 		}
 		.mainCatBlock{
 			width: calc(100% - 20px);
-			border-bottom: 1px solid #333;
+			border-bottom: 1px solid $fontColor1;
 			padding: 0;
 			margin: 10px 10px;
 			padding-bottom: 10px;
@@ -3209,7 +3213,7 @@ select{
 				top: 4px;
 				display: block;
 				content: '';
-				background: url(../images/icon-arrow.png) center center no-repeat;
+				background: url($imgURL+'/icon-arrow.png') center center no-repeat;
 				width: 10px;
 				height: 10px;
 			}
@@ -3229,7 +3233,7 @@ select{
 		.catBlock{
 			h4{
 				background: #fff;
-				color: #333;
+				color: $fontColor1;
 				width: calc(100% - 40px);
 				left: 20px;
 				bottom: 10px;
@@ -3237,7 +3241,7 @@ select{
 			&:hover{
 				h4{
 					background: #fff;
-					color: #333;
+					color: $fontColor1;
 				}
 			}
 		}
@@ -3421,7 +3425,7 @@ select{
 				&.active{
 					a{
 						&:after{
-			    			border-left-color: #333;
+			    			border-left-color: $fontColor1;
 						}
 					}
 				}
@@ -3440,7 +3444,7 @@ select{
 			}
 		}
 		a{
-			color: #333;
+			color: $fontColor1;
 		}
 		input[type="button"]{
 			margin: 10px 0 10px !important;
@@ -3517,7 +3521,7 @@ select{
 	}
 	input[type="button"]{
 		border: none;
-		background: #3995ae;
+		background: $blueColor;
 		outline: none;
 		width: 100%;
 		text-align: center;
@@ -3535,7 +3539,7 @@ select{
 	border-radius: 0;
 }
 #logOutPopUp{
-	color: #333;
+	color: $fontColor1;
 	top: 50%;
 	margin-top: -35px;
 	.modal-body{
@@ -3546,30 +3550,6 @@ select{
 		}
 	}
 } 
-// @media (min-width: 1200px){
-// 	.container {
-// 	    width: 1200px;
-// 	}
-// 	#checkoutPage .container {
-// 	    width: 1170px;
-// 	}
-// }
-// @media  screen and (min-width: 1600px) {
-//    .container {
-// 	    width: 1366px;
-// 	}
-// 	#checkoutPage .container {
-// 	    width: 1280px;
-// 	}
-// }
-// @media  screen and (min-width: 1900px) {
-//    .container {
-// 	    width: 1170px;
-// 	}
-// 	#checkoutPage .container {
-// 	    width: 1170px;
-// 	}
-// }
 
 
 

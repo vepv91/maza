@@ -18,24 +18,7 @@ $('.storeBlockMain').slick({
 		}
 	]
 });
-$('.sliderIMG ul').slick({
-    infinite: true,
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    speed: 500,
-	arrows: true, 
-	dots: false,
-	asNavFor: '.nav4sliderIMG ul',
-    responsive:[{
-	  	breakpoint: 480,
-		  	settings: {
-		  		slidesToShow: 1,
-    			slidesToScroll: 1,
-    			dots: false
-		  	}
-		}
-	]
-});
+
 $('.nav4sliderIMG ul').slick({
     infinite: true,
     slidesToShow: 5,
@@ -61,6 +44,24 @@ $('.nav4sliderIMG ul').slick({
 				slidesToShow: 5,
 				slidesToScroll: 1,
 				centerPadding: '0px'
+		  	}
+		}
+	]
+});
+$('.sliderIMG ul').slick({
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    speed: 500,
+	arrows: true, 
+	dots: false,
+	asNavFor: '.nav4sliderIMG ul',
+    responsive:[{
+	  	breakpoint: 480,
+		  	settings: {
+		  		slidesToShow: 1,
+    			slidesToScroll: 1,
+    			dots: false
 		  	}
 		}
 	]
@@ -388,7 +389,7 @@ function nextSlide(){ //next Slider - please dont edit this function
 		curIMGIndex = 0;
 	else
 		curIMGIndex ++;
-	urlIMGFull = $('.sliderIMG ul li:eq('+curIMGIndex+')').find('img').attr('data-full');
+	urlIMGFull = $('.sliderIMG ul li:eq('+curIMGIndex+')').find('a').attr('src');
 	$('#fullSlider .modal-body img').attr('src', urlIMGFull);
 };
 function prevSlide(){ //prev Slider - please dont edit this function
@@ -396,7 +397,7 @@ function prevSlide(){ //prev Slider - please dont edit this function
 		curIMGIndex = lengthSlider-1;
 	else
 		curIMGIndex --;
-	urlIMGFull = $('.sliderIMG ul li:eq('+curIMGIndex+')').find('img').attr('data-full');
+	urlIMGFull = $('.sliderIMG ul li:eq('+curIMGIndex+')').find('a').attr('src');
 	$('#fullSlider .modal-body img').attr('src', urlIMGFull);
 };
 function getFullSlider(){ //get Slider - please dont edit this function

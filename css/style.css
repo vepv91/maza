@@ -53,7 +53,7 @@ ul, li, ol {
 }
 
 body {
-  font-family: 'Source Sans Pro', 'Open Sans', 'Roboto', sans-serif;
+  font-family: "Source Sans Pro", "Open Sans", "Roboto", sans-serif;
   font-size: 14px;
   color: #333;
   line-height: 1.6 !important;
@@ -73,11 +73,11 @@ body {
 }
 
 .rq-input {
-  border: 1px solid #f70404;
+  border: 1px solid #f12424;
 }
 
 .sumAlertRQ {
-  color: #f70404;
+  color: #f12424;
 }
 
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
@@ -130,8 +130,8 @@ select {
   position: relative;
 }
 #header .topMenu .mainMenu li.active > a {
-  color: #e50303;
-  border-bottom: 2px solid #e50303;
+  color: #f12424;
+  border-bottom: 2px solid #f12424;
 }
 #header .topMenu .mainMenu li a {
   color: #fafafa;
@@ -292,7 +292,7 @@ select {
   left: 10px;
   z-index: 151;
   font-size: 11px;
-  background: red;
+  background: #f12424;
   display: block;
   min-width: 16px;
   height: 16px;
@@ -369,7 +369,7 @@ select {
   font-size: 28px;
   background: #000;
   padding: 15px 50px;
-  font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+  font-family: "MazaB", "Open Sans", "Roboto", sans-serif;
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;
   -ms-transition: all 0.3s linear;
@@ -415,7 +415,7 @@ select {
   -ms-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
-  font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+  font-family: "MazaB", "Open Sans", "Roboto", sans-serif;
 }
 #catHome .catBlock img {
   max-width: 100%;
@@ -471,7 +471,7 @@ select {
   transition: all 0.3s linear;
   display: inline-block;
   position: relative;
-  font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+  font-family: "MazaB", "Open Sans", "Roboto", sans-serif;
 }
 #mainCatHome .mainCatBlock h3:after {
   position: absolute;
@@ -482,7 +482,7 @@ select {
   content: '';
   width: 10px;
   height: 10px;
-  background: url(../images/icon-arrow.png) center center no-repeat;
+  background: url("../images/icon-arrow.png") center center no-repeat;
   background-size: 70%;
 }
 #mainCatHome .mainCatBlock:hover img {
@@ -537,17 +537,17 @@ select {
   border-radius: 50%;
 }
 #mazaStore .storeBlockMain .slick-prev {
-  background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255, 255, 255, 0.6);
+  background: url("../images/arrow-slick-prev.png") center center no-repeat rgba(255, 255, 255, 0.6);
 }
 #mazaStore .storeBlockMain .slick-prev:hover {
-  background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255, 255, 255, 0.9);
+  background: url("../images/arrow-slick-prev.png") center center no-repeat rgba(255, 255, 255, 0.9);
 }
 #mazaStore .storeBlockMain .slick-next {
   right: 10px;
-  background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255, 255, 255, 0.6);
+  background: url("../images/arrow-slick-next.png") center center no-repeat rgba(255, 255, 255, 0.6);
 }
 #mazaStore .storeBlockMain .slick-next:hover {
-  background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255, 255, 255, 0.9);
+  background: url("../images/arrow-slick-next.png") center center no-repeat rgba(255, 255, 255, 0.9);
 }
 
 #footer {
@@ -589,7 +589,7 @@ select {
   width: 45%;
   text-align: center;
   margin-top: 10px;
-  font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+  font-family: "MazaB", "Open Sans", "Roboto", sans-serif;
   text-transform: uppercase;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
@@ -1029,19 +1029,19 @@ select {
 }
 
 .slick-prev {
-  background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255, 255, 255, 0.6);
+  background: url("../images/arrow-slick-prev.png") center center no-repeat rgba(255, 255, 255, 0.6);
   left: 10px;
 }
 .slick-prev:hover {
-  background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255, 255, 255, 0.9);
+  background: url("../images/arrow-slick-prev.png") center center no-repeat rgba(255, 255, 255, 0.9);
 }
 
 .slick-next {
   right: 10px;
-  background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255, 255, 255, 0.6);
+  background: url("../images/arrow-slick-next.png") center center no-repeat rgba(255, 255, 255, 0.6);
 }
 .slick-next:hover {
-  background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255, 255, 255, 0.9);
+  background: url("../images/arrow-slick-next.png") center center no-repeat rgba(255, 255, 255, 0.9);
 }
 
 #detailPage table {
@@ -1104,7 +1104,7 @@ select {
   width: calc(100% - 57px);
 }
 #detailPage .sliderIMG ul {
-  background: url(../images/bg-slider-IMG.jpg) center center no-repeat;
+  background: url("../images/bg-slider-IMG.jpg") center center no-repeat;
   background-size: cover;
 }
 #detailPage .sliderIMG li {
@@ -1135,7 +1135,7 @@ select {
 }
 #detailPage .detailInfo .price .newPrice {
   font-weight: 400;
-  color: #eb2e48;
+  color: #f12424;
   padding: 0 10px;
 }
 #detailPage .detailInfo .discount {
@@ -1228,7 +1228,7 @@ select {
   font-weight: 400;
   cursor: pointer;
   outline: none;
-  font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+  font-family: "MazaB", "Open Sans", "Roboto", sans-serif;
   margin: 25px 0 0;
   border-radius: 4px;
 }
@@ -1403,27 +1403,28 @@ select {
   border-radius: 50%;
 }
 #detailPage .relatedProducts .slick-prev {
-  background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255, 255, 255, 0.6);
+  background: url("../images/arrow-slick-prev.png") center center no-repeat rgba(255, 255, 255, 0.6);
   left: 20px;
 }
 #detailPage .relatedProducts .slick-prev:hover {
-  background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255, 255, 255, 0.9);
+  background: url("../images/arrow-slick-prev.png") center center no-repeat rgba(255, 255, 255, 0.9);
 }
 #detailPage .relatedProducts .slick-next {
   right: 10px;
-  background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255, 255, 255, 0.6);
+  background: url("../images/arrow-slick-next.png") center center no-repeat rgba(255, 255, 255, 0.6);
 }
 #detailPage .relatedProducts .slick-next:hover {
-  background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255, 255, 255, 0.9);
+  background: url("../images/arrow-slick-next.png") center center no-repeat rgba(255, 255, 255, 0.9);
 }
 #detailPage .relatedProductsTitle {
-  font-size: 20px;
+  font-size: 18px;
   display: block;
   margin-bottom: 10px;
   font-weight: normal;
   border-bottom: 1px solid #eee;
   padding-bottom: 10px;
-  font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+  font-family: "MazaB", "Open Sans", "Roboto", sans-serif;
+  text-transform: uppercase;
 }
 #detailPage .relatedProductsTitle strong {
   text-transform: uppercase;
@@ -1498,15 +1499,16 @@ select {
   margin-right: 30px;
 }
 #detailPage .tabs li h4 {
-  font-family: 'Maza', 'Open Sans', 'Roboto', sans-serif;
+  font-family: "Maza", "Open Sans", "Roboto", sans-serif;
   margin: 0;
   font-size: 18px;
   font-weight: normal;
   color: #696969;
+  text-transform: uppercase;
 }
 #detailPage .tabs li.active h4 {
   color: #333;
-  font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+  font-family: "MazaB", "Open Sans", "Roboto", sans-serif;
 }
 #detailPage .tabContent h4 {
   display: none;
@@ -1568,18 +1570,6 @@ select {
   margin: 20px 0 15px;
   text-align: center;
 }
-#quickBuyPopUp .modal-content form#callTo input[type="button"] {
-  width: 100%;
-  padding: 8px 0;
-  text-align: center;
-  text-transform: uppercase;
-  color: #fafafa;
-  background: #000;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font-size: 16px;
-}
 #quickBuyPopUp .modal-content input[type="button"] {
   width: 100%;
   padding: 8px 0;
@@ -1591,6 +1581,7 @@ select {
   outline: none;
   cursor: pointer;
   font-size: 16px;
+  font-family: "MazaB", "Open Sans", "Roboto", sans-serif;
 }
 #quickBuyPopUp .modal-body {
   padding: 15px 20px 25px;
@@ -1771,6 +1762,8 @@ select {
   border: none;
   cursor: pointer;
   color: #fafafa;
+  font-family: "MazaB", "Open Sans", "Roboto", sans-serif;
+  text-transform: uppercase;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -ms-transition: all 0.2s linear;
@@ -1858,7 +1851,7 @@ select {
   transition: all 0.2s linear;
 }
 #registerPage input[type="text"].rq-input {
-  border: 1px solid #f70404;
+  border: 1px solid #f12424;
 }
 #registerPage input[type="text"]:hover, #registerPage input[type="text"]:focus {
   border: 1px solid #3995ae;
@@ -1878,7 +1871,7 @@ select {
   -ms-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
-  font-family: 'MazaB', 'Open Sans', 'Roboto', sans-serif;
+  font-family: "MazaB", "Open Sans", "Roboto", sans-serif;
 }
 #registerPage input[type="button"]:hover {
   background: #3995ae;
@@ -1917,7 +1910,7 @@ select {
   color: #3995ae;
 }
 #registerPage .sumAlertRQ {
-  color: #f70404;
+  color: #f12424;
 }
 
 #style-policyPage .topBannerFull {
@@ -2496,18 +2489,18 @@ select {
     margin: 0 5px;
   }
   #detailPage .relatedProducts .slick-prev {
-    background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255, 255, 255, 0.6);
+    background: url("../images/arrow-slick-prev.png") center center no-repeat rgba(255, 255, 255, 0.6);
     left: 10px;
   }
   #detailPage .relatedProducts .slick-prev:hover {
-    background: url(../images/arrow-slick-prev.png) center center no-repeat rgba(255, 255, 255, 0.9);
+    background: url("../images/arrow-slick-prev.png") center center no-repeat rgba(255, 255, 255, 0.9);
   }
   #detailPage .relatedProducts .slick-next {
     right: 10px;
-    background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255, 255, 255, 0.6);
+    background: url("../images/arrow-slick-next.png") center center no-repeat rgba(255, 255, 255, 0.6);
   }
   #detailPage .relatedProducts .slick-next:hover {
-    background: url(../images/arrow-slick-next.png) center center no-repeat rgba(255, 255, 255, 0.9);
+    background: url("../images/arrow-slick-next.png") center center no-repeat rgba(255, 255, 255, 0.9);
   }
   #detailPage .detailInfo .callToAction #quickView {
     margin-top: 10px;
@@ -2680,7 +2673,7 @@ select {
   }
 
   .hasSubMenu {
-    background: url(../images/icon-arrow.png) right center no-repeat;
+    background: url("../images/icon-arrow.png") right center no-repeat;
   }
 
   .breadcrumbBlock {
@@ -2888,6 +2881,11 @@ select {
 }
 #checkoutPage form label {
   font-weight: normal;
+  margin-top: 10px;
+}
+#checkoutPage form p {
+  margin-bottom: 0;
+  font-size: 12px;
 }
 #checkoutPage form input[type="text"] {
   border: 1px solid #ddd;
@@ -2896,7 +2894,6 @@ select {
   outline: none;
   -webkit-appearance: none;
   border-radius: 0;
-  margin-bottom: 15px;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -ms-transition: all 0.2s linear;
@@ -2905,9 +2902,6 @@ select {
 }
 #checkoutPage form input[type="text"]:hover, #checkoutPage form input[type="text"]:focus {
   border: 1px solid #3995ae;
-}
-#checkoutPage form select {
-  margin-bottom: 15px;
 }
 #checkoutPage form input[type="button"] {
   background: #333;
@@ -2919,7 +2913,8 @@ select {
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
-  margin: 10px 0 20px;
+  margin: 20px 0 20px;
+  font-family: "MazaB", "Open Sans", "Roboto", sans-serif;
 }
 #checkoutPage input[type="button"] {
   background: #333;
@@ -2932,6 +2927,7 @@ select {
   font-size: 16px;
   font-weight: 600;
   margin: 20px 0;
+  font-family: "MazaB", "Open Sans", "Roboto", sans-serif;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -ms-transition: all 0.2s linear;
@@ -2951,18 +2947,19 @@ select {
 #checkoutPage h4 {
   font-size: 18px;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #ddd;
 }
 #checkoutPage h2 {
-  background: url(../images/patternHeader-checkout.jpg) top left repeat;
-  font-size: 28px;
-  font-weight: bold;
-  padding: 25px 25px;
+  background: url("../images/patternHeader-checkout.jpg") top left repeat;
+  font-size: 32px;
+  padding: 20px 25px;
   text-transform: uppercase;
   margin-bottom: 20px;
+  font-weight: 700;
+  font-family: "MazaB", "Open Sans", "Roboto", sans-serif;
 }
 #checkoutPage .buttonForMaza {
   background: none;
@@ -3254,7 +3251,7 @@ select {
     top: 4px;
     display: block;
     content: '';
-    background: url(../images/icon-arrow.png) center center no-repeat;
+    background: url("../images/icon-arrow.png") center center no-repeat;
     width: 10px;
     height: 10px;
   }
