@@ -18,7 +18,6 @@ $('.storeBlockMain').slick({
 		}
 	]
 });
-
 $('.nav4sliderIMG ul').slick({
     infinite: true,
     slidesToShow: 5,
@@ -66,7 +65,6 @@ $('.sliderIMG ul').slick({
 		}
 	]
 });
-$('.zoomOnHover').zoom();
 $('.recommendList').slick({
     infinite: true,
     slidesToShow: 4,
@@ -99,7 +97,6 @@ $('.relatedList').slick({
 	    }
 	]
 });
-
 $(function(){ // this function for responsive on mobile devices - please dont edit this
 	if($(window).width() < 992){
 		var cloneMainDetail = $('.detailProductText').clone();
@@ -546,7 +543,11 @@ function saveCartCheckout(className){  //Lưu edit số lượng trong giỏ hà
 	parentDiv.find('span.numberProCO').css({opacity: 1});
 };
 function onchangeSelectCartCheckout(){ //onchange checkout selectbox số lượng
-	onchangeSelect('.subInfoCO select', 'class','span');
+	$('select.numberProCO').change(function(){
+		var selectValue = $(this).val(),
+			selectClass = $(this).attr('class');
+		$(this).closest('.subInfoCO').find('span.'+selectClass).text(selectValue).attr('value', selectValue);
+	});
 };
 function showregFormCO(){
 	$('.logButton').show();
@@ -567,6 +568,28 @@ function showlogFormCO(){
 function submitFilter(){
 	$('.selectedFilters').fadeIn('fast');
 };
+function showSelect(className){ //show / hide custom selectbox
+	var idSlideUpDown = $(className).next('.listOption');
+	showHide(idSlideUpDown);
+};
+function optionClick(){ //onchange custom selecbox
+	var itemOption = $('.listOption li');
+	itemOption.click(function(){
+		var selectValue 	= $(this).find('span').text(),
+			listOption		= $(this).closest('.listOption'),
+			checkedOption 	= listOption.prev('.currentOption');
+		checkedOption.text(selectValue);
+		listOption.slideUp('fast');
+	});
+};
+$(document).click(function(e){ 
+    if(e.target.className != 'customSelect' && !$('.customSelect').find(e.target).length){
+        $('.listOption').hide();
+    }
+    // if(e.target.className != 'menuMobileClick' && !$('.menuMobileClick').find(e.target).length){
+    //     $('.menuMobileClick').hide();
+    // }
+});
 
 showSortBy();
 onChangeSortBy();
@@ -577,6 +600,7 @@ getAllFilter();
 onChangeAllFilter();
 chooseColor();
 tabs();
+optionClick();
+onchangeSelectCartCheckout();
 radioCheck('#newMem','#logOldMem','#logNewMem');
 radioCheck('#oldMem','#logNewMem','#logOldMem');
-onchangeSelectCartCheckout();

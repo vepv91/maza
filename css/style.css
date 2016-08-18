@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'Maza';
   src: url("../fonts/UVNHongHaHep_R.ttf");
@@ -101,6 +102,48 @@ select {
   outline: -webkit-focus-ring-color auto 5px;
   background: #fff;
   border-radius: 0;
+}
+
+.customSelect {
+  position: relative;
+}
+.customSelect .currentOption {
+  display: block;
+  border: 1px solid #ddd;
+  background: #fff;
+  height: 38px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.customSelect .currentOption:hover {
+  border: 1px solid #3995ae;
+}
+.customSelect .listOption {
+  border: 1px solid #ddd;
+  border-top: none;
+  position: absolute;
+  margin-bottom: 0;
+  top: 38px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 10;
+  display: none;
+}
+.customSelect .listOption li {
+  padding: 2px 10px;
+}
+.customSelect .listOption li:hover {
+  background: #0093ff;
+  color: #fff;
+}
+.customSelect:after {
+  display: block;
+  position: absolute;
+  top: 12px;
+  right: 5px;
+  content: '▼';
+  font-size: 10px;
 }
 
 #header .topMenu {
@@ -2672,8 +2715,15 @@ select {
     float: right;
   }
 
-  .hasSubMenu {
-    background: url("../images/icon-arrow.png") right center no-repeat;
+  .hasSubMenu:after {
+    display: block;
+    content: '➤';
+    color: #000;
+    position: absolute;
+    top: 17px;
+    right: 10px;
+    font-size: 12px;
+    z-index: 12;
   }
 
   .breadcrumbBlock {
@@ -3217,11 +3267,15 @@ select {
   }
 
   #bannerHeader {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   #bannerHeader a {
     font-size: 16px;
     padding: 10px 10px;
+  }
+
+  #mainCatHome {
+    padding-top: 0px;
   }
 
   #subBannerHome {
@@ -3247,13 +3301,13 @@ select {
   }
   #mainCatHome .mainCatBlock:after {
     position: absolute;
-    right: 0;
-    top: 4px;
     display: block;
-    content: '';
-    background: url("../images/icon-arrow.png") center center no-repeat;
-    width: 10px;
-    height: 10px;
+    content: '➤';
+    color: #000;
+    top: 0px;
+    right: 0px;
+    font-size: 10px;
+    z-index: 12;
   }
   #mainCatHome .mainCatBlock h3 {
     margin-top: 0;
@@ -3461,6 +3515,9 @@ select {
   }
   #checkoutPage a {
     color: #333;
+  }
+  #checkoutPage input[type="text"] {
+    margin-bottom: 10px;
   }
   #checkoutPage input[type="button"] {
     margin: 10px 0 10px !important;
