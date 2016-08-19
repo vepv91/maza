@@ -582,13 +582,22 @@ function optionClick(){ //onchange custom selecbox
 		listOption.slideUp('fast');
 	});
 };
+function showHideMenuMobile(className){
+	showHide('.mainMenu');
+	if($(className).hasClass('active'))
+		$(className).removeClass('active');
+	else
+		$(className).addClass('active');
+};
 $(document).click(function(e){ 
     if(e.target.className != 'customSelect' && !$('.customSelect').find(e.target).length){
         $('.listOption').hide();
     }
-    // if(e.target.className != 'menuMobileClick' && !$('.menuMobileClick').find(e.target).length){
-    //     $('.menuMobileClick').hide();
-    // }
+    if(e.target.className != 'iconList' && !$('.iconList').find(e.target).length){
+        $('.popUpLogin').hide();
+        $('.popUpCart').hide();
+        $('#mainSearchForm').hide();
+    }
 });
 
 showSortBy();

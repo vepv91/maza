@@ -2434,6 +2434,40 @@ select {
   outline: none;
 }
 
+#pageNotFound {
+  text-align: center;
+  padding: 40px 0 30px;
+}
+#pageNotFound h3 {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+#pageNotFound ul {
+  text-align: center;
+  margin: 50px 0 0;
+}
+#pageNotFound ul li {
+  display: inline;
+  margin: 0 10px;
+}
+#pageNotFound ul li a {
+  padding: 10px 20px;
+  background: #000;
+  text-transform: uppercase;
+  color: #fafafa;
+  font-size: 16px;
+  font-family: "MazaB", "Open Sans", "Roboto", sans-serif;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+#pageNotFound ul li a:hover {
+  background: #3995ae;
+}
+
 @media screen and (max-width: 992px) {
   #header .subMenuTop .s3 li {
     margin-right: 20px;
@@ -2667,6 +2701,15 @@ select {
     margin: 7px 0 5px;
     background: #fff;
     display: block;
+  }
+  #header .topMenu .menuMobile.active span:nth-of-type(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  #header .topMenu .menuMobile.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+  #header .topMenu .menuMobile.active span:nth-of-type(3) {
+    transform: translateY(-9px) rotate(-45deg);
   }
   #header .topMenu .iconList #mainSearchForm {
     position: fixed;
@@ -3181,6 +3224,24 @@ select {
 
   #cartPage {
     padding-top: 15px;
+  }
+
+  #pageNotFound {
+    padding: 10px 0 0px;
+  }
+  #pageNotFound ul {
+    margin-top: 20px;
+  }
+  #pageNotFound ul li {
+    display: block;
+    width: 60%;
+    padding: 5px 0px;
+    margin: 0 auto;
+  }
+  #pageNotFound ul li a {
+    padding: 10px 20px;
+    display: block;
+    width: 100%;
   }
 
   #accountInfo .contentTabRight .infoBlock, #accountInfo .contentTabRight .pwBlock, #accountInfo .contentTabRight .addressAccInfo {
