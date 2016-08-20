@@ -822,6 +822,10 @@ select{
 			li{
 				margin: 5px 0;
 				cursor: pointer;
+				a{
+					color: #333;
+					text-decoration: none;
+				}
 				span{
 					margin-right: 5px;
 				}
@@ -2288,6 +2292,7 @@ select{
 				width: 100%;
 				border-radius: 4px;
 				font-size: 18px;
+				font-family: $titleFontBold;
 				@include transition (all .2s linear);
 				&:hover{
 					background: #000;
@@ -2335,6 +2340,7 @@ select{
 			border-radius: 4px;
 			font-size: 18px;
 			margin-top: 10px;
+			font-family: $titleFontBold;
 			@include transition (all .2s linear);
 			&:hover{
 				background: #fff;
@@ -2818,6 +2824,7 @@ select{
 				padding: 15px 15px;
 				input[type="button"]{
 					margin: 10px 0 20px 0;
+					font-family: $titleFontBold;
 				}
 			}
 			.tableBody{

@@ -582,14 +582,16 @@ function optionClick(){ //onchange custom selecbox
 		listOption.slideUp('fast');
 	});
 };
-function showHideMenuMobile(className){
+
+//new edit 18.08 click function
+function showHideMenuMobile(className){ //change hamburger icon menu to "x" icon
 	showHide('.mainMenu');
 	if($(className).hasClass('active'))
 		$(className).removeClass('active');
 	else
 		$(className).addClass('active');
 };
-$(document).click(function(e){ 
+$(document).click(function(e){ //close popUp when click outside element
     if(e.target.className != 'customSelect' && !$('.customSelect').find(e.target).length){
         $('.listOption').hide();
     }
@@ -599,6 +601,7 @@ $(document).click(function(e){
         $('#mainSearchForm').hide();
     }
 });
+//end new edit 18.08 click function
 
 showSortBy();
 onChangeSortBy();
@@ -611,5 +614,5 @@ chooseColor();
 tabs();
 optionClick();
 onchangeSelectCartCheckout();
-radioCheck('#newMem','#logOldMem','#logNewMem');
-radioCheck('#oldMem','#logNewMem','#logOldMem');
+// radioCheck('#newMem','#logOldMem','#logNewMem');
+// radioCheck('#oldMem','#logNewMem','#logOldMem');

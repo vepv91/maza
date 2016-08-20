@@ -853,6 +853,10 @@ select {
   margin: 5px 0;
   cursor: pointer;
 }
+#categoryPage .sortCategory ul li a {
+  color: #333;
+  text-decoration: none;
+}
 #categoryPage .sortCategory ul li span {
   margin-right: 5px;
 }
@@ -2340,6 +2344,7 @@ select {
   width: 100%;
   border-radius: 4px;
   font-size: 18px;
+  font-family: "MazaB", "Open Sans", "Roboto", sans-serif;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -ms-transition: all 0.2s linear;
@@ -2390,6 +2395,7 @@ select {
   border-radius: 4px;
   font-size: 18px;
   margin-top: 10px;
+  font-family: "MazaB", "Open Sans", "Roboto", sans-serif;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -ms-transition: all 0.2s linear;
@@ -2845,6 +2851,7 @@ select {
   }
   #cartPage .cartLeft .tableFooter input[type="button"] {
     margin: 10px 0 20px 0;
+    font-family: "MazaB", "Open Sans", "Roboto", sans-serif;
   }
   #cartPage .cartLeft .tableBody .row {
     margin-left: 10px;
