@@ -122,6 +122,7 @@ $(function(){ // this function for responsive on mobile devices - please dont ed
 		getFullSlider();
 	}else{
 		getFullSlider();
+		$('.zoomOnHover').zoom(); //fix zoomHover detail page on mobile - edit 24.08
 	}
 });
 
@@ -591,17 +592,39 @@ function showHideMenuMobile(className){ //change hamburger icon menu to "x" icon
 	else
 		$(className).addClass('active');
 };
-$(document).click(function(e){ //close popUp when click outside element
-    if(e.target.className != 'customSelect' && !$('.customSelect').find(e.target).length){
-        $('.listOption').hide();
-    }
-    if(e.target.className != 'iconList' && !$('.iconList').find(e.target).length){
-        $('.popUpLogin').hide();
-        $('.popUpCart').hide();
-        $('#mainSearchForm').hide();
-    }
-});
+// $(document).click(function(e){ //close popUp when click outside element
+//     if(e.target.className != 'customSelect' && !$('.customSelect').find(e.target).length){
+//         $('.listOption').hide();
+//     }
+//     if(e.target.className != 'popUpLogin' && && !$('.popUpLogin').find(e.target).length){
+//        $('.popUpLogin').hide();
+//        // $('.popUpCart').hide();
+//        // $('#mainSearchForm').hide();
+//     }
+// });
 //end new edit 18.08 click function
+//new edit 24.08
+function enterSubmitForm(){
+	$('form#loginFormPage').keypress(function(event){
+	    var keycode = (event.keyCode ? event.keyCode : event.which);
+	    if(keycode == '13'){
+	        alert('Hội Maza đẹp trai, Tân bị gay ! Enter form Đăng nhập !');    
+	    }
+	});
+	$('form#regFormPage').keypress(function(event){
+	    var keycode = (event.keyCode ? event.keyCode : event.which);
+	    if(keycode == '13'){
+	        alert('Hội Maza đẹp trai, Tân bị gay ! Enter form Đăng ký !');    
+	    }
+	});
+	$('.popUpLogin').keypress(function(event){
+	    var keycode = (event.keyCode ? event.keyCode : event.which);
+	    if(keycode == '13'){
+	        alert('Hội Maza đẹp trai, Tân bị gay ! Enter Popup Đăng nhập !');    
+	    }
+	});
+}
+//end new edit 24.08 
 
 showSortBy();
 onChangeSortBy();
@@ -614,5 +637,6 @@ chooseColor();
 tabs();
 optionClick();
 onchangeSelectCartCheckout();
+enterSubmitForm();
 // radioCheck('#newMem','#logOldMem','#logNewMem');
 // radioCheck('#oldMem','#logNewMem','#logOldMem');
